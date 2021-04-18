@@ -1,1 +1,7 @@
-<p>checklist works!</p>
+<div *ngIf="checklist">
+  <div *ngFor="let list of checklist; let i = index">
+    <div>{{ list | json }}</div>
+  </div>
+
+  <button (click)="destroy.emit()">Close</button>
+</div>

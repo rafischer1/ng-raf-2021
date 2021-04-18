@@ -4,12 +4,14 @@ import { ChecklistObject, initialStateChecklist } from "./checklist.model";
 
 export interface ChecklistState {
   checklist: ChecklistObject[];
+  active: boolean;
 }
 
 export function createInitialState(): ChecklistState {
   return {
     // * add to initial state when new tasks needed for checklist
     checklist: initialStateChecklist,
+    active: false,
   };
 }
 

@@ -8,9 +8,10 @@ import { TranslocoRootModule } from "./transloco/transloco-root.module";
 import { ChecklistContainerComponent } from './shared/checklist-container/checklist-container.component';
 import { ToastsContainerComponent } from './shared/toasts-container/toasts-container.component';
 import { ChecklistComponent } from './shared/checklist-container/checklist/checklist.component';
+import { MainComponent } from './components/main/main.component';
 
 @NgModule({
-  declarations: [AppComponent, ChecklistContainerComponent, ToastsContainerComponent, ChecklistComponent],
+  declarations: [AppComponent, ChecklistContainerComponent, ToastsContainerComponent, ChecklistComponent, MainComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

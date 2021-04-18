@@ -1,8 +1,9 @@
 export interface ChecklistObject {
-  [key: string]: { [key: string]: ChecklistStatus }[];
+  [title: string]: ChecklistStatus[];
 }
 
 export interface ChecklistStatus {
+  action: string;
   status: boolean;
   description?: string;
 }
@@ -10,8 +11,12 @@ export interface ChecklistStatus {
 export const initialStateChecklist: ChecklistObject[] = [
   {
     checklist: [
-      { open: { status: false } },
-      { active: { status: false, description: "Handles live updating." } },
+      { action: "open", status: false },
+      {
+        action: "active",
+        status: false,
+        description: "Handles live updating.",
+      },
     ],
   },
 ];
