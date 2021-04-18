@@ -9,14 +9,21 @@ import { ChecklistContainerComponent } from './shared/checklist-container/checkl
 import { ToastsContainerComponent } from './shared/toasts-container/toasts-container.component';
 import { ChecklistComponent } from './shared/checklist-container/checklist/checklist.component';
 import { MainComponent } from './components/main/main.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { MatIconModule } from "@angular/material/icon";
+import { MatOptionModule } from "@angular/material/core";
 
 @NgModule({
-  declarations: [AppComponent, ChecklistContainerComponent, ToastsContainerComponent, ChecklistComponent, MainComponent],
+  declarations: [AppComponent, ChecklistContainerComponent, ToastsContainerComponent, ChecklistComponent, MainComponent, NavBarComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     TranslocoRootModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatOptionModule
   ],
   providers: [],
   bootstrap: [AppComponent],

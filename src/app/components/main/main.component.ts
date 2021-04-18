@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { ChecklistService } from "../../shared/checklist-container/state/checklist.service";
+
 
 @Component({
   selector: "raf-main",
@@ -7,9 +7,7 @@ import { ChecklistService } from "../../shared/checklist-container/state/checkli
   styleUrls: ["./main.component.scss"],
 })
 export class MainComponent implements OnInit {
-  constructor(private checklistService: ChecklistService) {}
+  constructor() {}
 
   ngOnInit(): void {}
-
-  openChecklist = () => this.checklistService.open();
 }

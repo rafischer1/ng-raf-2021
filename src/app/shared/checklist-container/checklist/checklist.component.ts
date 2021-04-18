@@ -7,10 +7,11 @@ import { ChecklistObject } from "../state/checklist.model";
   styleUrls: ["./checklist.component.scss"],
 })
 export class ChecklistComponent implements OnInit {
-  @Input() checklist: ChecklistObject[] | undefined;
+  @Input() checklist: ChecklistObject[] | null | undefined;
   @Output() destroy: EventEmitter<any> = new EventEmitter<any>();
   constructor() {}
 
-  ngOnInit(): void {}
-
+  ngOnInit(): void {
+    console.log(this.checklist);
+  }
 }

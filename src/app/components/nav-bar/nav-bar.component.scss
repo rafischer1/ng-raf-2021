@@ -1,0 +1,15 @@
+@import "./src/scss/_variables.scss";
+
+div.nav-bar {
+  top: 0;
+  height: 70px;
+  background: $light-grey;
+  width: 100%;
+  border-bottom: lightgrey;
+}
+
+button.checklist-btn {
+  margin: 14px;
+}
+
+

@@ -2,12 +2,13 @@
   display: flex;
   z-index: 99998;
   position: fixed;
-  top: 0;
+  top: 100px;
   right: 25%;
   left: 25%;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  border: 1px solid red;
 }
 
 .wrapper-hidden {
