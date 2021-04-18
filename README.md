@@ -1,7 +1,7 @@
 # NG RAF 2021
 ## A repository of angular components / test setups / general exploration
 
-```json
+```js
 "cmd": {
   "ng serve": run(),
   "ng test": test(),
