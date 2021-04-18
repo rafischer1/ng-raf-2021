@@ -3,3 +3,20 @@
 * {
   color: $dark;
 }
+
+.checklist {
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  border: 1px solid $tertiary;
+  padding: 1%;
+  color: $primary;
+  margin-left: 2px;
+  border-radius: 5px;
+  cursor: crosshair;
+
+  &:hover {
+    background: $dark;
+    color: $secondary;
+  }
+}
