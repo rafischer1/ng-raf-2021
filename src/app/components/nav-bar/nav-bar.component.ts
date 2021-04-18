@@ -18,6 +18,7 @@ export class NavBarComponent implements OnInit {
   openChecklist = () => this.checklistService.open();
 
   navTo(page: string) {
+    this.checklistService.close();
     this.router
       .navigate([`/${page}`])
       .then((x) => console.log("Navigate to: ", page));
