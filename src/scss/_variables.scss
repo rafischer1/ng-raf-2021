@@ -1,14 +1,35 @@
-$primary: #3D7EBE;
-$secondary: #3DBEBE;
-$tertiary: #7E3DBE;
+$primary: #3d7ebe;
+$secondary: #3dbebe;
+$tertiary: #7e3dbe;
 
-$error: #DD435A;
+$error: #dd435a;
 $warn: #ddc643;
 $success: $secondary;
-$info: #E0E0E0;
+$info: #e0e0e0;
 
-$dark: #2D2D2D;
+$dark: #2d2d2d;
 $light-grey: #717171;
 
 $font-family-sans-serif: "Avenir", Arial, sans-serif;
 $text-transform: capitalize;
+
+button {
+  padding: 1% 2%;
+  color: white;
+  cursor: pointer;
+  margin: 2px;
+  border-radius: 5px;
+  background: $primary;
+  border: none;
+  outline: none;
+  text-transform: capitalize;
+  font-weight: bolder;
+}
+
+button:hover {
+  filter: brightness(90%);
+}
+
+button:active {
+  filter: brightness(80%);
+}

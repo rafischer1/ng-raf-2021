@@ -1,0 +1,9 @@
+@import "./src/scss/variables";
+
+.checklist {
+  border: 1px solid forestgreen;
+  z-index: 999999;
+  position: fixed;
+  top: 100px;
+  width: 400px;
+}
