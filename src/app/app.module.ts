@@ -18,6 +18,7 @@ import { ToastsModalComponent } from "./shared/toasts-container/toasts-modal/toa
 import { FormsModule } from "@angular/forms";
 import { ChecklistListComponent } from "./shared/checklist-container/checklist/checklist-list/checklist-list.component";
 import { ChecklistItemComponent } from "./shared/checklist-container/checklist/checklist-list/checklist-item/checklist-item.component";
+import { NgxGraphModule } from "@swimlane/ngx-graph";
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { ChecklistItemComponent } from "./shared/checklist-container/checklist/c
     MatIconModule,
     MatOptionModule,
     FormsModule,
+    NgxGraphModule
   ],
   providers: [],
   bootstrap: [AppComponent],

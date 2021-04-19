@@ -14,7 +14,7 @@
 ## Docs / Resources
 ------
 
-[High Charts Vis](https://github.com/highcharts/highcharts-angular)
+[NGX Graph Data Vis](https://swimlane.github.io/ngx-graph/)
 
 [Transloco](https://ngneat.github.io/transloco/)
 

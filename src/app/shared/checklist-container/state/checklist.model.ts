@@ -41,7 +41,7 @@ export const initialStateChecklist: ChecklistObject[] = [
   },
   {
     dashboard: [
-      { action: "high charts component", status: false },
+      { action: "ngx graph component", status: false },
       {
         action: "interactive contact components",
         status: false,
