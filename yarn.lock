@@ -1152,6 +1152,13 @@
     merge-source-map "^1.1.0"
     schema-utils "^2.7.0"
 
+"@ngneat/forms-manager@^2.3.0":
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/@ngneat/forms-manager/-/forms-manager-2.3.0.tgz#154f671c1ef2a8a4df591c5aa396eae63fa17f52"
+  integrity sha512-ivei8rh3a2B+Q5ABrSm/u3nIf2PbqophMToKOU9/1RCjywJPNuuior5O4L4SHj57ceOe5ty1o2p7te0CF7975Q==
+  dependencies:
+    tslib "^1.10.0"
+
 "@ngneat/transloco-utils@^1.0.6":
   version "1.1.2"
   resolved "https://registry.npmjs.org/@ngneat/transloco-utils/-/transloco-utils-1.1.2.tgz"
