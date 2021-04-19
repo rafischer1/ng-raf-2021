@@ -18,6 +18,7 @@ import { ToastButtonComponent } from './components/features/toasts-web/toast-but
 import { ToastsModalComponent } from './shared/toasts-container/toasts-modal/toasts-modal.component';
 import { FormsModule } from "@angular/forms";
 import { ChecklistListComponent } from './shared/checklist-container/checklist/checklist-list/checklist-list.component';
+import { ChecklistItemComponent } from './shared/checklist-container/checklist/checklist-list/checklist-item/checklist-item.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { ChecklistListComponent } from './shared/checklist-container/checklist/c
     ToastButtonComponent,
     ToastsModalComponent,
     ChecklistListComponent,
+    ChecklistItemComponent,
   ],
   imports: [
     BrowserModule,

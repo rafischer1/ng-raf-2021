@@ -17,6 +17,7 @@ export const initialStateChecklist: ChecklistObject[] = [
         status: false,
         description: "Handles live updating.",
       },
+      { action: "live updating", status: true },
     ],
   },
   {

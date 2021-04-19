@@ -11,16 +11,11 @@ export class ChecklistListComponent implements OnInit {
   @Input() list: ChecklistStatus[] = [];
   @Input() groupIndex: number = 0;
 
-  @Output() update: EventEmitter<ChecklistStatus[]> = new EventEmitter<
-    ChecklistStatus[]
-  >();
   constructor() {}
 
   ngOnInit(): void {}
 
   toggleStatus(index: number, status: boolean) {
-    const newList = [...this.list];
-    !newList[index].status;
-    this.update.emit(newList);
+
   }
 }

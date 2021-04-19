@@ -1,15 +1,4 @@
 <h3>{{ title | titlecase }}</h3>
-<div *ngFor="let l of list; let i = index">
-  <span
-    ><label>
-      <input
-        class="action"
-        (click)="toggleStatus(i, l.status)"
-        type="radio"
-        [checked]="l.status"
-      /> </label
-  ></span>
-  {{ l.action | titlecase }}:
-  <span>{{ l.status ? "Yes" : "No" }}</span>
-  <div *ngIf="l.description" style="margin-left: 10px">{{ l.description }}</div>
+<div *ngFor="let item of list">
+  <raf-checklist-item [item]="item"></raf-checklist-item>
 </div>
