@@ -1,6 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 
-
 @Component({
   selector: "raf-main",
   templateUrl: "./main.component.html",

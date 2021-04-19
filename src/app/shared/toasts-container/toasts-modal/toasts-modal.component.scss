@@ -1,0 +1,207 @@
+@import "./src/scss/variables";
+
+.toast {
+  color: white;
+  margin: auto 0 2px 20px;
+  visibility: hidden;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 15px;
+  display: inline-flex;
+  background: linear-gradient(lighten($light-grey, 8), lighten($light-grey, 2));
+  -webkit-box-shadow: 14px 13px 12px -16px rgba(225, 225, 225, 0.18);
+  box-shadow: 14px 13px 12px -16px rgba(225, 225, 225, 0.18);
+}
+
+.toast-dismiss-btn {
+  margin-left: 7px;
+  cursor: pointer;
+
+  &:hover {
+    color: $error;
+    filter: brightness(120%);
+  }
+
+  &:active {
+    filter: brightness(150%);
+    text-decoration: underline;
+  }
+}
+
+.img {
+  height: 50px;
+  width: 50px;
+  float: left;
+  padding-top: 14px;
+  box-sizing: border-box;
+  background-color: $dark;
+  color: #fff;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.msg {
+  border-left: 3px solid $light-grey;
+  padding: 15px 15px 0 10px;
+}
+
+.link {
+  cursor: pointer;
+  background: linear-gradient(lighten($dark, 10), $dark);
+  color: lighten($tertiary, 20);
+  text-decoration: underline;
+
+  &:hover {
+    color: #fff;
+    background: $dark, linear-gradient(lighten($dark, 10));
+  }
+
+  &:active {
+    background: $dark, linear-gradient(lighten($dark, 20));
+  }
+}
+
+// -==Animation Classes==-
+.show-toast {
+  visibility: visible;
+  -webkit-animation: fadeInLeft 0.5s ease-in, stay 3s 1s, fade-out 1s 4s;
+  animation: fadeInLeft 0.5s ease-in, stay 3s 1s, fade-out 1s 4s;
+}
+
+.dismiss {
+  visibility: visible;
+  -webkit-animation: fadeInLeft 0.5s ease-in, stay forwards;
+  animation: fadeInLeft 0.5s ease-in, stay forwards;
+}
+
+.link-toast {
+  visibility: visible;
+  -webkit-animation: fadeInLeft 0.5s ease-in, stay forwards;
+  animation: fadeInLeft 0.5s ease-in, stay forwards;
+}
+
+// -==VARIABLE SETTINGS==-
+.msg.alert {
+  border-left-color: $error;
+}
+
+.msg.success {
+  border-left-color: $secondary;
+}
+
+.msg.warn {
+  //border-left-color: $brand-warning;
+  border-left-color: #f0ad4e;
+}
+
+.msg.info {
+  border-left-color: $info;
+}
+
+.msg.link {
+  border-left-color: $tertiary;
+}
+
+.toast.success {
+  background-color: $secondary;
+}
+
+.toast.info {
+  background-color: $dark;
+}
+
+.toast.warn {
+  background-color: $warn;
+}
+
+.toast.alert {
+  background-color: $error;
+}
+
+.toast.link {
+  background-color: $tertiary;
+}
+
+// -==ANIMATIONS==-
+@-webkit-keyframes stay {
+  from {
+    margin-left: 20px;
+  }
+
+  to {
+    margin-left: 20px;
+  }
+}
+
+@keyframes stay {
+  from {
+    margin-left: 20px;
+  }
+
+  to {
+    margin-left: 20px;
+  }
+}
+
+@-webkit-keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    -webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+}
+
+@-webkit-keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@-moz-keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}

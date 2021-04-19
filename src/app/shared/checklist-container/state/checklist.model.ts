@@ -19,4 +19,18 @@ export const initialStateChecklist: ChecklistObject[] = [
       },
     ],
   },
+  {
+    toasts: [
+      { action: "modal exists", status: false },
+      {
+        action: "components on navigate",
+        status: false,
+        description: "Handles live testing.",
+      },
+      {
+        action: "testing",
+        status: false,
+      },
+    ],
+  },
 ];

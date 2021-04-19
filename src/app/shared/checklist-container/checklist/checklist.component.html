@@ -1,4 +1,4 @@
-<ng-container class="checklist">
-  <div>{{checklist | json}}</div>
+<div class="checklist">
+  <div *ngFor="let list of checklist">{{ list | json }}</div>
   <button (click)="destroy.emit()">Close</button>
-</ng-container>
+</div>
