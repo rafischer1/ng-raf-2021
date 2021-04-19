@@ -10,3 +10,14 @@
 ```
 
 [Deployed URL (TBD)](https://github.com/rafischer1/ng-raf-2021)
+
+## Docs / Resources
+------
+
+[High Charts Vis](https://github.com/highcharts/highcharts-angular)
+
+[Transloco](https://ngneat.github.io/transloco/)
+
+[Forms Manager](https://github.com/ngneat/forms-manager)
+
+[Spectator Testing](https://github.com/ngneat/spectator)

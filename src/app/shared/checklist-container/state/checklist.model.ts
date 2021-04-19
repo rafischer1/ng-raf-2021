@@ -39,4 +39,17 @@ export const initialStateChecklist: ChecklistObject[] = [
       },
     ],
   },
+  {
+    dashboard: [
+      { action: "high charts component", status: false },
+      {
+        action: "interactive contact components",
+        status: false,
+      },
+      {
+        action: "forms for inquiry component",
+        status: false,
+      },
+    ],
+  },
 ];
