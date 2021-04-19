@@ -1,1 +1,10 @@
-<p>toasts-container works!</p>
+<div class="toasts-container">
+  <ng-container *ngFor="let toast of toasts$ | async; let i = index">
+    <raf-toasts-modal
+      (delete)="deleteToast(i)"
+      [type]="toast.type"
+      [message]="toast.message"
+      [link]="toast.link"
+    ></raf-toasts-modal>
+  </ng-container>
+</div>

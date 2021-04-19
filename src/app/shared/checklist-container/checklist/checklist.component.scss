@@ -1,9 +1,13 @@
 @import "./src/scss/variables";
 
 .checklist {
-  border: 1px solid forestgreen;
+  border: 1px solid $light-grey;
   z-index: 999999;
   position: fixed;
-  top: 100px;
-  width: 400px;
+  background: $dark;
+  color: white;
+  margin: auto auto;
+  width: 50%;
+  padding: 1%;
+  border-radius: 5px;
 }

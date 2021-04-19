@@ -1,0 +1,29 @@
+<ng-template #defaultToast let-type="type" let-message="message">
+  <div class="toast {{ toastClass }}">
+    <div class="img">{{ type.charAt(0) | uppercase }}</div>
+    <div class="msg {{ type }}">{{ message | uppercase }}</div>
+  </div>
+</ng-template>
+
+<ng-template #errorToast let-type="type" let-message="message">
+  <div class="toast {{ toastClass }}">
+    <div class="img">A</div>
+    <div class="msg {{ type }}" style="display: flex; flex-direction: row">
+      {{ message | uppercase }}
+      <div class="pull-right toast-dismiss-btn" (click)="deleteToast()">X</div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #linkToast let-type="type" let-message="message">
+  <div class="toast {{ toastClass }}">
+    <div class="msg href {{ type }}" (click)="navigateToRoute()">
+      {{ message | uppercase }}
+    </div>
+  </div>
+</ng-template>
+
+<ng-container
+  [ngTemplateOutlet]="liveTemplate"
+  [ngTemplateOutletContext]="{ type: type, message: message }"
+></ng-container>

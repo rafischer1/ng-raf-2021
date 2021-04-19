@@ -1,1 +1,18 @@
-<p>toasts-web works!</p>
+<div class="toast-buttons-container">
+  <raf-toast-button
+    [type]="'success'"
+    (show)="showToast('success')"
+  ></raf-toast-button>
+  <raf-toast-button
+    [type]="'info'"
+    (show)="showToast('info')"
+  ></raf-toast-button>
+  <raf-toast-button
+    [type]="'warn'"
+    (show)="showToast('warn')"
+  ></raf-toast-button>
+  <raf-toast-button
+    [type]="'alert'"
+    (show)="showToast('alert')"
+  ></raf-toast-button>
+</div>
