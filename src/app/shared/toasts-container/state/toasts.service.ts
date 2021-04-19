@@ -11,8 +11,8 @@ export interface Toast {
   providedIn: "root",
 })
 export class ToastsService implements Toast {
-  message: string;
-  type: string;
+  message: string = "";
+  type: string = "";
   link?: string = "";
 
   constructor(private store: ToastsStore) {}

@@ -16,6 +16,8 @@ import { MatOptionModule } from "@angular/material/core";
 import { ToastsWebComponent } from "./components/features/toasts-web/toasts-web.component";
 import { ToastButtonComponent } from './components/features/toasts-web/toast-button/toast-button.component';
 import { ToastsModalComponent } from './shared/toasts-container/toasts-modal/toasts-modal.component';
+import { FormsModule } from "@angular/forms";
+import { ChecklistListComponent } from './shared/checklist-container/checklist/checklist-list/checklist-list.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,7 @@ import { ToastsModalComponent } from './shared/toasts-container/toasts-modal/toa
     ToastsWebComponent,
     ToastButtonComponent,
     ToastsModalComponent,
+    ChecklistListComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,6 +40,7 @@ import { ToastsModalComponent } from './shared/toasts-container/toasts-modal/toa
     BrowserAnimationsModule,
     MatIconModule,
     MatOptionModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

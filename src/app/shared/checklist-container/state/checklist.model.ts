@@ -11,7 +11,7 @@ export interface ChecklistStatus {
 export const initialStateChecklist: ChecklistObject[] = [
   {
     checklist: [
-      { action: "open", status: false },
+      { action: "open", status: true },
       {
         action: "active",
         status: false,

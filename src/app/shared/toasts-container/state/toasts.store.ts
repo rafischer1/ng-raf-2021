@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Store, StoreConfig } from "@datorama/akita";
 import { Toast } from "./toasts.service";
+import { deepFreeze } from "@datorama/akita/src/internal/deep-freeze";
 
 export interface ToastsState {
   toasts: Toast[];
@@ -16,6 +17,8 @@ export function createInitialState(): ToastsState {
 @StoreConfig({ name: "toasts-store" })
 export class ToastsStore extends Store<ToastsState> {
   constructor() {
-    super(createInitialState());
+    super(
+      createInitialState(),
+    );
   }
 }

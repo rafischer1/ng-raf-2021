@@ -1,4 +1,16 @@
 <div class="checklist">
-  <div *ngFor="let list of checklist">{{ list | json }}</div>
-  <button (click)="destroy.emit()">Close</button>
+  <raf-checklist-list
+    [title]="'checklist'"
+    [list]="checklist[0]['checklist']"
+    [groupIndex]="0"
+    (update)="updateChecklist($event, 0, 'checklist')"
+  ></raf-checklist-list>
+  <br />
+  <raf-checklist-list
+    [title]="'toasts'"
+    [list]="checklist[1]['toasts']"
+    [groupIndex]="1"
+    (update)="updateChecklist($event,1,'toasts')"
+  ></raf-checklist-list>
+  <button (click)="destroy.emit()" style="float: right">Close</button>
 </div>
