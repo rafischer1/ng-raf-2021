@@ -18,7 +18,7 @@ import { ToastsModalComponent } from "./shared/toasts-container/toasts-modal/toa
 import { FormsModule } from "@angular/forms";
 import { ChecklistListComponent } from "./shared/checklist-container/checklist/checklist-list/checklist-list.component";
 import { ChecklistItemComponent } from "./shared/checklist-container/checklist/checklist-list/checklist-item/checklist-item.component";
-import { NgxGraphModule } from "@swimlane/ngx-graph";
+import { ContactGraphComponent } from "./components/main/components/contact-graph/contact-graph.component";
 
 @NgModule({
   declarations: [
@@ -33,6 +33,7 @@ import { NgxGraphModule } from "@swimlane/ngx-graph";
     ToastsModalComponent,
     ChecklistListComponent,
     ChecklistItemComponent,
+    ContactGraphComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +44,6 @@ import { NgxGraphModule } from "@swimlane/ngx-graph";
     MatIconModule,
     MatOptionModule,
     FormsModule,
-    NgxGraphModule
   ],
   providers: [],
   bootstrap: [AppComponent],
