@@ -3,14 +3,18 @@
     [title]="'checklist'"
     [list]="checklist[0]['checklist']"
     [groupIndex]="0"
-    (update)="updateChecklist($event, 0, 'checklist')"
   ></raf-checklist-list>
   <br />
   <raf-checklist-list
     [title]="'toasts'"
     [list]="checklist[1]['toasts']"
     [groupIndex]="1"
-    (update)="updateChecklist($event,1,'toasts')"
+  ></raf-checklist-list>
+  <br />
+  <raf-checklist-list
+    [title]="'dashboard'"
+    [list]="checklist[2]['dashboard']"
+    [groupIndex]="2"
   ></raf-checklist-list>
   <button (click)="destroy.emit()" style="float: right">Close</button>
 </div>

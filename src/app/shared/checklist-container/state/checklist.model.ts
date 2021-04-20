@@ -17,18 +17,36 @@ export const initialStateChecklist: ChecklistObject[] = [
         status: false,
         description: "Handles live updating.",
       },
+      {
+        action: "live updating",
+        status: false,
+        description: "Store or form resets state",
+      },
     ],
   },
   {
     toasts: [
-      { action: "modal exists", status: false },
+      { action: "modal exists", status: true },
+      { action: "renders", status: true, description: "All types rendering" },
       {
-        action: "components on navigate",
+        action: "collapse multiple",
         status: false,
-        description: "Handles live testing.",
+        description: "If two of the exact same in a row - collapse and show #",
       },
       {
         action: "testing",
+        status: false,
+      },
+    ],
+  },
+  {
+    dashboard: [
+      {
+        action: "interactive contact components",
+        status: false,
+      },
+      {
+        action: "forms for inquiry component",
         status: false,
       },
     ],

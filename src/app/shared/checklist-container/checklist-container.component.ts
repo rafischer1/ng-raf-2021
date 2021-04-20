@@ -29,18 +29,14 @@ export class ChecklistContainerComponent
 
   ngOnInit(): void {
     this.checklist$ = this.query.select((state) => state.checklist).pipe();
-    this.active$ = this.query
-      .select((state) => state.active)
-      .pipe(tap((a) => console.log("active:", a)));
+    this.active$ = this.query.select((state) => state.active);
   }
 
   toggleWrapperClass() {
-    console.log("toggled");
     this.wrapperClass = "modal-wrapper";
   }
 
   closeContainer() {
-    console.log("closed");
     this.wrapperClass = "hidden-wrapper";
     this.service.close();
   }
