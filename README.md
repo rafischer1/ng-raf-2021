@@ -9,7 +9,7 @@
 }
 ```
 
-[Deployed URL (TBD)](https://github.com/rafischer1/ng-raf-2021)
+[Deployed URL 🚀](http://ng-raf-2021.surge.sh/)
 
 ## Docs / Resources
 ------
