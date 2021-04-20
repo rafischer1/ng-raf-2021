@@ -21,6 +21,8 @@ export class ToastsWebComponent implements OnInit {
         return this.toasts.showToast(type, "Warning");
       case "alert":
         return this.toasts.showToast(type, "Error");
+      case "link":
+        return this.toasts.showToast(type, "Home", "");
     }
   }
 }

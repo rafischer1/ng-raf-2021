@@ -17,6 +17,7 @@
 
 <ng-template #linkToast let-type="type" let-message="message">
   <div class="toast {{ toastClass }}">
+    <div class="img">L</div>
     <div class="msg href {{ type }}" (click)="navigateToRoute()">
       {{ message | uppercase }}
     </div>

@@ -47,13 +47,11 @@
 
 .link {
   cursor: pointer;
-  background: linear-gradient(lighten($dark, 10), $dark);
-  color: lighten($tertiary, 20);
+  color: lighten($tertiary, 30);
   text-decoration: underline;
 
   &:hover {
     color: #fff;
-    background: $dark, linear-gradient(lighten($dark, 10));
   }
 
   &:active {
