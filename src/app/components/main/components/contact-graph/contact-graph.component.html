@@ -1,6 +1,11 @@
-<div class="contact-graph" cdkDrag cdkDragBoundary=".main">
+<div
+  class="contact-graph"
+  cdkDrag
+  cdkDragBoundary=".main"
+  *transloco="let t; read: 'main'"
+>
   <div class="widget-header" cdkDragHandle>
-    <h2>Skills</h2>
+    <h2>{{ t("skills") }}</h2>
   </div>
   <ngx-charts-pie-chart
     [results]="pieGraphData"

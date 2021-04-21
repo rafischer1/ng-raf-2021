@@ -1,1 +1,19 @@
-{}
+{
+  "main": {
+    "skills": "Kompetenzen",
+    "links": "links",
+    "info": "informationen"
+  },
+  "nav": {
+    "checklist": "Checkliste",
+    "toasts": "Benachrichtigungen",
+    "home": "Startseite"
+  },
+  "toasts": {
+    "success": "Erfolg",
+    "alert": "alarm",
+    "warn": "warnen",
+    "info": "informationen",
+    "link": "link"
+  }
+}

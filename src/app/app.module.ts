@@ -22,6 +22,9 @@ import { ContactGraphComponent } from "./components/main/components/contact-grap
 import { BarChartModule, PieChartModule } from "@swimlane/ngx-charts";
 import { DragDropModule } from "@angular/cdk/drag-drop";
 import { ContactLinksComponent } from './components/main/components/contact-links/contact-links.component';
+import { LanguageToggleComponent } from './shared/language-toggle/language-toggle.component';
+import { LanguageIconComponent } from './shared/language-toggle/language-icon/language-icon.component';
+import { ContactInfoComponent } from './components/main/components/contact-info/contact-info.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +41,9 @@ import { ContactLinksComponent } from './components/main/components/contact-link
     ChecklistItemComponent,
     ContactGraphComponent,
     ContactLinksComponent,
+    LanguageToggleComponent,
+    LanguageIconComponent,
+    ContactInfoComponent,
   ],
   imports: [
     BrowserModule,
