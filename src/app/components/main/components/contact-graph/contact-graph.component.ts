@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { pieGraphSkillsData } from "./dashboard-data";
 
 @Component({
   selector: "raf-contact-graph",
@@ -7,6 +8,6 @@ import { Component, OnInit } from "@angular/core";
 })
 export class ContactGraphComponent implements OnInit {
   constructor() {}
-
+  pieGraphData: { name: string; value: number }[] = pieGraphSkillsData;
   ngOnInit(): void {}
 }
