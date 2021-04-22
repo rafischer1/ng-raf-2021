@@ -1,1 +1,24 @@
-{}
+{
+  "main": {
+    "skills": "compétences",
+    "links": "liens",
+    "info": "info"
+  },
+  "nav": {
+    "checklist": "Liste de contrôle",
+    "toasts": "notifications",
+    "home": "page d'accueil"
+  },
+  "toasts": {
+    "success": "Succès",
+    "alert": "Erreur",
+    "warn": "Avertir",
+    "info": "informations",
+    "link": "lien",
+    "successMsg": "excellent résultat",
+    "alertMsg": "échec: le pont s'est effondré",
+    "warnMsg": "avertissement: inondation imminente",
+    "infoMsg": "Les plantes-parapluies... efficaces surtout quand il pleut!",
+    "linkMsg": "emmène moi chez toi"
+  }
+}

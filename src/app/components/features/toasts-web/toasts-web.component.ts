@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ToastsService } from "../../../shared/toasts-container/state/toasts.service";
+import { TranslocoService } from "@ngneat/transloco";
 
 @Component({
   selector: "raf-toasts-web",
@@ -7,22 +8,17 @@ import { ToastsService } from "../../../shared/toasts-container/state/toasts.ser
   styleUrls: ["./toasts-web.component.scss"],
 })
 export class ToastsWebComponent implements OnInit {
-  constructor(private toasts: ToastsService) {}
+  constructor(
+    private translate: TranslocoService,
+    private toasts: ToastsService
+  ) {}
 
   ngOnInit(): void {}
 
-  showToast(type: string) {
-    switch (type) {
-      case "success":
-        return this.toasts.showToast(type, "Hooray!");
-      case "info":
-        return this.toasts.showToast(type, "Information");
-      case "warn":
-        return this.toasts.showToast(type, "Warning");
-      case "alert":
-        return this.toasts.showToast(type, "Error");
-      case "link":
-        return this.toasts.showToast(type, "Home", "");
-    }
-  }
+  showToast = (type: string) =>
+    this.toasts.showToast(
+      type,
+      this.translate.translate(`toasts.${type}Msg`),
+      type === "link" ? "" : null
+    );
 }

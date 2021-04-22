@@ -1,1 +1,24 @@
-{}
+{
+  "main": {
+    "skills": "habilidades",
+    "links": "enlaces",
+    "info": "info"
+  },
+  "nav": {
+    "checklist": "Lista de Verificación",
+    "toasts": "notificaciones",
+    "home": "casa"
+  },
+  "toasts": {
+    "success": "Éxito",
+    "alert": "error",
+    "warn": "avisa",
+    "info": "información",
+    "link": "enlace",
+    "successMsg": "¡Buena Onda!",
+    "alertMsg": "falla del sistema: errores persistentes en el código",
+    "warnMsg": "mantente alejado: no te comas el musgo",
+    "infoMsg": "nota la nieve en primavera",
+    "linkMsg": "regresar a la página principal"
+  }
+}

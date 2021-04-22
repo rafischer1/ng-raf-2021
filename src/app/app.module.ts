@@ -19,6 +19,12 @@ import { FormsModule } from "@angular/forms";
 import { ChecklistListComponent } from "./shared/checklist-container/checklist/checklist-list/checklist-list.component";
 import { ChecklistItemComponent } from "./shared/checklist-container/checklist/checklist-list/checklist-item/checklist-item.component";
 import { ContactGraphComponent } from "./components/main/components/contact-graph/contact-graph.component";
+import { BarChartModule, PieChartModule } from "@swimlane/ngx-charts";
+import { DragDropModule } from "@angular/cdk/drag-drop";
+import { ContactLinksComponent } from './components/main/components/contact-links/contact-links.component';
+import { LanguageToggleComponent } from './shared/language-toggle/language-toggle.component';
+import { LanguageIconComponent } from './shared/language-toggle/language-icon/language-icon.component';
+import { ContactInfoComponent } from './components/main/components/contact-info/contact-info.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +40,10 @@ import { ContactGraphComponent } from "./components/main/components/contact-grap
     ChecklistListComponent,
     ChecklistItemComponent,
     ContactGraphComponent,
+    ContactLinksComponent,
+    LanguageToggleComponent,
+    LanguageIconComponent,
+    ContactInfoComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,6 +54,9 @@ import { ContactGraphComponent } from "./components/main/components/contact-grap
     MatIconModule,
     MatOptionModule,
     FormsModule,
+    BarChartModule,
+    PieChartModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent],

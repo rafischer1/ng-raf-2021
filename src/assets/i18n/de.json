@@ -1,1 +1,24 @@
-{}
+{
+  "main": {
+    "skills": "Kompetenzen",
+    "links": "links",
+    "info": "informationen"
+  },
+  "nav": {
+    "checklist": "Checkliste",
+    "toasts": "Benachrichtigungen",
+    "home": "Startseite"
+  },
+  "toasts": {
+    "success": "Erfolg",
+    "alert": "alarm",
+    "warn": "warnen",
+    "info": "informationen",
+    "link": "link",
+    "successMsg": "Herzlichen Glückwunsch, lass uns ein Bier trinken",
+    "alertMsg": "Fehler: Keine Mutationen für die Nur-Ansicht-Rolle",
+    "warnMsg": "Vielleicht sei vorsichtig",
+    "infoMsg": "die täglichen Nachrichten",
+    "linkMsg": "schnell zum anfang"
+  }
+}

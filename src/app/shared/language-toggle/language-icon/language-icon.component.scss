@@ -1,0 +1,15 @@
+div {
+  color: lightgrey;
+  filter: brightness(85%);
+  margin: auto 2px;
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(110%);
+  }
+}
+
+.active {
+  filter: brightness(120%);
+  text-decoration: underline;
+}

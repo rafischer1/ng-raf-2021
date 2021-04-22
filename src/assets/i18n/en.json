@@ -1,1 +1,24 @@
-{}
+{
+  "main": {
+    "skills": "skills",
+    "links": "links",
+    "info": "info"
+  },
+  "nav": {
+    "checklist": "checklist",
+    "toasts": "toasts",
+    "home": "home"
+  },
+  "toasts": {
+    "success": "success",
+    "alert": "alert",
+    "warn": "warn",
+    "info": "info",
+    "link": "link",
+    "linkMsg": "Home",
+    "successMsg": "Hooray!",
+    "alertMsg": "Error",
+    "warnMsg": "Warning",
+    "infoMsg": "Information"
+  }
+}

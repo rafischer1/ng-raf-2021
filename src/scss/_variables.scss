@@ -1,4 +1,4 @@
-$primary: #3d7ebe;
+$primary: #4f8fd4;
 $secondary: #3dbebe;
 $tertiary: #7e3dbe;
 
@@ -32,4 +32,17 @@ button:hover {
 
 button:active {
   filter: brightness(80%);
+}
+
+.widget-header {
+  background: #2d2d2d;
+  color: white;
+  height: 33px;
+  text-transform: uppercase;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+h2 {
+  text-align: center;
 }

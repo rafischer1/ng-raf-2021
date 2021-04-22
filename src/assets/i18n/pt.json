@@ -1,0 +1,24 @@
+{
+  "main": {
+    "skills": "habilidades",
+    "links": "links",
+    "info": "informação"
+  },
+  "nav": {
+    "checklist": "lista de controle",
+    "toasts": "notificações",
+    "home": "pagina inicial"
+  },
+  "toasts": {
+    "success": "sucesso",
+    "alert": "alerta",
+    "warn": "avisar",
+    "info": "informação",
+    "link": "link",
+    "successMsg": "resultados surpreendentes",
+    "alertMsg": "algo deu muito errado",
+    "warnMsg": "tome precauções",
+    "infoMsg": "esta é uma grande notícia",
+    "linkMsg": "pagina inicial"
+  }
+}

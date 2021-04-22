@@ -1,5 +1,12 @@
-<div class="nav-bar">
-  <button (click)="navTo('')" class="checklist-btn">Home</button>
-  <button (click)="openChecklist()" class="checklist-btn">Checklist</button>
-  <button (click)="navTo('toasts')" class="checklist-btn">Toasts</button>
+<div class="nav-bar" *transloco="let t; read: 'nav'">
+  <button (click)="navTo('')" class="checklist-btn">
+    {{ t("home") | titlecase }}
+  </button>
+  <button (click)="openChecklist()" class="checklist-btn">
+    {{ t("checklist") | titlecase }}
+  </button>
+  <button (click)="navTo('toasts')" class="checklist-btn">
+    {{ t("toasts") | titlecase }}
+  </button>
+  <raf-language-toggle style="float: right"></raf-language-toggle>
 </div>
