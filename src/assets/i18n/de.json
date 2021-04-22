@@ -14,6 +14,11 @@
     "alert": "alarm",
     "warn": "warnen",
     "info": "informationen",
-    "link": "link"
+    "link": "link",
+    "successMsg": "Herzlichen Glückwunsch, lass uns ein Bier trinken",
+    "alertMsg": "Fehler: Keine Mutationen für die Nur-Ansicht-Rolle",
+    "warnMsg": "Vielleicht sei vorsichtig",
+    "infoMsg": "die täglichen Nachrichten",
+    "linkMsg": "schnell zum anfang"
   }
 }

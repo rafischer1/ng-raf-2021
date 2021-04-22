@@ -14,6 +14,11 @@
     "alert": "alert",
     "warn": "warn",
     "info": "info",
-    "link": "enlace"
+    "link": "enlace",
+    "successMsg": "¡Buena Onda!",
+    "alertMsg": "falla del sistema: errores persistentes en el código",
+    "warnMsg": "mantente alejado: no te comas el musgo",
+    "infoMsg": "nota la nieve en primavera",
+    "linkMsg": "regresar a la página principal"
   }
 }

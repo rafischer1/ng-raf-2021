@@ -14,6 +14,11 @@
     "alert": "alerta",
     "warn": "avisar",
     "info": "informação",
-    "link": "link"
+    "link": "link",
+    "successMsg": "resultados surpreendentes",
+    "alertMsg": "algo deu muito errado",
+    "warnMsg": "tome precauções",
+    "infoMsg": "esta é uma grande notícia",
+    "linkMsg": "pagina inicial"
   }
 }
