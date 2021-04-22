@@ -7,7 +7,8 @@
   "nav": {
     "checklist": "checklist",
     "toasts": "toasts",
-    "home": "home"
+    "home": "home",
+    "logger": "logger"
   },
   "toasts": {
     "success": "success",

@@ -1,0 +1,70 @@
+@import "./src/scss/variables";
+
+.logger-container {
+  font-family: monospace, sans-serif;
+  height: 175px;
+  max-height: 300px;
+  width: 100%;
+  background: $dark;
+  color: #6cfb6c;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  overflow-y: scroll;
+  text-align: right;
+}
+
+.logger-header {
+  height: 34px;
+  background: $light-grey;
+  margin-bottom: 10px;
+}
+
+.header-item {
+  font-family: $font-family-sans-serif;
+  color: #2d2d2d;
+  float: right;
+  text-align: left;
+  margin: 3px 5px;
+  border: 1px solid lightgrey;
+  padding: 1px 5px;
+  border-radius: 5px;
+  background: white;
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(110%);
+  }
+
+  &:active {
+    filter: brightness(120%);
+  }
+}
+
+.log {
+  margin: 3px 50px;
+}
+
+.blink {
+  color: #6cfb6c;
+  font-size: 1.3em;
+  animation: blinker 1s infinite;
+}
+
+@keyframes blinker {
+  0% {
+    color: #6cfb6c;
+  }
+  25% {
+    color: transparent;
+  }
+  50% {
+    color: #6cfb6c;
+  }
+  75% {
+    color: transparent;
+  }
+  100% {
+    color: #6cfb6c;
+  }
+}
