@@ -15,6 +15,8 @@ export class LoggerService {
 
   addLog = (log: Log) => {
     setTimeout(() => {
+      const clg = `(${log.context.toUpperCase()}): ${log.text}`;
+      console.log("%c " + clg, "color: limegreen; font-family: monospace;");
       this.store.update((_old) => {
         return { logs: [log, ..._old.logs] };
       });
