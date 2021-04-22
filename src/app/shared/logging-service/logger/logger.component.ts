@@ -18,9 +18,7 @@ export class LoggerComponent implements OnInit {
 
   ngOnInit(): void {
     this.active$ = this.query.select((state) => state.active).pipe();
-    this.logs$ = this.query
-      .select((state) => state.logs)
-      .pipe(throttle((ev) => interval(1)));
+    this.logs$ = this.query.select((state) => state.logs);
   }
 
   closeLogger = () => this.service.toggleStore();
