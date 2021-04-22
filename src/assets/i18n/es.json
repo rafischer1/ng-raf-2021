@@ -10,10 +10,10 @@
     "home": "casa"
   },
   "toasts": {
-    "success": "success",
-    "alert": "alert",
-    "warn": "warn",
-    "info": "info",
+    "success": "Éxito",
+    "alert": "error",
+    "warn": "avisa",
+    "info": "información",
     "link": "enlace",
     "successMsg": "¡Buena Onda!",
     "alertMsg": "falla del sistema: errores persistentes en el código",

@@ -10,10 +10,10 @@
     "home": "page d'accueil"
   },
   "toasts": {
-    "success": "success",
-    "alert": "alert",
-    "warn": "warn",
-    "info": "info",
+    "success": "Succès",
+    "alert": "Erreur",
+    "warn": "Avertir",
+    "info": "informations",
     "link": "lien",
     "successMsg": "excellent résultat",
     "alertMsg": "échec: le pont s'est effondré",
