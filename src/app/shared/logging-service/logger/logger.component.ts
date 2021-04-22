@@ -20,7 +20,7 @@ export class LoggerComponent implements OnInit {
     this.active$ = this.query.select((state) => state.active).pipe();
     this.logs$ = this.query
       .select((state) => state.logs)
-      .pipe(throttle((ev) => interval(1000)));
+      .pipe(throttle((ev) => interval(1)));
   }
 
   closeLogger = () => this.service.toggleStore();

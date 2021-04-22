@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { LoggerQuery } from "../../shared/logging-service/logger.query";
 import { Observable } from "rxjs";
 import { UntilDestroy } from "@ngneat/until-destroy";
+import { LoggerService } from "../../shared/logging-service/logger.service";
 
 @UntilDestroy()
 @Component({
@@ -11,11 +12,21 @@ import { UntilDestroy } from "@ngneat/until-destroy";
 })
 export class MainComponent implements OnInit {
   loggerActive$: Observable<boolean>;
-  constructor(private loggerQuery: LoggerQuery) {}
+
+  constructor(
+    private loggerQuery: LoggerQuery,
+    private loggerService: LoggerService
+  ) {}
 
   ngOnInit(): void {
     this.loggerActive$ = this.loggerQuery
       .select((state) => state.active)
       .pipe();
   }
+
+  logComponentEnter = (name: string) =>
+    this.loggerService.addLog({
+      context: "ComponentActive",
+      text: `${name.toUpperCase()} drag active`,
+    });
 }
