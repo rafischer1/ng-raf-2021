@@ -8,5 +8,8 @@
   <button (click)="navTo('toasts')" class="checklist-btn">
     {{ t("toasts") | titlecase }}
   </button>
+  <button (click)="toggleLogger()" class="checklist-btn">
+    {{ t("logger") | titlecase }}
+  </button>
   <raf-language-toggle style="float: right"></raf-language-toggle>
 </div>

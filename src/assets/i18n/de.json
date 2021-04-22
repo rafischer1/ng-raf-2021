@@ -7,7 +7,8 @@
   "nav": {
     "checklist": "Checkliste",
     "toasts": "Benachrichtigungen",
-    "home": "Startseite"
+    "home": "Startseite",
+    "logger": "logbuch"
   },
   "toasts": {
     "success": "Erfolg",

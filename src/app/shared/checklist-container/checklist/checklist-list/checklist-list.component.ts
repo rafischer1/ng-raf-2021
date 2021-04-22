@@ -14,8 +14,4 @@ export class ChecklistListComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-
-  toggleStatus(index: number, status: boolean) {
-
-  }
 }

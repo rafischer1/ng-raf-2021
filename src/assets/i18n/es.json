@@ -7,7 +7,8 @@
   "nav": {
     "checklist": "Lista de Verificación",
     "toasts": "notificaciones",
-    "home": "casa"
+    "home": "casa",
+    "logger": "registro"
   },
   "toasts": {
     "success": "Éxito",

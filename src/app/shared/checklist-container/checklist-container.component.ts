@@ -8,7 +8,7 @@ import { Observable } from "rxjs";
 import { ChecklistObject } from "./state/checklist.model";
 import { ChecklistQuery } from "./state/checklist.query";
 import { ChecklistService } from "./state/checklist.service";
-import { tap } from "rxjs/operators";
+import { LoggerService } from "../logging-service/logger.service";
 
 @Component({
   selector: "raf-checklist-container",
@@ -24,7 +24,8 @@ export class ChecklistContainerComponent
   constructor(
     private query: ChecklistQuery,
     private cdRef: ChangeDetectorRef,
-    private service: ChecklistService
+    private service: ChecklistService,
+    private loggerService: LoggerService
   ) {}
 
   ngOnInit(): void {
@@ -39,6 +40,10 @@ export class ChecklistContainerComponent
   closeContainer() {
     this.wrapperClass = "hidden-wrapper";
     this.service.close();
+    this.loggerService.addLog({
+      context: "ChecklistClickEvent",
+      text: "Close checklist",
+    });
   }
 
   ngAfterContentChecked(): void {

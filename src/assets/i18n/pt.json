@@ -7,7 +7,8 @@
   "nav": {
     "checklist": "lista de controle",
     "toasts": "notificações",
-    "home": "pagina inicial"
+    "home": "pagina inicial",
+    "logger": "registro"
   },
   "toasts": {
     "success": "sucesso",

@@ -10,6 +10,7 @@ import {
   ViewChild,
 } from "@angular/core";
 import { Router } from "@angular/router";
+import { LoggerService } from "../../logging-service/logger.service";
 
 @Component({
   selector: "raf-toasts-modal",
@@ -31,10 +32,11 @@ export class ToastsModalComponent implements OnInit, OnChanges {
 
   toastClass: string = "";
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private logger: LoggerService) {}
 
   ngOnInit() {
     this.setTemplateType(this.type);
+    this.logger.addLog({ context: "ToastsService", text: this.type + " added" });
   }
 
   ngOnChanges(changes: SimpleChanges) {

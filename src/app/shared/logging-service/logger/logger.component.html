@@ -1,0 +1,10 @@
+<div class="logger-container" *ngIf="active$ | async">
+  <div class="logger-header">
+    <div class="header-item" (click)="closeLogger()">Close</div>
+    <div class="header-item" (click)="clearLogs()">Clear Logs</div>
+  </div>
+  <div class="blink log">...</div>
+  <div *ngFor="let log of logs$ | async">
+    <div class="log">...({{ log.context | uppercase }}) {{ log.text }}</div>
+  </div>
+</div>
