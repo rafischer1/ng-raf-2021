@@ -20,7 +20,7 @@ export class LoggerService {
       this.store.update((_old) => {
         return { logs: [log, ..._old.logs] };
       });
-    }, 1000);
+    }, 500);
   };
 
   clearLogs = () =>
