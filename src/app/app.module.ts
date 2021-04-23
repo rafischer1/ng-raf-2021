@@ -21,12 +21,12 @@ import { ChecklistItemComponent } from "./shared/checklist-container/checklist/c
 import { ContactGraphComponent } from "./components/main/components/contact-graph/contact-graph.component";
 import { BarChartModule, PieChartModule } from "@swimlane/ngx-charts";
 import { DragDropModule } from "@angular/cdk/drag-drop";
-import { ContactLinksComponent } from './components/main/components/contact-links/contact-links.component';
-import { LanguageToggleComponent } from './shared/language-toggle/language-toggle.component';
-import { LanguageIconComponent } from './shared/language-toggle/language-icon/language-icon.component';
-import { ContactInfoComponent } from './components/main/components/contact-info/contact-info.component';
-import { LoggerComponent } from './shared/logging-service/logger/logger.component';
-import { InfoTabComponent } from './components/main/components/contact-info/info-tab/info-tab.component';
+import { ContactLinksComponent } from "./components/main/components/contact-links/contact-links.component";
+import { LanguageToggleComponent } from "./shared/language-toggle/language-toggle.component";
+import { LanguageIconComponent } from "./shared/language-toggle/language-icon/language-icon.component";
+import { ContactInfoComponent } from "./components/main/components/contact-info/contact-info.component";
+import { LoggerComponent } from "./shared/logging-service/logger/logger.component";
+import { InfoTabComponent } from "./components/main/components/contact-info/info-tab/info-tab.component";
 
 @NgModule({
   declarations: [
@@ -60,7 +60,7 @@ import { InfoTabComponent } from './components/main/components/contact-info/info
     FormsModule,
     BarChartModule,
     PieChartModule,
-    DragDropModule
+    DragDropModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
