@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ChecklistService } from "../../shared/checklist-container/state/checklist.service";
 import { Router } from "@angular/router";
 import { LoggerService } from "../../shared/logging-service/logger.service";
+import { TranslocoService } from "@ngneat/transloco";
 
 @Component({
   selector: "raf-nav-bar",
@@ -12,7 +13,8 @@ export class NavBarComponent implements OnInit {
   constructor(
     private checklistService: ChecklistService,
     private router: Router,
-    private loggerService: LoggerService
+    private loggerService: LoggerService,
+    private translate: TranslocoService
   ) {}
 
   ngOnInit(): void {}
@@ -30,7 +32,9 @@ export class NavBarComponent implements OnInit {
     this.router.navigate([`/${page}`]).then((x) => x);
     this.loggerService.addLog({
       context: "Navigate",
-      text: "Navigate to: " + page,
+      text: this.translate
+        .translate(`nav.${page.length > 0 ? page : "home"}`)
+        .toUpperCase(),
     });
   }
 

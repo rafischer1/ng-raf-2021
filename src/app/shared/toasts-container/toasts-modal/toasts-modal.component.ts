@@ -11,6 +11,7 @@ import {
 } from "@angular/core";
 import { Router } from "@angular/router";
 import { LoggerService } from "../../logging-service/logger.service";
+import { TranslocoService } from "@ngneat/transloco";
 
 @Component({
   selector: "raf-toasts-modal",
@@ -32,11 +33,18 @@ export class ToastsModalComponent implements OnInit, OnChanges {
 
   toastClass: string = "";
 
-  constructor(private router: Router, private logger: LoggerService) {}
+  constructor(
+    private router: Router,
+    private logger: LoggerService,
+    private translate: TranslocoService
+  ) {}
 
   ngOnInit() {
     this.setTemplateType(this.type);
-    this.logger.addLog({ context: "ToastsService", text: this.type + " added" });
+    this.logger.addLog({
+      context: "ToastsService",
+      text: this.type + " added",
+    });
   }
 
   ngOnChanges(changes: SimpleChanges) {
@@ -90,6 +98,10 @@ export class ToastsModalComponent implements OnInit, OnChanges {
 
   navigateToRoute() {
     this.router.navigate([this.link]);
+    this.logger.addLog({
+      context: "Navigate",
+      text: this.translate.translate("toasts.linkMsg"),
+    });
     return setTimeout(() => {
       this.deleteToast();
     }, 500);
