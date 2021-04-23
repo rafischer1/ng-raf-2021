@@ -21,6 +21,8 @@ import { ChecklistItemComponent } from "./shared/checklist-container/checklist/c
 import { ContactGraphComponent } from "./components/main/components/contact-graph/contact-graph.component";
 import { BarChartModule, PieChartModule } from "@swimlane/ngx-charts";
 import { DragDropModule } from "@angular/cdk/drag-drop";
+import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/compiler";
+import { InfoTabComponent } from './components/main/components/contact-info/info-tab/info-tab.component';
 import { ContactLinksComponent } from "./components/main/components/contact-links/contact-links.component";
 import { LanguageToggleComponent } from "./shared/language-toggle/language-toggle.component";
 import { LanguageIconComponent } from "./shared/language-toggle/language-icon/language-icon.component";
@@ -71,10 +73,10 @@ import { MatTabsModule } from "@angular/material/tabs";
     FormsModule,
     BarChartModule,
     PieChartModule,
-    DragDropModule,
-    MatTabsModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppModule {}
