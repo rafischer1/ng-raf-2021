@@ -1,0 +1,7 @@
+<div
+  [@active]="active$ | async"
+  (click)="toggle.emit()"
+  class="tab {{ title }}"
+>
+  {{ title | titlecase }}
+</div>

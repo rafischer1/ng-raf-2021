@@ -4,11 +4,18 @@
   cdkDragBoundary=".main"
   *transloco="let t; read: 'main'"
 >
-  <div class="widget-header" cdkDragHandle>
+  <div class="widget-header" cdkDragHandle (mousedown)="log.emit()">
     <h2>{{ t("info") }}</h2>
   </div>
   <div class="information">
-    <div>Robert A Fischer (Artie) (He/Him)</div>
+    <div>
+      <raf-info-tab
+        (toggle)="toggleInfoTab('nameTab')"
+        [active$]="getObservable$('nameTab')"
+        [title]="'name'"
+      ></raf-info-tab
+      >Robert A Fischer (Artie) (He/Him)
+    </div>
     <div>Boulder, Colorado, USA (Remote)</div>
     <div>Full Stack Software Developer</div>
   </div>

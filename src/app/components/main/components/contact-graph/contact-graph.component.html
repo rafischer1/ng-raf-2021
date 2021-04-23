@@ -4,7 +4,7 @@
   cdkDragBoundary=".main"
   *transloco="let t; read: 'main'"
 >
-  <div class="widget-header" cdkDragHandle>
+  <div class="widget-header" cdkDragHandle (mousedown)="log.emit()">
     <h2>{{ t("skills") }}</h2>
   </div>
   <ngx-charts-pie-chart

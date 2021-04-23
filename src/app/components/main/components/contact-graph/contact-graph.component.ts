@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, EventEmitter, OnInit, Output } from "@angular/core";
 import { pieGraphSkillsData } from "./dashboard-data";
 
 @Component({
@@ -7,6 +7,7 @@ import { pieGraphSkillsData } from "./dashboard-data";
   styleUrls: ["./contact-graph.component.scss"],
 })
 export class ContactGraphComponent implements OnInit {
+  @Output() log: EventEmitter<any> = new EventEmitter<any>();
   constructor() {}
   pieGraphData: { name: string; value: number }[] = pieGraphSkillsData;
   ngOnInit(): void {}

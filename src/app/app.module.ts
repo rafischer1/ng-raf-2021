@@ -26,6 +26,7 @@ import { LanguageToggleComponent } from './shared/language-toggle/language-toggl
 import { LanguageIconComponent } from './shared/language-toggle/language-icon/language-icon.component';
 import { ContactInfoComponent } from './components/main/components/contact-info/contact-info.component';
 import { LoggerComponent } from './shared/logging-service/logger/logger.component';
+import { InfoTabComponent } from './components/main/components/contact-info/info-tab/info-tab.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { LoggerComponent } from './shared/logging-service/logger/logger.componen
     LanguageIconComponent,
     ContactInfoComponent,
     LoggerComponent,
+    InfoTabComponent,
   ],
   imports: [
     BrowserModule,
