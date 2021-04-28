@@ -23,7 +23,13 @@ export class BusinessCardFormComponent implements OnInit {
     this.service.updateCatchPhrase(ev.target.value);
 
   randomCatchPhrase = () =>
-    this.service.updateCatchPhrase(faker.company.catchPhrase());
+    this.service.updateCatchPhrase(
+      faker.company.bsBuzz() +
+        " " +
+        faker.company.bsAdjective() +
+        " " +
+        faker.company.bsNoun()
+    );
 
   randomPosition = () => this.service.updatePosition(faker.name.jobTitle());
 

@@ -9,8 +9,7 @@ export class BusinessCardService {
   constructor(
     private store: BusinessCardStore,
     private logger: LoggerService
-  ) {
-  }
+  ) {}
 
   updateBackground = (value: any) => {
     this.store.update((_old) => {
@@ -211,6 +210,11 @@ export class BusinessCardService {
       text: type + " updated",
     });
 
-  reset = () => this.store.reset()
+  reset = () => {
+    this.logger.addLog({
+      context: "Business Card Update",
+      text: "card randomized / reset",
+    });
+    this.store.reset();
+  };
 }
-

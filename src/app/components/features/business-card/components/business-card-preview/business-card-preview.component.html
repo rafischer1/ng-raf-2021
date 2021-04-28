@@ -1,5 +1,5 @@
 <div class="button-container">
-  <button (click)="reset()">Reset</button>
+  <button (click)="reset()">Randomize/Reset</button>
   <button (click)="export()">Export as PDF</button>
 </div>
 
@@ -61,7 +61,7 @@
     [style.font-weight]="(card$ | async)?.secondaryFont?.weight"
     [style.font-size]="(card$ | async)?.secondaryFont?.size + 'px'"
   >
-    {{ (card$ | async)?.catchPhrase }}
+    {{ (card$ | async)?.catchPhrase | titlecase }}
   </div>
 </div>
 <div>{{ card$ | async | json }}</div>
