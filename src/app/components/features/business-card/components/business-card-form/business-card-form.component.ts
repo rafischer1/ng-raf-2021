@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { BusinessCardService } from "../../state/business-card.service";
 import * as faker from "faker";
+import { BusinessCardImage } from "../../state/business-card.model";
 
 @Component({
   selector: "raf-business-card-form",
@@ -39,6 +40,8 @@ export class BusinessCardFormComponent implements OnInit {
   emailChange = (ev: any) => this.service.updateEmail(ev.target.value);
 
   phoneChange = (ev: any) => this.service.updatePhone(ev.target.value);
+
+  addImage = (image: BusinessCardImage) => this.service.addImage(image)
 
   captureFontEvent(ev: {
     property: "family" | "size" | "weight" | "color";
@@ -95,4 +98,6 @@ export class BusinessCardFormComponent implements OnInit {
         }
     }
   }
+
+
 }

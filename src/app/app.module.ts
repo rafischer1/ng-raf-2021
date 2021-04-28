@@ -31,6 +31,7 @@ import { BusinessCardComponent } from './components/features/business-card/busin
 import { BusinessCardFormComponent } from './components/features/business-card/components/business-card-form/business-card-form.component';
 import { BusinessCardPreviewComponent } from './components/features/business-card/components/business-card-preview/business-card-preview.component';
 import { FontFormComponent } from './components/features/business-card/components/font-form/font-form.component';
+import { ImageFormComponent } from './components/features/business-card/components/image-form/image-form.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { FontFormComponent } from './components/features/business-card/component
     BusinessCardFormComponent,
     BusinessCardPreviewComponent,
     FontFormComponent,
+    ImageFormComponent,
   ],
   imports: [
     BrowserModule,

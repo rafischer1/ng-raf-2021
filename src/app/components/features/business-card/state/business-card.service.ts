@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { BusinessCardStore } from "./business-card.store";
 import { LoggerService } from "../../../../shared/logging-service/logger.service";
+import { BusinessCardImage } from "./business-card.model";
 
 @Injectable({
   providedIn: "root",
@@ -202,6 +203,30 @@ export class BusinessCardService {
       };
     });
     this.log("tertiaryFont weight");
+  };
+
+  addImage = (newImage: BusinessCardImage) => {
+    this.store.update((_old) => {
+      return {
+        card: {
+          ..._old.card,
+          image: newImage,
+        },
+      };
+    });
+    this.log("image");
+  };
+
+  toggleImage = (status: boolean) => {
+    this.store.update((_old) => {
+      return {
+        card: {
+          ..._old.card,
+          image: { ..._old.card.image, active: status },
+        },
+      };
+    });
+    this.log("image");
   };
 
   log = (type: string) =>

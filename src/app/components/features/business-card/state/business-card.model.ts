@@ -5,6 +5,14 @@ export interface BusinessCardFont {
   weight: string;
 }
 
+export interface BusinessCardImage {
+  src: string;
+  height: number;
+  width: number;
+  opacity: number;
+  active: boolean;
+}
+
 export interface BusinessCard {
   name: string;
   phone: string;
@@ -17,5 +25,5 @@ export interface BusinessCard {
   secondaryFont: BusinessCardFont;
   tertiaryFont: BusinessCardFont;
   borderRadius: number;
-
+  image?: BusinessCardImage;
 }
