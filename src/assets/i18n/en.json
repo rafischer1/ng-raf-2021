@@ -1,4 +1,7 @@
 {
+  "businessCard": {
+    "title": "business card generator"
+  },
   "main": {
     "skills": "skills",
     "links": "links",
@@ -8,7 +11,8 @@
     "checklist": "checklist",
     "toasts": "toasts",
     "home": "home",
-    "logger": "logger"
+    "logger": "logger",
+    "businessCard": "Business"
   },
   "toasts": {
     "success": "success",

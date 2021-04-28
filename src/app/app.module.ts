@@ -27,6 +27,9 @@ import { LanguageIconComponent } from "./shared/language-toggle/language-icon/la
 import { ContactInfoComponent } from "./components/main/components/contact-info/contact-info.component";
 import { LoggerComponent } from "./shared/logging-service/logger/logger.component";
 import { InfoTabComponent } from "./components/main/components/contact-info/info-tab/info-tab.component";
+import { BusinessCardComponent } from './components/features/business-card/business-card.component';
+import { BusinessCardFormComponent } from './components/features/business-card/components/business-card-form/business-card-form.component';
+import { BusinessCardPreviewComponent } from './components/features/business-card/components/business-card-preview/business-card-preview.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +51,9 @@ import { InfoTabComponent } from "./components/main/components/contact-info/info
     ContactInfoComponent,
     LoggerComponent,
     InfoTabComponent,
+    BusinessCardComponent,
+    BusinessCardFormComponent,
+    BusinessCardPreviewComponent,
   ],
   imports: [
     BrowserModule,

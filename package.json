@@ -26,6 +26,8 @@
     "@ngneat/transloco": "^2.20.1",
     "@ngneat/until-destroy": "^8.0.4",
     "@swimlane/ngx-charts": "^17.0.1",
+    "@types/faker": "^5.5.3",
+    "faker": "^5.5.3",
     "postcss": "^8.2.10",
     "postcss-import": "^14.0.1",
     "postcss-loader": "^4.2.0",

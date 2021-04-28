@@ -1,0 +1,18 @@
+.business-card-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  height: 100%;
+}
+
+.business-card-form {
+  flex-basis: 10%;
+}
+
+.business-card-preview {
+  border-left: 1px solid #2d2d2d;
+  background: #4a4a4a;
+  color: white;
+  text-align: center;
+  flex-basis: 55%;
+}

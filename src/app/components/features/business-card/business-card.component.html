@@ -1,0 +1,11 @@
+<ng-template transloco let-t [translocoRead]="'businessCard'">
+  <h1>{{ t("title") | titlecase }}</h1>
+  <div class="business-card-container">
+    <div class="business-card-form">
+      <raf-business-card-form></raf-business-card-form>
+    </div>
+    <div class="business-card-preview">
+      <raf-business-card-preview></raf-business-card-preview>
+    </div>
+  </div>
+</ng-template>
