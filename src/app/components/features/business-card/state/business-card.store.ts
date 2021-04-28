@@ -16,7 +16,7 @@ export function createInitialCard(): BusinessCard {
     doubleSided: false,
     phone: faker.phone.phoneNumber(),
     primaryFont: {
-      size: 22,
+      size: 40,
       color: "white",
       family: "serif",
       weight: "normal",
