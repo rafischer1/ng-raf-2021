@@ -1,4 +1,8 @@
-<div class="card" [style.background]="(card$ | async)?.background">
+<div
+  class="card"
+  [style.background]="(card$ | async)?.background"
+  [style.border-radius]="(card$ | async)?.borderRadius + 'px'"
+>
   <div
     cdkDrag
     cdkDragBoundary=".card"

@@ -16,6 +16,19 @@
     Background Color
     <input type="color" (change)="backgroundColorChange($event)" />
   </label>
+  <label for="radius"
+    >Border Radius
+    <input
+      type="range"
+      id="radius"
+      name="points"
+      min="0"
+      max="110"
+      class="slider"
+      [value]="0"
+      (change)="borderRadiusSelect($event)"
+    />
+  </label>
   <br />
   <raf-font-form
     [type]="'primary'"

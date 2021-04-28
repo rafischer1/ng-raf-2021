@@ -13,4 +13,5 @@ export interface BusinessCard {
   doubleSided: boolean;
   primaryFont: BusinessCardFont;
   secondaryFont: BusinessCardFont;
+  borderRadius: number;
 }

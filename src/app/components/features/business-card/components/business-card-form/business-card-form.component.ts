@@ -1,9 +1,5 @@
 import { Component, OnInit } from "@angular/core";
 import { BusinessCardService } from "../../state/business-card.service";
-import {
-  fontFamilyValueSet,
-  fontWeightValueSet,
-} from "./business-card-form.constants";
 
 @Component({
   selector: "raf-business-card-form",
@@ -19,6 +15,9 @@ export class BusinessCardFormComponent implements OnInit {
     this.service.updateBackground(ev.target.value);
 
   nameChange = (ev: any) => this.service.updateName(ev.target.value);
+
+  borderRadiusSelect = (ev: any) =>
+    this.service.updateBorderRadius(+ev.target.value);
 
   emailChange = (ev: any) => this.service.updateEmail(ev.target.value);
 

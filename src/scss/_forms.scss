@@ -1,3 +1,5 @@
+@import "_variables.scss";
+
 label {
   font-weight: bold;
   display: flex;
@@ -23,6 +25,31 @@ input[type="email"] {
 input[type="color"] {
   width: 100px;
   border: none;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 80%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  align-self: center;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #2d2d2d;
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  background: $secondary;
 }
 
 select {

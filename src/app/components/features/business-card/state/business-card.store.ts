@@ -12,6 +12,7 @@ export function createInitialCard(): BusinessCard {
     name: faker.name.findName(),
     email: faker.internet.email(),
     background: "#333333",
+    borderRadius: 0,
     doubleSided: false,
     phone: faker.phone.phoneNumber(),
     primaryFont: {

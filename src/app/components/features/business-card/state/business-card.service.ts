@@ -18,6 +18,13 @@ export class BusinessCardService {
     this.log("background");
   };
 
+  updateBorderRadius = (value: number) => {
+    this.store.update((_old) => {
+      return { card: { ..._old.card, borderRadius: value } };
+    });
+    this.log("border radius");
+  };
+
   updateName = (value: string) => {
     this.store.update((_old) => {
       return { card: { ..._old.card, name: value } };
