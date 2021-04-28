@@ -9,13 +9,14 @@
   [style.border-radius]="(card$ | async)?.borderRadius + 'px'"
 >
   <!--  image-->
-  <div *ngIf="(card$ | async)?.image" cdkDrag cdkDragBoundary=".card">
+  <div *ngIf="(card$ | async)?.image?.active" cdkDrag cdkDragBoundary=".card">
     <img
       src="{{ (card$ | async)?.image?.src }}"
       alt="'Business Card Image'"
       [style.opacity]="(card$ | async)?.image?.opacity"
-      [style.height]="(card$ | async)?.image?.height"
-      [style.width]="(card$ | async)?.image?.width"
+      [style.height]="(card$ | async)?.image?.height + 'px'"
+      [style.width]="(card$ | async)?.image?.width + 'px'"
+      [style.border-radius]="(card$ | async)?.image?.borderRadius + 'px'"
     />
   </div>
   <!--  name-->

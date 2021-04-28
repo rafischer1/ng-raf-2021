@@ -2,7 +2,8 @@ import { Component, EventEmitter, OnInit, Output } from "@angular/core";
 import * as faker from "faker";
 import { BusinessCardImage } from "../../state/business-card.model";
 import { BusinessCardQuery } from "../../state/business-card.query";
-import { UntilDestroy } from "@ngneat/until-destroy";
+import { UntilDestroy, untilDestroyed } from "@ngneat/until-destroy";
+import { map } from "rxjs/operators";
 
 @UntilDestroy()
 @Component({
@@ -11,8 +12,8 @@ import { UntilDestroy } from "@ngneat/until-destroy";
   styleUrls: ["./image-form.component.scss"],
 })
 export class ImageFormComponent implements OnInit {
-  selectedWidth: number = 15;
-  selectedHeight: number = 15;
+  selectedWidth: number = 55;
+  selectedHeight: number = 55;
 
   @Output()
   imageAdd: EventEmitter<BusinessCardImage> = new EventEmitter<BusinessCardImage>();
@@ -26,8 +27,9 @@ export class ImageFormComponent implements OnInit {
       width: this.selectedWidth,
       height: this.selectedHeight,
       src: faker.image.abstract(),
-      opacity: 0,
+      opacity: 1,
       active: true,
+      borderRadius: 2,
     });
   };
 
@@ -35,10 +37,7 @@ export class ImageFormComponent implements OnInit {
     faker.image.abstract(this.selectedWidth, this.selectedHeight);
 
   toggle = () => {
-    this.query
-      .select((state) => state.card.image.active)
-      .subscribe((active) => this.toggleImage.emit(!active))
-      .unsubscribe();
+    this.toggleImage.emit(false);
   };
 
   ngOnInit(): void {}

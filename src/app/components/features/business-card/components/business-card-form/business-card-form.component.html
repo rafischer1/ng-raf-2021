@@ -1,5 +1,5 @@
 <div class="card-form">
-  <raf-image-form (imageAdd)="addImage($event)"></raf-image-form>
+  <raf-image-form (imageAdd)="addImage($event)" (toggleImage)="toggleImage($event)"></raf-image-form>
   <label>
     Name
     <input type="text" (change)="nameChange($event)" />

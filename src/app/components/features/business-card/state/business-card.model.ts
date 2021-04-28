@@ -11,6 +11,7 @@ export interface BusinessCardImage {
   width: number;
   opacity: number;
   active: boolean;
+  borderRadius: number;
 }
 
 export interface BusinessCard {

@@ -41,7 +41,9 @@ export class BusinessCardFormComponent implements OnInit {
 
   phoneChange = (ev: any) => this.service.updatePhone(ev.target.value);
 
-  addImage = (image: BusinessCardImage) => this.service.addImage(image)
+  addImage = (image: BusinessCardImage) => this.service.addImage(image);
+
+  toggleImage = (status: boolean) => this.service.toggleImage(status);
 
   captureFontEvent(ev: {
     property: "family" | "size" | "weight" | "color";
@@ -98,6 +100,4 @@ export class BusinessCardFormComponent implements OnInit {
         }
     }
   }
-
-
 }
