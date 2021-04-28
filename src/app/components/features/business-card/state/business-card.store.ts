@@ -14,7 +14,7 @@ export function createInitialCard(): BusinessCard {
     background: "#333333",
     color: "white",
     doubleSided: false,
-    phone: "302 423 2120",
+    phone: faker.phone.phoneNumber(),
   };
 }
 

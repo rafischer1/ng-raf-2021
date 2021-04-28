@@ -1,2 +1,12 @@
 <p>business-card-preview works!</p>
+<div
+  class="card"
+  [style.background]="(card$ | async)?.background"
+  [style.color]="(card$ | async)?.color"
+>
+  <div>{{ (card$ | async)?.name }}</div>
+  <div>{{ (card$ | async)?.email }}</div>
+  <div>{{ (card$ | async)?.phone }}</div>
+</div>
+
 <div>{{ card$ | async | json }}</div>
