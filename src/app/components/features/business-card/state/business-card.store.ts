@@ -12,9 +12,20 @@ export function createInitialCard(): BusinessCard {
     name: faker.name.findName(),
     email: faker.internet.email(),
     background: "#333333",
-    color: "white",
     doubleSided: false,
     phone: faker.phone.phoneNumber(),
+    primaryFont: {
+      size: 22,
+      color: "white",
+      family: "serif",
+      weight: "normal",
+    },
+    secondaryFont: {
+      size: 22,
+      color: "white",
+      family: "serif",
+      weight: "normal",
+    },
   };
 }
 

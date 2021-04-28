@@ -13,11 +13,61 @@
     />
   </label>
   <label>
-    Text Color
-    <input type="color" (change)="colorChange($event)" />
-  </label>
-  <label>
     Background Color
     <input type="color" (change)="backgroundColorChange($event)" />
+  </label>
+  <br />
+  <label>
+    Primary Font
+    <select (change)="primaryFontSelect($event)">
+      <option disabled>Select a primary font...</option>
+      <option *ngFor="let f of fontFamilies">{{ f | titlecase }}</option>
+    </select>
+  </label>
+  <label for="primaryColor">
+    Primary Text Color
+    <input
+      id="primaryColor"
+      type="color"
+      (change)="primaryColorChange($event)"
+    />
+  </label>
+  <label>
+    Primary Text Size
+    <input type="number" (change)="primaryFontSizeChange($event)" />
+  </label>
+  <label>
+    Primary Font Weight
+    <select (change)="primaryFontWeightChange($event)">
+      <option disabled>Select a weight...</option>
+      <option *ngFor="let w of fontWeights">{{ w | titlecase }}</option>
+    </select>
+  </label>
+  <br />
+  <label>
+    Secondary Font
+    <select (change)="secondaryFontSelect($event)">
+      <option disabled>Select a secondary font...</option>
+      <option *ngFor="let f of fontFamilies">{{ f | titlecase }}</option>
+    </select>
+  </label>
+  <label for="secondaryColor">
+    Secondary Text Color
+    <input
+      id="secondaryColor"
+      type="color"
+      (change)="secondaryColorChange($event)"
+    />
+  </label>
+  <label>
+    Secondary Text Size
+    <input type="number" (change)="secondaryFontSizeChange($event)" />
+  </label>
+  <label>
+    Secondary Font Weight
+    <select (change)="secondaryFontWeightChange($event)">
+      <option disabled>Select a weight...</option>
+      <option *ngFor="let w of fontWeights">{{ w | titlecase }}</option>
+    </select>
   </label>
 </div>

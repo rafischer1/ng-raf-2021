@@ -1,12 +1,35 @@
 <p>business-card-preview works!</p>
-<div
-  class="card"
-  [style.background]="(card$ | async)?.background"
-  [style.color]="(card$ | async)?.color"
->
-  <div>{{ (card$ | async)?.name }}</div>
-  <div>{{ (card$ | async)?.email }}</div>
-  <div>{{ (card$ | async)?.phone }}</div>
+<div class="card" [style.background]="(card$ | async)?.background">
+  <div
+    cdkDrag
+    cdkDragBoundary=".card"
+    [style.font-family]="(card$ | async)?.primaryFont?.family"
+    [style.color]="(card$ | async)?.primaryFont?.color"
+    [style.font-weight]="(card$ | async)?.primaryFont?.weight"
+    [style.font-size]="(card$ | async)?.primaryFont?.size + 'px'"
+  >
+    {{ (card$ | async)?.name }}
+  </div>
+  <div
+    cdkDrag
+    cdkDragBoundary=".card"
+    [style.font-family]="(card$ | async)?.secondaryFont?.family"
+    [style.color]="(card$ | async)?.secondaryFont?.color"
+    [style.font-weight]="(card$ | async)?.secondaryFont?.weight"
+    [style.font-size]="(card$ | async)?.secondaryFont?.size + 'px'"
+  >
+    {{ (card$ | async)?.email }}
+  </div>
+  <div
+    cdkDrag
+    cdkDragBoundary=".card"
+    [style.font-family]="(card$ | async)?.secondaryFont?.family"
+    [style.color]="(card$ | async)?.secondaryFont?.color"
+    [style.font-weight]="(card$ | async)?.secondaryFont?.weight"
+    [style.font-size]="(card$ | async)?.secondaryFont?.size + 'px'"
+  >
+    {{ (card$ | async)?.phone }}
+  </div>
 </div>
 
 <div>{{ card$ | async | json }}</div>
