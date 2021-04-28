@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Store, StoreConfig } from "@datorama/akita";
+import { resetActive, Store, StoreConfig } from "@datorama/akita";
 import { BusinessCard } from "./business-card.model";
 import * as faker from "faker";
 
@@ -15,6 +15,8 @@ export function createInitialCard(): BusinessCard {
     borderRadius: 0,
     doubleSided: false,
     phone: faker.phone.phoneNumber(),
+    position: faker.name.jobTitle(),
+    catchPhrase: faker.company.catchPhrase(),
     primaryFont: {
       size: 40,
       color: "white",
@@ -22,6 +24,12 @@ export function createInitialCard(): BusinessCard {
       weight: "normal",
     },
     secondaryFont: {
+      size: 30,
+      color: "white",
+      family: "serif",
+      weight: "normal",
+    },
+    tertiaryFont: {
       size: 22,
       color: "white",
       family: "serif",
@@ -42,4 +50,9 @@ export class BusinessCardStore extends Store<BusinessCardState> {
   constructor() {
     super(createInitialState());
   }
+
+  reset = () =>
+    this.update((_) => {
+      return { card: createInitialCard() };
+    });
 }

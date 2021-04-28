@@ -13,6 +13,24 @@
     />
   </label>
   <label>
+    Phone
+    <input type="text" (change)="phoneChange($event)" />
+  </label>
+  <label>
+    Position
+    <input type="text" (change)="positionChange($event)" />
+  </label>
+  <label>
+    <button (click)="randomPosition()">Random Position</button>
+  </label>
+  <label>
+    Catch Phrase
+    <input type="text" (change)="catchPhraseChange($event)" />
+  </label>
+  <label>
+    <button (click)="randomCatchPhrase()">Random Catch Phrase</button>
+  </label>
+  <label>
     Background Color
     <input type="color" (change)="backgroundColorChange($event)" />
   </label>
@@ -37,6 +55,11 @@
   <br />
   <raf-font-form
     [type]="'secondary'"
+    (fontEvent)="captureFontEvent($event)"
+  ></raf-font-form>
+  <br />
+  <raf-font-form
+    [type]="'tertiary'"
     (fontEvent)="captureFontEvent($event)"
   ></raf-font-form>
 </div>

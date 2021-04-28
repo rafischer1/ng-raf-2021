@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { BusinessCardService } from "../../state/business-card.service";
+import * as faker from "faker";
 
 @Component({
   selector: "raf-business-card-form",
@@ -16,14 +17,26 @@ export class BusinessCardFormComponent implements OnInit {
 
   nameChange = (ev: any) => this.service.updateName(ev.target.value);
 
+  positionChange = (ev: any) => this.service.updatePosition(ev.target.value);
+
+  catchPhraseChange = (ev: any) =>
+    this.service.updateCatchPhrase(ev.target.value);
+
+  randomCatchPhrase = () =>
+    this.service.updateCatchPhrase(faker.company.catchPhrase());
+
+  randomPosition = () => this.service.updatePosition(faker.name.jobTitle());
+
   borderRadiusSelect = (ev: any) =>
     this.service.updateBorderRadius(+ev.target.value);
 
   emailChange = (ev: any) => this.service.updateEmail(ev.target.value);
 
+  phoneChange = (ev: any) => this.service.updatePhone(ev.target.value);
+
   captureFontEvent(ev: {
     property: "family" | "size" | "weight" | "color";
-    type: "primary" | "secondary";
+    type: "primary" | "secondary" | "tertiary";
     value: any;
   }) {
     switch (ev.type) {
@@ -56,6 +69,22 @@ export class BusinessCardFormComponent implements OnInit {
             break;
           case "weight":
             this.service.updateSecondaryWeight(ev.value);
+            break;
+        }
+        break;
+      case "tertiary":
+        switch (ev.property) {
+          case "color":
+            this.service.updateTertiaryColor(ev.value);
+            break;
+          case "family":
+            this.service.updateTertiaryFont(ev.value);
+            break;
+          case "size":
+            this.service.updateTertiarySize(+ev.value);
+            break;
+          case "weight":
+            this.service.updateTertiaryWeight(ev.value);
             break;
         }
     }

@@ -9,7 +9,8 @@ export class BusinessCardService {
   constructor(
     private store: BusinessCardStore,
     private logger: LoggerService
-  ) {}
+  ) {
+  }
 
   updateBackground = (value: any) => {
     this.store.update((_old) => {
@@ -37,6 +38,27 @@ export class BusinessCardService {
       return { card: { ..._old.card, email: value } };
     });
     this.log("email");
+  };
+
+  updatePosition = (value: string) => {
+    this.store.update((_old) => {
+      return { card: { ..._old.card, position: value } };
+    });
+    this.log("role");
+  };
+
+  updateCatchPhrase = (value: string) => {
+    this.store.update((_old) => {
+      return { card: { ..._old.card, catchPhrase: value } };
+    });
+    this.log("catch phrase");
+  };
+
+  updatePhone = (value: string) => {
+    this.store.update((_old) => {
+      return { card: { ..._old.card, phone: value } };
+    });
+    this.log("phone");
   };
 
   updatePrimaryFont = (value: string) => {
@@ -132,7 +154,55 @@ export class BusinessCardService {
         },
       };
     });
-    this.log("primaryFont weight");
+    this.log("secondaryFont weight");
+  };
+
+  updateTertiaryFont = (value: string) => {
+    this.store.update((_old) => {
+      return {
+        card: {
+          ..._old.card,
+          tertiaryFont: { ..._old.card.tertiaryFont, family: value },
+        },
+      };
+    });
+    this.log("tertiaryFont family");
+  };
+
+  updateTertiaryColor = (value: string) => {
+    this.store.update((_old) => {
+      return {
+        card: {
+          ..._old.card,
+          tertiaryFont: { ..._old.card.tertiaryFont, color: value },
+        },
+      };
+    });
+    this.log("tertiaryFont color");
+  };
+
+  updateTertiarySize = (value: number) => {
+    this.store.update((_old) => {
+      return {
+        card: {
+          ..._old.card,
+          tertiaryFont: { ..._old.card.tertiaryFont, size: value },
+        },
+      };
+    });
+    this.log("tertiaryFont size");
+  };
+
+  updateTertiaryWeight = (value: string) => {
+    this.store.update((_old) => {
+      return {
+        card: {
+          ..._old.card,
+          tertiaryFont: { ..._old.card.tertiaryFont, weight: value },
+        },
+      };
+    });
+    this.log("tertiaryFont weight");
   };
 
   log = (type: string) =>
@@ -140,4 +210,7 @@ export class BusinessCardService {
       context: "Business Card Update",
       text: type + " updated",
     });
+
+  reset = () => this.store.reset()
 }
+

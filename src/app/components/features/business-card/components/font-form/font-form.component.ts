@@ -10,17 +10,17 @@ import {
   styleUrls: ["./font-form.component.scss"],
 })
 export class FontFormComponent implements OnInit {
-  @Input() type: "primary" | "secondary";
+  @Input() type: "primary" | "secondary" | "tertiary";
   fontFamilies: string[] = fontFamilyValueSet;
   fontWeights: string[] = fontWeightValueSet;
 
   @Output() fontEvent: EventEmitter<{
     property: "family" | "size" | "weight" | "color";
-    type: "primary" | "secondary";
+    type: "primary" | "secondary" | "tertiary";
     value: any;
   }> = new EventEmitter<{
     property: "family" | "size" | "weight" | "color";
-    type: "primary" | "secondary";
+    type: "primary" | "secondary" | "tertiary";
     value: any;
   }>();
   constructor() {}
