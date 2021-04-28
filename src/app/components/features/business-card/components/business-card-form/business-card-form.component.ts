@@ -11,8 +11,6 @@ import {
   styleUrls: ["./business-card-form.component.scss"],
 })
 export class BusinessCardFormComponent implements OnInit {
-  fontFamilies: string[] = fontFamilyValueSet;
-  fontWeights: string[] = fontWeightValueSet;
   constructor(private service: BusinessCardService) {}
 
   ngOnInit(): void {}
@@ -24,27 +22,43 @@ export class BusinessCardFormComponent implements OnInit {
 
   emailChange = (ev: any) => this.service.updateEmail(ev.target.value);
 
-  primaryFontSelect = (ev: any) =>
-    this.service.updatePrimaryFont(ev.target.value);
-
-  primaryColorChange = (ev: any) =>
-    this.service.updatePrimaryColor(ev.target.value);
-
-  primaryFontSizeChange = (ev: any) =>
-    this.service.updatePrimarySize(+ev.target.value);
-
-  primaryFontWeightChange = (ev: any) =>
-    this.service.updatePrimaryWeight(ev.target.value);
-
-  secondaryFontSelect = (ev: any) =>
-    this.service.updateSecondaryFont(ev.target.value);
-
-  secondaryColorChange = (ev: any) =>
-    this.service.updateSecondaryColor(ev.target.value);
-
-  secondaryFontSizeChange = (ev: any) =>
-    this.service.updateSecondarySize(+ev.target.value);
-
-  secondaryFontWeightChange = (ev: any) =>
-    this.service.updateSecondaryWeight(ev.target.value);
+  captureFontEvent(ev: {
+    property: "family" | "size" | "weight" | "color";
+    type: "primary" | "secondary";
+    value: any;
+  }) {
+    switch (ev.type) {
+      case "primary":
+        switch (ev.property) {
+          case "color":
+            this.service.updatePrimaryColor(ev.value);
+            break;
+          case "family":
+            this.service.updatePrimaryFont(ev.value);
+            break;
+          case "size":
+            this.service.updatePrimarySize(+ev.value);
+            break;
+          case "weight":
+            this.service.updatePrimaryWeight(ev.value);
+            break;
+        }
+        break;
+      case "secondary":
+        switch (ev.property) {
+          case "color":
+            this.service.updateSecondaryColor(ev.value);
+            break;
+          case "family":
+            this.service.updateSecondaryFont(ev.value);
+            break;
+          case "size":
+            this.service.updateSecondarySize(+ev.value);
+            break;
+          case "weight":
+            this.service.updateSecondaryWeight(ev.value);
+            break;
+        }
+    }
+  }
 }

@@ -1,0 +1,31 @@
+label {
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  width: 100%;
+  align-items: baseline;
+}
+
+input {
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 3px auto;
+  vertical-align: baseline;
+  height: 25px;
+}
+
+input[type="text"],
+input[type="email"] {
+  cursor: text;
+}
+
+input[type="color"] {
+  width: 100px;
+  border: none;
+}
+
+select {
+  cursor: pointer;
+  height: 25px;
+}

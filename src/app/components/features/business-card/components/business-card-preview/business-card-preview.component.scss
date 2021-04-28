@@ -1,14 +1,13 @@
 .card {
   height: 300px;
   width: 500px;
-  margin: 5px auto;
+  margin: 25px auto;
   font-size: 22px;
   text-align: left;
   padding: 1%;
+  box-shadow: 6px 5px 94px 0 rgba(220,220,220,0.75);
 
   > div {
     width: fit-content;
   }
 }
-
-

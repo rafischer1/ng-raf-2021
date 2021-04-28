@@ -30,6 +30,7 @@ import { InfoTabComponent } from "./components/main/components/contact-info/info
 import { BusinessCardComponent } from './components/features/business-card/business-card.component';
 import { BusinessCardFormComponent } from './components/features/business-card/components/business-card-form/business-card-form.component';
 import { BusinessCardPreviewComponent } from './components/features/business-card/components/business-card-preview/business-card-preview.component';
+import { FontFormComponent } from './components/features/business-card/components/font-form/font-form.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { BusinessCardPreviewComponent } from './components/features/business-car
     BusinessCardComponent,
     BusinessCardFormComponent,
     BusinessCardPreviewComponent,
+    FontFormComponent,
   ],
   imports: [
     BrowserModule,
