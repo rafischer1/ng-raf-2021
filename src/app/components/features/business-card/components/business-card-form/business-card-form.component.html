@@ -1,11 +1,5 @@
 <div class="card-form">
   <mat-tab-group>
-    <mat-tab label="Image">
-      <raf-image-form
-        (imageAdd)="addImage($event)"
-        (toggleImage)="toggleImage($event)"
-      ></raf-image-form
-    ></mat-tab>
     <mat-tab label="General">
       <label>
         Name
@@ -56,6 +50,12 @@
         />
       </label>
     </mat-tab>
+    <mat-tab label="Image">
+      <raf-image-form
+        (imageAdd)="addImage($event)"
+        (toggleImage)="toggleImage($event)"
+      ></raf-image-form
+    ></mat-tab>
     <mat-tab label="Primary Font">
       <raf-font-form
         [type]="'primary'"
