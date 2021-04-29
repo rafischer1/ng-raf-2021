@@ -1,66 +1,78 @@
 <div class="card-form">
-  <raf-image-form (imageAdd)="addImage($event)" (toggleImage)="toggleImage($event)"></raf-image-form>
-  <label>
-    Name
-    <input type="text" (change)="nameChange($event)" />
-  </label>
-  <label>
-    Email
-    <input
-      type="email"
-      (change)="emailChange($event)"
-      minlength="3"
-      maxlength="64"
-    />
-  </label>
-  <label>
-    Phone
-    <input type="text" (change)="phoneChange($event)" />
-  </label>
-  <label>
-    Position
-    <input type="text" (change)="positionChange($event)" />
-  </label>
-  <label>
-    <button (click)="randomPosition()">Random Position</button>
-  </label>
-  <label>
-    Catch Phrase
-    <input type="text" (change)="catchPhraseChange($event)" />
-  </label>
-  <label>
-    <button (click)="randomCatchPhrase()">Random Catch Phrase</button>
-  </label>
-  <label>
-    Background Color
-    <input type="color" (change)="backgroundColorChange($event)" />
-  </label>
-  <label for="radius"
-    >Border Radius
-    <input
-      type="range"
-      id="radius"
-      name="points"
-      min="0"
-      max="110"
-      class="slider"
-      [value]="0"
-      (change)="borderRadiusSelect($event)"
-    />
-  </label>
-  <br />
-  <raf-font-form
-    [type]="'primary'"
-    (fontEvent)="captureFontEvent($event)"
-  ></raf-font-form>
-  <br />
-  <raf-font-form
-    [type]="'secondary'"
-    (fontEvent)="captureFontEvent($event)"
-  ></raf-font-form>
-  <br />
-  <raf-font-form
-    [type]="'tertiary'"
-    (fontEvent)="captureFontEvent($event)"
-  ></raf-font-form>
+  <mat-tab-group>
+    <mat-tab label="Image">
+      <raf-image-form
+        (imageAdd)="addImage($event)"
+        (toggleImage)="toggleImage($event)"
+      ></raf-image-form
+    ></mat-tab>
+    <mat-tab label="General">
+      <label>
+        Name
+        <input type="text" (change)="nameChange($event)" />
+      </label>
+      <label>
+        Email
+        <input
+          type="email"
+          (change)="emailChange($event)"
+          minlength="3"
+          maxlength="64"
+        />
+      </label>
+      <label>
+        Phone
+        <input type="text" (change)="phoneChange($event)" />
+      </label>
+      <label>
+        Position
+        <input type="text" (change)="positionChange($event)" />
+      </label>
+      <label>
+        <button (click)="randomPosition()">Random Position</button>
+      </label>
+      <label>
+        Catch Phrase
+        <input type="text" (change)="catchPhraseChange($event)" />
+      </label>
+      <label>
+        <button (click)="randomCatchPhrase()">Random Catch Phrase</button>
+      </label>
+      <label>
+        Background Color
+        <input type="color" (change)="backgroundColorChange($event)" />
+      </label>
+      <label for="radius"
+        >Border Radius
+        <input
+          type="range"
+          id="radius"
+          name="points"
+          min="0"
+          max="110"
+          class="slider"
+          [value]="0"
+          (change)="borderRadiusSelect($event)"
+        />
+      </label>
+    </mat-tab>
+    <mat-tab label="Primary Font">
+      <raf-font-form
+        [type]="'primary'"
+        (fontEvent)="captureFontEvent($event)"
+      ></raf-font-form>
+    </mat-tab>
+    <mat-tab label="Secondary Font">
+      <raf-font-form
+        [type]="'secondary'"
+        (fontEvent)="captureFontEvent($event)"
+      ></raf-font-form>
+    </mat-tab>
+    <mat-tab label="Tertiary Font">
+      <raf-font-form
+        [type]="'tertiary'"
+        (fontEvent)="captureFontEvent($event)"
+      ></raf-font-form>
+    </mat-tab>
+  </mat-tab-group>
 </div>

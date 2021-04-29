@@ -3,10 +3,11 @@
 label {
   font-weight: bold;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-direction: row;
-  width: 100%;
+  width: 50%;
   align-items: baseline;
+  margin-left: 66px;
 }
 
 input {
