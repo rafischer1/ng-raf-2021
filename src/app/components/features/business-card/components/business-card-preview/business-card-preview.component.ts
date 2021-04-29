@@ -1,9 +1,10 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { BusinessCardQuery } from "../../state/business-card.query";
 import { Observable } from "rxjs";
 import { BusinessCard } from "../../state/business-card.model";
 import { BusinessCardService } from "../../state/business-card.service";
 import { ToastsService } from "../../../../../shared/toasts-container/state/toasts.service";
+import { PdfService } from "../../state/pdf.service";
 
 @Component({
   selector: "raf-business-card-preview",
@@ -11,12 +12,14 @@ import { ToastsService } from "../../../../../shared/toasts-container/state/toas
   styleUrls: ["./business-card-preview.component.scss"],
 })
 export class BusinessCardPreviewComponent implements OnInit {
+  @ViewChild("card", { static: false }) cardRef: ElementRef;
   card$: Observable<BusinessCard>;
 
   constructor(
     private query: BusinessCardQuery,
     private service: BusinessCardService,
-    private toast: ToastsService
+    private toast: ToastsService,
+    private pdf: PdfService
   ) {}
 
   ngOnInit(): void {
@@ -25,5 +28,5 @@ export class BusinessCardPreviewComponent implements OnInit {
 
   reset = () => this.service.reset();
 
-  export = () => this.toast.showToast("warn", "PDF Service WIP");
+  export = () => this.pdf.pdfDownload(this.cardRef.nativeElement);
 }

@@ -11,7 +11,7 @@ export function createInitialCard(): BusinessCard {
   return {
     name: faker.name.findName(),
     email: faker.internet.email(),
-    background: "#333333",
+    background: "lightblue",
     borderRadius: 0,
     doubleSided: false,
     phone: faker.phone.phoneNumber(),
@@ -19,19 +19,19 @@ export function createInitialCard(): BusinessCard {
     catchPhrase: faker.company.catchPhrase(),
     primaryFont: {
       size: 40,
-      color: "white",
+      color: "#2d2d2d",
       family: "serif",
       weight: "normal",
     },
     secondaryFont: {
       size: 30,
-      color: "white",
+      color: "#2d2d2d",
       family: "serif",
       weight: "normal",
     },
     tertiaryFont: {
       size: 22,
-      color: "white",
+      color: "#2d2d2d",
       family: "serif",
       weight: "normal",
     },

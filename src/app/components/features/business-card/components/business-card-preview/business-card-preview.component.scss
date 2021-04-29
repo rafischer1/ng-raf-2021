@@ -5,10 +5,18 @@
   font-size: 22px;
   text-align: left;
   padding: 1%;
-  box-shadow: 6px 5px 94px 0 rgba(220,220,220,0.75);
+  box-shadow: 6px 5px 94px 0 rgba(220, 220, 220, 0.75);
   position: fixed;
 
   > div {
     width: fit-content;
   }
+}
+
+.button-container {
+  width: 86%;
+  background: #2d2d2d;
+  border-radius: 5px;
+  padding: 13px 26px;
+  margin: 0 auto;
 }
