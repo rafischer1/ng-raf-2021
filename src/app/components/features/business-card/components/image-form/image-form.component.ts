@@ -1,7 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from "@angular/core";
 import * as faker from "faker";
 import { BusinessCardImage } from "../../state/business-card.model";
-import { BusinessCardQuery } from "../../state/business-card.query";
 
 @Component({
   selector: "raf-image-form",
@@ -18,6 +17,12 @@ export class ImageFormComponent implements OnInit {
     src: "",
   };
 
+  selectedBorderRadius: number = 2;
+  selectedOpacity: number = 1;
+  selectedHeight: number = 60;
+  selectedWidth: number = 60;
+  selectedSrc: string = "";
+
   @Output()
   imageAdd: EventEmitter<BusinessCardImage> = new EventEmitter<BusinessCardImage>();
 
@@ -27,20 +32,51 @@ export class ImageFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.currentImage.src = faker.image.abstract();
+    this.selectedSrc = this.currentImage.src;
   }
 
   addImage = () => {
-    this.imageAdd.emit({ ...this.currentImage, active: true });
+    this.currentImage.active = true;
+    this.imageAdd.emit(this.currentImage);
   };
 
-  randomImage = () =>
-    this.imageAdd.emit({
-      ...this.currentImage,
-      src: faker.image.image(),
-      active: true,
-    });
+  randomImage = () => {
+    this.selectedSrc = faker.image.image();
+    this.updateImage();
+  };
 
   toggle = () => {
     this.toggleImage.emit(false);
   };
+
+  borderRadiusSelect = (ev: any) => {
+    this.selectedBorderRadius = +ev.target.value;
+    this.updateImage();
+  };
+
+  opacitySelect = (ev: any) => {
+    this.selectedOpacity = +ev.target.value / 100;
+    this.updateImage();
+  };
+
+  widthSelect = (ev: any) => {
+    this.selectedWidth = +ev.target.value;
+    this.updateImage();
+  };
+
+  heightSelect = (ev: any) => {
+    this.selectedHeight = +ev.target.value;
+    this.updateImage();
+  };
+
+  updateImage = () =>
+    this.imageAdd.emit({
+      ...this.currentImage,
+      borderRadius: this.selectedBorderRadius,
+      src: this.selectedSrc,
+      opacity: this.selectedOpacity,
+      height: this.selectedHeight,
+      width: this.selectedWidth,
+      active: true,
+    });
 }
