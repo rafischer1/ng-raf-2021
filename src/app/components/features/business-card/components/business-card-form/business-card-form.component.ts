@@ -14,7 +14,7 @@ export class BusinessCardFormComponent implements OnInit {
   ngOnInit(): void {}
 
   backgroundColorChange = (ev: any) =>
-    this.service.updateBackground(ev.target.value);
+    this.service.updateBackground(ev.target?.value);
 
   nameChange = (ev: any) => this.service.updateName(ev.target.value);
 

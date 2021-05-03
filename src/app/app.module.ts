@@ -73,7 +73,8 @@ import { MatTabsModule } from "@angular/material/tabs";
     FormsModule,
     BarChartModule,
     PieChartModule,
-    DragDropModule
+    DragDropModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
