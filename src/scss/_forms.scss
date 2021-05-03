@@ -3,29 +3,34 @@
 label {
   font-weight: bold;
   display: flex;
-  justify-content: space-around;
   flex-direction: row;
-  width: 50%;
+  width: 70%;
   align-items: baseline;
   margin-left: 66px;
+  margin-bottom: 7px;
 }
 
 input {
   cursor: pointer;
   border-radius: 5px;
-  margin: 3px auto;
+  margin: 5px 15px;
   vertical-align: baseline;
   height: 25px;
+  width: 90%;
 }
 
 input[type="text"],
 input[type="email"] {
   cursor: text;
+  vertical-align: baseline;
 }
 
 input[type="color"] {
-  width: 100px;
   border: none;
+  height: 30px;
+  width: 70%;
+  align-self: center;
+  vertical-align: baseline;
 }
 
 .slider {
@@ -55,5 +60,9 @@ input[type="color"] {
 
 select {
   cursor: pointer;
+  border-radius: 5px;
+  margin: 5px 15px;
+  vertical-align: baseline;
   height: 25px;
+  width: 90%;
 }
