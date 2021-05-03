@@ -1,22 +1,24 @@
-<label>
-  {{ type | titlecase }} Font
-  <select (change)="fontSelect($event)">
-    <option disabled>Select a secondary font...</option>
-    <option *ngFor="let f of fontFamilies">{{ f | titlecase }}</option>
-  </select>
-</label>
-<label for="color">
-  {{ type | titlecase }} Text Color
-  <input id="color" type="color" (change)="colorChange($event)" />
-</label>
-<label>
-  {{ type | titlecase }} Text Size
-  <input type="number" (change)="fontSizeChange($event)" />
-</label>
-<label>
-  {{ type | titlecase }} Font Weight
-  <select (change)="fontWeightChange($event)">
-    <option disabled>Select a weight...</option>
-    <option *ngFor="let w of fontWeights">{{ w | titlecase }}</option>
-  </select>
-</label>
+<ng-container class="card-form" *transloco="let t; read: 'businessCard'">
+  <label>
+    {{ t("font") | titlecase }}
+    <select (change)="fontSelect($event)">
+      <option disabled>Select a secondary font...</option>
+      <option *ngFor="let f of fontFamilies">{{ f | titlecase }}</option>
+    </select>
+  </label>
+  <label for="color">
+    {{ t("color") | titlecase }}
+    <input id="color" type="color" (change)="colorChange($event)" />
+  </label>
+  <label>
+    {{ t("size") | titlecase }}
+    <input type="number" (change)="fontSizeChange($event)" />
+  </label>
+  <label>
+    {{ t("weight") | titlecase }}
+    <select (change)="fontWeightChange($event)">
+      <option disabled>Select a weight...</option>
+      <option *ngFor="let w of fontWeights">{{ w | titlecase }}</option>
+    </select>
+  </label>
+</ng-container>

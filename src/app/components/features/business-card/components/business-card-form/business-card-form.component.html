@@ -1,8 +1,8 @@
-<div class="card-form">
+<div class="card-form" *transloco="let t; read: 'businessCard'">
   <mat-tab-group>
-    <mat-tab label="General">
+    <mat-tab label="{{ t('general') | titlecase }}">
       <label>
-        Name
+        {{ t("name") | titlecase }}
         <input type="text" (change)="nameChange($event)" />
       </label>
       <label>
@@ -15,29 +15,33 @@
         />
       </label>
       <label>
-        Phone
+        {{ t("phone") | titlecase }}
         <input type="text" (change)="phoneChange($event)" />
       </label>
       <label>
-        Position
+        {{ t("position") | titlecase }}
         <input type="text" (change)="positionChange($event)" />
       </label>
       <label>
-        <button (click)="randomPosition()">Random Position</button>
+        <button (click)="randomPosition()">
+          {{ t("random") | titlecase }} {{ t("position") | titlecase }}
+        </button>
       </label>
       <label>
-        Catch Phrase
+        {{ t("catch phrase") | titlecase }}
         <input type="text" (change)="catchPhraseChange($event)" />
       </label>
       <label>
-        <button (click)="randomCatchPhrase()">Random Catch Phrase</button>
+        <button (click)="randomCatchPhrase()">
+          {{ t("random") | titlecase }} {{ t("catch phrase") | titlecase }}
+        </button>
       </label>
       <label>
-        Background Color
+        {{ t("background") | titlecase }} {{ t("color") | titlecase }}
         <input type="color" (change)="backgroundColorChange($event)" />
       </label>
       <label for="radius"
-        >Border Radius
+        >{{ t("border radius") | titlecase }}
         <input
           type="range"
           id="radius"
@@ -50,25 +54,29 @@
         />
       </label>
     </mat-tab>
-    <mat-tab label="Image">
+    <mat-tab label="{{ t('image') | titlecase }}">
       <raf-image-form
         (imageAdd)="addImage($event)"
         (toggleImage)="toggleImage($event)"
       ></raf-image-form
     ></mat-tab>
-    <mat-tab label="Primary Font">
+    <mat-tab label="{{ t('primary') | titlecase }} {{ t('font') | titlecase }}">
       <raf-font-form
         [type]="'primary'"
         (fontEvent)="captureFontEvent($event)"
       ></raf-font-form>
     </mat-tab>
-    <mat-tab label="Secondary Font">
+    <mat-tab
+      label="{{ t('secondary') | titlecase }} {{ t('font') | titlecase }}"
+    >
       <raf-font-form
         [type]="'secondary'"
         (fontEvent)="captureFontEvent($event)"
       ></raf-font-form>
     </mat-tab>
-    <mat-tab label="Tertiary Font">
+    <mat-tab
+      label="{{ t('tertiary') | titlecase }} {{ t('font') | titlecase }}"
+    >
       <raf-font-form
         [type]="'tertiary'"
         (fontEvent)="captureFontEvent($event)"

@@ -1,6 +1,30 @@
 {
   "businessCard": {
-    "title": "business card generator"
+    "general": "general",
+    "image": "image",
+    "title": "business card generator",
+    "name": "name",
+    "phone": "phone",
+    "position": "position",
+    "random": "random",
+    "catch phrase": "catch phrase",
+    "background": "background",
+    "color": "color",
+    "border radius": "border radius",
+    "addImage": "add image",
+    "randomImage": "random image",
+    "remove": "remove",
+    "opacity": "opacity",
+    "width": "width",
+    "height": "height",
+    "weight": "weight",
+    "size": "size",
+    "font": "font",
+    "primary": "primary",
+    "secondary": "secondary",
+    "tertiary": "tertiary",
+    "randomize/reset": "Randomize/Reset",
+    "exportPDF": "Export as PDF"
   },
   "main": {
     "skills": "skills",
