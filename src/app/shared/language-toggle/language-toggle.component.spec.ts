@@ -1,25 +1,23 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { LanguageToggleComponent } from "./language-toggle.component";
+import { createComponentFactory, Spectator } from "@ngneat/spectator/jest";
+import { LanguageIconComponent } from "./language-icon/language-icon.component";
+import { getTranslocoModule } from "../../transloco/transloco-testing.module";
 
-import { LanguageToggleComponent } from './language-toggle.component';
+describe("LanguageToggleComponent", () => {
+  let spectator: Spectator<LanguageToggleComponent>;
 
-describe('LanguageToggleComponent', () => {
-  let component: LanguageToggleComponent;
-  let fixture: ComponentFixture<LanguageToggleComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ LanguageToggleComponent ]
-    })
-    .compileComponents();
+  const createComponent = createComponentFactory({
+    component: LanguageToggleComponent,
+    declarations: [LanguageIconComponent],
+    imports: [getTranslocoModule()],
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LanguageToggleComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    spectator = createComponent();
+    spectator.component.ngOnInit();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it("should create", () => {
+    expect(spectator.component).toBeTruthy();
   });
 });

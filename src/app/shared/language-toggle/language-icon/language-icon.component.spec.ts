@@ -1,25 +1,21 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { LanguageIconComponent } from "./language-icon.component";
+import { createComponentFactory, Spectator } from "@ngneat/spectator/jest";
 
-import { LanguageIconComponent } from './language-icon.component';
+describe("LanguageIconComponent", () => {
+  let spectator: Spectator<LanguageIconComponent>;
 
-describe('LanguageIconComponent', () => {
-  let component: LanguageIconComponent;
-  let fixture: ComponentFixture<LanguageIconComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ LanguageIconComponent ]
-    })
-    .compileComponents();
+  const createComponent = createComponentFactory({
+    component: LanguageIconComponent,
+    declarations: [],
+    imports: [],
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LanguageIconComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    spectator = createComponent();
+    spectator.component.ngOnInit();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it("should create", () => {
+    expect(spectator.component).toBeTruthy();
   });
 });
