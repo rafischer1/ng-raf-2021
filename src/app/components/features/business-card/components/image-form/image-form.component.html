@@ -1,0 +1,55 @@
+<button (click)="addImage()">Add Image</button>
+<button (click)="randomImage()">Random Image</button>
+<button (click)="toggle()">Remove</button>
+<label for="radius"
+  >Border Radius
+  <input
+    type="range"
+    id="radius"
+    name="points"
+    min="0"
+    max="25"
+    class="slider"
+    [value]="0"
+    (change)="borderRadiusSelect($event)"
+  />
+</label>
+<label for="opacity"
+  >Opacity
+  <input
+    type="range"
+    id="opacity"
+    name="points"
+    min="0"
+    max="100"
+    class="slider"
+    [value]="100"
+    (change)="opacitySelect($event)"
+  />
+</label>
+<label for="width"
+  >Width
+  <input
+    type="range"
+    id="width"
+    name="points"
+    min="0"
+    max="500"
+    class="slider"
+    [value]="this.currentImage.width"
+    (change)="widthSelect($event)"
+  />
+</label>
+<label for="height"
+  >Height
+  <input
+    type="range"
+    id="height"
+    name="points"
+    min="0"
+    max="400"
+    class="slider"
+    [value]="this.currentImage.height"
+    (change)="heightSelect($event)"
+  />
+</label>

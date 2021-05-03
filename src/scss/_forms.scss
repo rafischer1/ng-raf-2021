@@ -1,0 +1,68 @@
+@import "_variables.scss";
+
+label {
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  align-items: baseline;
+  margin-left: 66px;
+  margin-bottom: 7px;
+}
+
+input {
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 5px 15px;
+  vertical-align: baseline;
+  height: 25px;
+  width: 90%;
+}
+
+input[type="text"],
+input[type="email"] {
+  cursor: text;
+  vertical-align: baseline;
+}
+
+input[type="color"] {
+  border: none;
+  height: 30px;
+  width: 70%;
+  align-self: center;
+  vertical-align: baseline;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 80%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  align-self: center;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #2d2d2d;
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  background: $secondary;
+}
+
+select {
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 5px 15px;
+  vertical-align: baseline;
+  height: 25px;
+  width: 90%;
+}

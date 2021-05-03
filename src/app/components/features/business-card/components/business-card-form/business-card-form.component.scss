@@ -1,0 +1,32 @@
+@import "src/scss/forms";
+@import "src/scss/variables";
+
+.card-form {
+  display: flex;
+  flex-direction: column;
+}
+
+::ng-deep.mat-tab-label,
+::ng-deep.mat-tab-label-active {
+  min-width: 80px !important;
+  padding: 1px 15px !important;
+  margin: 5px !important;
+  color: white !important;
+  background: #2d2d2d !important;
+}
+
+::ng-deep.mat-tab-labels {
+  min-width: 100px !important;
+  color: white !important;
+  background: #2d2d2d !important;
+  border-radius: 5px !important;
+}
+
+::ng-deep.mat-tab-group.mat-primary mat-ink-bar {
+  background: $secondary !important;
+  margin-bottom: 2px;
+}
+
+::ng-deep.mat-tab-label-active {
+  color: $secondary !important;
+}

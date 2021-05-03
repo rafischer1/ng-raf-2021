@@ -1,0 +1,79 @@
+<div class="button-container">
+  <button (click)="reset()">Randomize/Reset</button>
+  <button (click)="export()">Export as PDF</button>
+</div>
+
+<div
+  class="card"
+  #card
+  [style.background]="(card$ | async)?.background"
+  [style.border-radius]="(card$ | async)?.borderRadius + 'px'"
+>
+  <!--  image-->
+  <div *ngIf="(card$ | async)?.image?.active" cdkDrag cdkDragBoundary=".card">
+    <img
+      src="{{ (card$ | async)?.image?.src }}"
+      alt="'Business Card Image'"
+      [style.opacity]="(card$ | async)?.image?.opacity"
+      [style.height]="(card$ | async)?.image?.height + 'px'"
+      [style.width]="(card$ | async)?.image?.width + 'px'"
+      [style.border-radius]="(card$ | async)?.image?.borderRadius + 'px'"
+    />
+  </div>
+  <!--  name-->
+  <div
+    cdkDrag
+    cdkDragBoundary=".card"
+    [style.font-family]="(card$ | async)?.primaryFont?.family"
+    [style.color]="(card$ | async)?.primaryFont?.color"
+    [style.font-weight]="(card$ | async)?.primaryFont?.weight"
+    [style.font-size]="(card$ | async)?.primaryFont?.size + 'px'"
+  >
+    {{ (card$ | async)?.name }}
+  </div>
+  <!--  position-->
+  <div
+    cdkDrag
+    cdkDragBoundary=".card"
+    [style.font-family]="(card$ | async)?.secondaryFont?.family"
+    [style.color]="(card$ | async)?.secondaryFont?.color"
+    [style.font-weight]="(card$ | async)?.secondaryFont?.weight"
+    [style.font-size]="(card$ | async)?.secondaryFont?.size + 'px'"
+  >
+    {{ (card$ | async)?.position }}
+  </div>
+  <!--  email-->
+  <div
+    cdkDrag
+    cdkDragBoundary=".card"
+    [style.font-family]="(card$ | async)?.tertiaryFont?.family"
+    [style.color]="(card$ | async)?.tertiaryFont?.color"
+    [style.font-weight]="(card$ | async)?.tertiaryFont?.weight"
+    [style.font-size]="(card$ | async)?.tertiaryFont?.size + 'px'"
+  >
+    {{ (card$ | async)?.email }}
+  </div>
+  <!--  phone -->
+  <div
+    cdkDrag
+    cdkDragBoundary=".card"
+    [style.font-family]="(card$ | async)?.tertiaryFont?.family"
+    [style.color]="(card$ | async)?.tertiaryFont?.color"
+    [style.font-weight]="(card$ | async)?.tertiaryFont?.weight"
+    [style.font-size]="(card$ | async)?.tertiaryFont?.size + 'px'"
+  >
+    {{ (card$ | async)?.phone }}
+  </div>
+  <!--  catch phrase-->
+  <div
+    cdkDrag
+    cdkDragBoundary=".card"
+    [style.font-family]="(card$ | async)?.secondaryFont?.family"
+    [style.color]="(card$ | async)?.secondaryFont?.color"
+    [style.font-weight]="(card$ | async)?.secondaryFont?.weight"
+    [style.font-size]="(card$ | async)?.secondaryFont?.size + 'px'"
+  >
+    {{ (card$ | async)?.catchPhrase | titlecase }}
+  </div>
+</div>
+<div>{{ card$ | async | json }}</div>

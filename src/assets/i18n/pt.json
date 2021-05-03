@@ -8,7 +8,8 @@
     "checklist": "lista de controle",
     "toasts": "notificações",
     "home": "pagina inicial",
-    "logger": "registro"
+    "logger": "registro",
+    "businessCard": "empresa"
   },
   "toasts": {
     "success": "sucesso",
