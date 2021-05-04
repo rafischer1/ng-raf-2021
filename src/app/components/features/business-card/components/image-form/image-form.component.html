@@ -1,6 +1,8 @@
 <ng-container *transloco="let t; read: 'businessCard'">
   <button (click)="addImage()">{{ t("addImage") | titlecase }}</button>
-  <button (click)="randomImage()">{{ t("randomImage") | titlecase }}</button>
+  <button (click)="randomImage()" id="randomImgBtn">
+    {{ t("randomImage") | titlecase }}
+  </button>
   <button (click)="toggle()">{{ t("remove") | titlecase }}</button>
   <label for="radius"
     >{{ t("border radius") | titlecase }}

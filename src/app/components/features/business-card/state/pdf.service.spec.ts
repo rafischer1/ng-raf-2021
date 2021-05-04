@@ -1,16 +1,13 @@
-import { TestBed } from '@angular/core/testing';
+import { PdfService } from "./pdf.service";
+import { createServiceFactory, SpectatorService } from "@ngneat/spectator";
 
-import { PdfService } from './pdf.service';
+describe("PdfService", () => {
+  let spectator: SpectatorService<PdfService>;
+  const createService = createServiceFactory(PdfService);
 
-describe('PdfService', () => {
-  let service: PdfService;
+  beforeEach(() => (spectator = createService()));
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(PdfService);
-  });
-
-  it('should be created', () => {
-    expect(service).toBeTruthy();
+  it("should exist", () => {
+    expect(spectator.service).toBeTruthy();
   });
 });
