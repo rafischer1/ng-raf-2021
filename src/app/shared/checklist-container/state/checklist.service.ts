@@ -1,7 +1,6 @@
 import { Injectable } from "@angular/core";
-import { ChecklistState, ChecklistStore } from "./checklist.store";
-import { deepFreeze } from "@datorama/akita/src/internal/deep-freeze";
-import { ChecklistObject, ChecklistStatus } from "./checklist.model";
+import { ChecklistStore } from "./checklist.store";
+import { ChecklistObject } from "./checklist.model";
 
 @Injectable({
   providedIn: "root",
@@ -28,5 +27,3 @@ export class ChecklistService {
     });
   }
 }
-
-//  = status;

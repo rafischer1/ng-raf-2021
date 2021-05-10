@@ -30,6 +30,10 @@ describe("NavBarComponent", () => {
     expect(spectator.component).toBeTruthy();
   });
 
+  it("should have class 'nav-bar'", () => {
+    expect(spectator.query(".nav-bar")).toExist();
+  });
+
   it("should translate", () => {
     expect(spectator.query("button#toasts")).toHaveText("En.nav.toasts");
     const service = spectator.inject(TranslocoService);

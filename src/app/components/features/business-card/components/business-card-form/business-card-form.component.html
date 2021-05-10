@@ -27,7 +27,7 @@
           {{ t("random") | titlecase }} {{ t("position") | titlecase }}
         </button>
       </label>
-      <label>
+      <label id="catchPhrase">
         {{ t("catch phrase") | titlecase }}
         <input type="text" (change)="catchPhraseChange($event)" />
       </label>
@@ -38,7 +38,11 @@
       </label>
       <label>
         {{ t("background") | titlecase }} {{ t("color") | titlecase }}
-        <input type="color" (change)="backgroundColorChange($event)" />
+        <input
+          type="color"
+          id="background"
+          (change)="backgroundColorChange($event)"
+        />
       </label>
       <label for="radius"
         >{{ t("border radius") | titlecase }}

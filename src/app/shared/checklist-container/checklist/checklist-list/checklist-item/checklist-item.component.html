@@ -1,13 +1,14 @@
 <div>
-  <span
-    ><label>
+  <span>
+    <label>
       <input
         class="action"
         (click)="toggleStatus()"
         type="radio"
         [checked]="currentStatus"
-      /> </label
-  ></span>
+      />
+    </label>
+  </span>
   {{ item.action | titlecase }}:
   <span>{{ currentStatus ? "Yes" : "No" }}</span>
   <div *ngIf="item.description" style="margin-left: 10px">

@@ -21,14 +21,12 @@ import { ChecklistItemComponent } from "./shared/checklist-container/checklist/c
 import { ContactGraphComponent } from "./components/main/components/contact-graph/contact-graph.component";
 import { BarChartModule, PieChartModule } from "@swimlane/ngx-charts";
 import { DragDropModule } from "@angular/cdk/drag-drop";
-import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/compiler";
-import { InfoTabComponent } from './components/main/components/contact-info/info-tab/info-tab.component';
+import { InfoTabComponent } from "./components/main/components/contact-info/info-tab/info-tab.component";
 import { ContactLinksComponent } from "./components/main/components/contact-links/contact-links.component";
 import { LanguageToggleComponent } from "./shared/language-toggle/language-toggle.component";
 import { LanguageIconComponent } from "./shared/language-toggle/language-icon/language-icon.component";
 import { ContactInfoComponent } from "./components/main/components/contact-info/contact-info.component";
 import { LoggerComponent } from "./shared/logging-service/logger/logger.component";
-import { InfoTabComponent } from "./components/main/components/contact-info/info-tab/info-tab.component";
 import { BusinessCardComponent } from "./components/features/business-card/business-card.component";
 import { BusinessCardFormComponent } from "./components/features/business-card/components/business-card-form/business-card-form.component";
 import { BusinessCardPreviewComponent } from "./components/features/business-card/components/business-card-preview/business-card-preview.component";
@@ -73,10 +71,11 @@ import { MatTabsModule } from "@angular/material/tabs";
     FormsModule,
     BarChartModule,
     PieChartModule,
-    DragDropModule
+    DragDropModule,
+    MatTabsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  schemas: [],
 })
 export class AppModule {}

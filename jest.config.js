@@ -20,5 +20,5 @@ module.exports = {
   ...jestPreset,
   globals: { ...globalOverrides },
   preset: "jest-preset-angular",
-  setupFilesAfterEnv: ["<rootDir>/src/setupJest.ts"],
+  setupFilesAfterEnv: ["<rootDir>/src/setupJest.ts", "jest-canvas-mock"],
 };

@@ -1,16 +1,21 @@
-import { TestBed } from '@angular/core/testing';
+import { BusinessCardService } from "./business-card.service";
+import {
+  createServiceFactory,
+  mockProvider,
+  SpectatorService,
+} from "@ngneat/spectator";
+import { TranslocoService } from "@ngneat/transloco";
 
-import { BusinessCardService } from './business-card.service';
-
-describe('BusinessCardService', () => {
-  let service: BusinessCardService;
-
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(BusinessCardService);
+describe("BusinessCardService", () => {
+  let spectator: SpectatorService<BusinessCardService>;
+  const createService = createServiceFactory({
+    service: BusinessCardService,
+    providers: [mockProvider(TranslocoService)],
   });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
+  beforeEach(() => (spectator = createService()));
+
+  it("should exist", () => {
+    expect(spectator.service).toBeTruthy();
   });
 });

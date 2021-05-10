@@ -2,7 +2,6 @@ import { Injectable } from "@angular/core";
 import { LoggerStore } from "./logger.store";
 import { Log } from "./log.interface";
 import { TranslocoService } from "@ngneat/transloco";
-import DateTimeFormat = Intl.DateTimeFormat;
 
 @Injectable({
   providedIn: "root",

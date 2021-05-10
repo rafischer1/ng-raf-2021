@@ -6,7 +6,7 @@
       <option *ngFor="let f of fontFamilies">{{ f | titlecase }}</option>
     </select>
   </label>
-  <label for="color">
+  <label for="color" id="colorLabel">
     {{ t("color") | titlecase }}
     <input id="color" type="color" (change)="colorChange($event)" />
   </label>

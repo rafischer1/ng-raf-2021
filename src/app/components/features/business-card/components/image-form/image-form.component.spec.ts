@@ -1,25 +1,67 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { createComponentFactory, Spectator } from "@ngneat/spectator/jest";
+import { getTranslocoModule } from "../../../../../transloco/transloco-testing.module";
+import { TranslocoService } from "@ngneat/transloco";
+import { ImageFormComponent } from "./image-form.component";
 
-import { ImageFormComponent } from './image-form.component';
+describe("ImageFormComponent", () => {
+  let spectator: Spectator<ImageFormComponent>;
 
-describe('ImageFormComponent', () => {
-  let component: ImageFormComponent;
-  let fixture: ComponentFixture<ImageFormComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ ImageFormComponent ]
-    })
-    .compileComponents();
+  const createComponent = createComponentFactory({
+    component: ImageFormComponent,
+    declarations: [],
+    providers: [],
+    schemas: [],
+    imports: [
+      getTranslocoModule({
+        translocoConfig: { reRenderOnLangChange: true },
+      }),
+    ],
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ImageFormComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    spectator = createComponent();
+    spectator.component.ngOnInit();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it("should create", () => {
+    expect(spectator.component).toBeTruthy();
+  });
+
+  it("should emit toggleButton value", () => {
+    const spy = jest.spyOn(spectator.component.toggleImage, "emit");
+    spectator.component.toggle();
+    expect(spy).toHaveBeenCalledWith(false);
+  });
+
+  it("should emit imageAdd value", () => {
+    const spy = jest.spyOn(spectator.component.imageAdd, "emit");
+    spectator.component.imageAdd.emit({
+      src: "src",
+      width: 2,
+      height: 2,
+      opacity: 0.4,
+      borderRadius: 20,
+      active: true,
+    });
+    expect(spy).toHaveBeenCalledWith({
+      src: "src",
+      width: 2,
+      height: 2,
+      opacity: 0.4,
+      borderRadius: 20,
+      active: true,
+    });
+  });
+
+  it("should translate from 'en' to 'pt'", () => {
+    expect(spectator.query("button#randomImgBtn")).toHaveText(
+      "En.businesscard.randomimage"
+    );
+    const service = spectator.inject(TranslocoService);
+    service.setActiveLang("pt");
+    spectator.detectChanges();
+    expect(spectator.query("button#randomImgBtn")).toHaveText(
+      "Pt.businesscard.randomimage"
+    );
   });
 });

@@ -1,7 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import {
   TRANSLOCO_LOADER,
-  Translation,
   TranslocoLoader,
   TRANSLOCO_CONFIG,
   translocoConfig,

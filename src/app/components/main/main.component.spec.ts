@@ -1,24 +1,29 @@
-import { ComponentFixture, TestBed } from "@angular/core/testing";
-
 import { MainComponent } from "./main.component";
+import { createComponentFactory, Spectator } from "@ngneat/spectator/jest";
+import { getTranslocoModule } from "../../transloco/transloco-testing.module";
+import { NO_ERRORS_SCHEMA } from "@angular/core";
 
 describe("MainComponent", () => {
-  let component: MainComponent;
-  let fixture: ComponentFixture<MainComponent>;
+  let spectator: Spectator<MainComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [MainComponent],
-    }).compileComponents();
+  const createComponent = createComponentFactory({
+    component: MainComponent,
+    declarations: [],
+    providers: [],
+    schemas: [NO_ERRORS_SCHEMA],
+    imports: [getTranslocoModule()],
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MainComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    spectator = createComponent();
+    spectator.component.ngOnInit();
   });
 
   it("should create", () => {
-    expect(component).toBeTruthy();
+    expect(spectator.component).toBeTruthy();
+  });
+
+  it("should have class 'main'", () => {
+    expect(spectator.query(".main")).toExist();
   });
 });

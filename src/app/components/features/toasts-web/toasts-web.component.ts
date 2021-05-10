@@ -5,10 +5,24 @@ import { LoggerService } from "../../../shared/logging-service/logger.service";
 
 @Component({
   selector: "raf-toasts-web",
-  templateUrl: "./toasts-web.component.html",
-  styleUrls: ["./toasts-web.component.scss"],
+  template: `<div class="toast-buttons-container">
+    <ng-container *ngFor="let type of toastTypes">
+      <raf-toast-button
+        [type]="type"
+        (show)="showToast(type)"
+      ></raf-toast-button>
+    </ng-container>
+  </div>`,
+  styles: [
+    `
+      .toast-buttons-container {
+        margin-top: 5px;
+      }
+    `,
+  ],
 })
 export class ToastsWebComponent implements OnInit {
+  toastTypes: string[] = ["success", "info", "warn", "alert", "link"];
   constructor(
     private translate: TranslocoService,
     private toasts: ToastsService,

@@ -1,25 +1,29 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ToastsWebComponent } from "./toasts-web.component";
+import { createComponentFactory, Spectator } from "@ngneat/spectator/jest";
+import { NO_ERRORS_SCHEMA } from "@angular/core";
+import { getTranslocoModule } from "../../../transloco/transloco-testing.module";
 
-import { ToastsWebComponent } from './toasts-web.component';
+describe("ToastsWebComponent", () => {
+  let spectator: Spectator<ToastsWebComponent>;
 
-describe('ToastsWebComponent', () => {
-  let component: ToastsWebComponent;
-  let fixture: ComponentFixture<ToastsWebComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ ToastsWebComponent ]
-    })
-    .compileComponents();
+  const createComponent = createComponentFactory({
+    component: ToastsWebComponent,
+    declarations: [],
+    providers: [],
+    schemas: [NO_ERRORS_SCHEMA],
+    imports: [getTranslocoModule()],
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ToastsWebComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    spectator = createComponent();
+    spectator.component.ngOnInit();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it("should create", () => {
+    expect(spectator.component).toBeTruthy();
+  });
+
+  it("should have class 'toast-buttons-container'", () => {
+    expect(spectator.query(".toast-buttons-container")).toExist();
   });
 });

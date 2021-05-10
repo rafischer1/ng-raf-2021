@@ -1,25 +1,51 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ContactLinksComponent } from "./contact-links.component";
+import { createComponentFactory, Spectator } from "@ngneat/spectator/jest";
+import { getTranslocoModule } from "../../../../transloco/transloco-testing.module";
+import { TranslocoService } from "@ngneat/transloco";
 
-import { ContactLinksComponent } from './contact-links.component';
+describe("ContactLinksComponent", () => {
+  let spectator: Spectator<ContactLinksComponent>;
 
-describe('ContactLinksComponent', () => {
-  let component: ContactLinksComponent;
-  let fixture: ComponentFixture<ContactLinksComponent>;
-
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ ContactLinksComponent ]
-    })
-    .compileComponents();
+  const createComponent = createComponentFactory({
+    component: ContactLinksComponent,
+    declarations: [],
+    providers: [],
+    schemas: [],
+    imports: [
+      getTranslocoModule({
+        translocoConfig: { reRenderOnLangChange: true },
+      }),
+    ],
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ContactLinksComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    spectator = createComponent();
+    spectator.component.ngOnInit();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it("should create", () => {
+    expect(spectator.component).toBeTruthy();
+  });
+
+  it("should emit event", () => {
+    const spy = jest.spyOn(spectator.component.log, "emit");
+    spectator.component.log.emit();
+    expect(spy).toHaveBeenCalled();
+  });
+
+  it("should have class 'contact-links", () => {
+    expect(spectator.query(".contact-links")).toExist();
+  });
+
+  it("should translate from 'en' to 'fr'", () => {
+    expect(spectator.query(".contact-links")).toHaveText(
+      "en.main.linksLinkedInGitHubEmail"
+    );
+    const service = spectator.inject(TranslocoService);
+    service.setActiveLang("fr");
+    spectator.detectChanges();
+    expect(spectator.query(".contact-links")).toHaveText(
+      "fr.main.linksLinkedInGitHubEmail"
+    );
   });
 });
