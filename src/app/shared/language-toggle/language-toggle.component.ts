@@ -5,8 +5,31 @@ import { ToastsService } from "../toasts-container/state/toasts.service";
 
 @Component({
   selector: "raf-language-toggle",
-  templateUrl: "./language-toggle.component.html",
-  styleUrls: ["./language-toggle.component.scss"],
+  template: `<div class="language-toggle-container">
+    <ng-container *ngFor="let l of langs">
+      <raf-language-icon
+        [icon]="l.toUpperCase()"
+        [active]="selectedLanguage === l"
+        (select)="setActive(l)"
+      ></raf-language-icon>
+    </ng-container>
+  </div> `,
+  styles: [
+    `
+      div.language-toggle-container {
+        display: flex;
+        flex-direction: row;
+        margin: 23px 5px;
+        border: 1px solid lightgrey;
+        border-radius: 7px;
+        padding: 2px 3px;
+      }
+
+      div.language-toggle-container:hover {
+        border: 1px solid #ededed;
+      }
+    `,
+  ],
 })
 export class LanguageToggleComponent implements OnInit {
   constructor(
@@ -15,12 +38,13 @@ export class LanguageToggleComponent implements OnInit {
     private toast: ToastsService
   ) {}
   selectedLanguage: string;
+  langs: string[] = ["en", "es", "pt", "de", "fr"];
 
   ngOnInit(): void {
     this.selectedLanguage = this.translate.getActiveLang();
   }
 
-  setActive = (lang: "en" | "es" | "fr" | "de" | "pt") => {
+  setActive = (lang: string) => {
     if (this.selectedLanguage !== lang) {
       this.logger.addLog({
         context: "LanguageChange",

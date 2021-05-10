@@ -1,16 +1,15 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { ToastsModalComponent } from './toasts-modal.component';
+import { ToastsModalComponent } from "./toasts-modal.component";
 
-describe('ToastsModalComponent', () => {
+describe("ToastsModalComponent", () => {
   let component: ToastsModalComponent;
   let fixture: ComponentFixture<ToastsModalComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ToastsModalComponent ]
-    })
-    .compileComponents();
+      declarations: [ToastsModalComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('ToastsModalComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

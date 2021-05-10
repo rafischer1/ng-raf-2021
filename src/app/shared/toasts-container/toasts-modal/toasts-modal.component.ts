@@ -19,16 +19,17 @@ import { TranslocoService } from "@ngneat/transloco";
   styleUrls: ["./toasts-modal.component.scss"],
 })
 export class ToastsModalComponent implements OnInit, OnChanges {
+  @ViewChild("defaultToast", { static: true }) defaultToast: TemplateRef<any>;
+  @ViewChild("errorToast", { static: true }) errorToast: TemplateRef<any>;
+  @ViewChild("linkToast", { static: true }) linkToast: TemplateRef<any>;
+  @ViewChild("listToast", { static: true }) listToast: TemplateRef<any>;
+
   @Input() message: string;
   @Input() type: string = "";
   @Input() link: string;
 
   @Output() delete: EventEmitter<any> = new EventEmitter<any>();
 
-  @ViewChild("defaultToast", { static: true }) defaultToast: TemplateRef<any>;
-  @ViewChild("errorToast", { static: true }) errorToast: TemplateRef<any>;
-  @ViewChild("linkToast", { static: true }) linkToast: TemplateRef<any>;
-  @ViewChild("listToast", { static: true }) listToast: TemplateRef<any>;
   liveTemplate: TemplateRef<any>;
 
   toastClass: string = "";

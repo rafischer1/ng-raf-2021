@@ -1,6 +1,5 @@
 import { ContactGraphComponent } from "./contact-graph.component";
 import { createComponentFactory, Spectator } from "@ngneat/spectator";
-import { NO_ERRORS_SCHEMA } from "@angular/core";
 import { getTranslocoModule } from "../../../../transloco/transloco-testing.module";
 import { TranslocoService } from "@ngneat/transloco";
 

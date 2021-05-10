@@ -1,25 +1,27 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { InfoTabComponent } from './info-tab.component';
+import { createComponentFactory, Spectator } from "@ngneat/spectator";
+import { getTranslocoModule } from "../../../../../transloco/transloco-testing.module";
 
-describe('InfoTabComponent', () => {
-  let component: InfoTabComponent;
-  let fixture: ComponentFixture<InfoTabComponent>;
+describe("InfoTabComponent", () => {
+  let spectator: Spectator<InfoTabComponent>;
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ InfoTabComponent ]
-    })
-    .compileComponents();
+  const createComponent = createComponentFactory({
+    component: InfoTabComponent,
+    declarations: [],
+    providers: [],
+    schemas: [],
+    imports: [
+      getTranslocoModule(),
+    ],
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(InfoTabComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    spectator = createComponent();
+    spectator.component.ngOnInit();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it("should create", () => {
+    expect(spectator.component).toBeTruthy();
   });
+
 });
