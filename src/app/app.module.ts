@@ -33,6 +33,7 @@ import { BusinessCardPreviewComponent } from "./components/features/business-car
 import { FontFormComponent } from "./components/features/business-card/components/font-form/font-form.component";
 import { ImageFormComponent } from "./components/features/business-card/components/image-form/image-form.component";
 import { MatTabsModule } from "@angular/material/tabs";
+import { WidgetHeaderComponent } from './components/main/components/widget-header/widget-header.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { MatTabsModule } from "@angular/material/tabs";
     BusinessCardPreviewComponent,
     FontFormComponent,
     ImageFormComponent,
+    WidgetHeaderComponent,
   ],
   imports: [
     BrowserModule,
