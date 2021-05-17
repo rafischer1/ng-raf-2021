@@ -8,6 +8,7 @@ import { pieGraphSkillsData } from "./dashboard-data";
 })
 export class ContactGraphComponent implements OnInit {
   @Output() log: EventEmitter<any> = new EventEmitter<any>();
+  @Output() close: EventEmitter<any> = new EventEmitter<any>();
   constructor() {}
   pieGraphData: { name: string; value: number }[] = pieGraphSkillsData;
   ngOnInit(): void {}
