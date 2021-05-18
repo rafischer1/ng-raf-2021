@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { LoggerQuery } from "../../shared/logging-service/logger.query";
-import { Observable } from "rxjs";
+import { BehaviorSubject, Observable } from "rxjs";
 import { UntilDestroy } from "@ngneat/until-destroy";
 import { LoggerService } from "../../shared/logging-service/logger.service";
 
@@ -12,7 +12,12 @@ import { LoggerService } from "../../shared/logging-service/logger.service";
 })
 export class MainComponent implements OnInit {
   loggerActive$: Observable<boolean>;
-
+  contactGraphLocked: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
+    false
+  );
+  contactGraphClosed: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
+    false
+  );
   constructor(
     private loggerQuery: LoggerQuery,
     private loggerService: LoggerService
@@ -29,4 +34,19 @@ export class MainComponent implements OnInit {
       context: "ComponentActive",
       text: `${name.toUpperCase()} drag active`,
     });
+
+  lock(type: "skills") {
+    switch (type) {
+      case "skills":
+        this.contactGraphLocked.next(!this.contactGraphLocked.getValue());
+    }
+  }
+
+  close(type: "skills") {
+    console.log("close clicked", type)
+    switch (type) {
+      case "skills":
+        this.contactGraphClosed.next(!this.contactGraphClosed.getValue());
+    }
+  }
 }

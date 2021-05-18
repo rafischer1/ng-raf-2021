@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
+import { Observable } from "rxjs";
 
 @Component({
   selector: "raf-widget-header",
@@ -7,9 +8,9 @@ import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 })
 export class WidgetHeaderComponent implements OnInit {
   @Input() type: "skills";
-
+  @Input() locked$: Observable<boolean>;
   @Output() close: EventEmitter<any> = new EventEmitter<any>();
+  @Output() lock: EventEmitter<any> = new EventEmitter<any>();
   constructor() {}
-
   ngOnInit(): void {}
 }

@@ -1,1 +1,45 @@
 @import "./src/scss/variables";
+
+.widget-header {
+  background: #2d2d2d;
+  color: white;
+  height: 33px;
+  text-transform: uppercase;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+p {
+  border-radius: 100px;
+  background: $warn;
+  float: right;
+  height: 10px;
+  width: 10px;
+  margin: 5px;
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(105%);
+  }
+
+  &:active {
+    filter: brightness(120%);
+  }
+}
+
+h2 {
+  text-align: center;
+  margin-left: 5px;
+}
+
+.close-btn {
+  background: $error;
+}
+
+.locked {
+  background: #999999;
+}

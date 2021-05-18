@@ -1,5 +1,18 @@
 <div class="main">
-  <raf-contact-graph (log)="logComponentEnter('skills')"></raf-contact-graph>
+  <raf-contact-graph
+    *ngIf="!(contactGraphClosed.asObservable() | async)"
+    (log)="logComponentEnter('skills')"
+    [contactGraphLocked$]="contactGraphLocked.asObservable()"
+    (lock)="lock('skills')"
+    (close)="close('skills')"
+  ></raf-contact-graph>
   <raf-contact-links (log)="logComponentEnter('links')"></raf-contact-links>
   <raf-contact-info (log)="logComponentEnter('info')"></raf-contact-info>
+  <div class="main-side-bar-icons">
+    <raf-main-side-bar-icon
+      [type]="'skills'"
+      [active]="contactGraphClosed.asObservable() | async"
+      (open)="close('skills')"
+    ></raf-main-side-bar-icon>
+  </div>
 </div>

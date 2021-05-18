@@ -6,8 +6,10 @@
 >
   <raf-widget-header
     cdkDragHandle
-    (mousedown)="log.emit()"
+    [locked$]="contactGraphLocked$"
+    [type]="'skills'"
     (close)="close.emit()"
+    (lock)="lock.emit()"
   ></raf-widget-header>
   <ngx-charts-pie-chart
     [results]="pieGraphData"
