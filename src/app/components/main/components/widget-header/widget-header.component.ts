@@ -7,7 +7,7 @@ import { Observable } from "rxjs";
   styleUrls: ["./widget-header.component.scss"],
 })
 export class WidgetHeaderComponent implements OnInit {
-  @Input() type: "skills";
+  @Input() type: "skills" | "info" | "links";
   @Input() locked$: Observable<boolean>;
   @Output() close: EventEmitter<any> = new EventEmitter<any>();
   @Output() lock: EventEmitter<any> = new EventEmitter<any>();

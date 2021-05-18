@@ -18,6 +18,19 @@ export class MainComponent implements OnInit {
   contactGraphClosed: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
     false
   );
+  contactLinksLocked: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
+    false
+  );
+  contactLinksClosed: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
+    false
+  );
+  contactInfoLocked: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
+    false
+  );
+  contactInfoClosed: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
+    false
+  );
+
   constructor(
     private loggerQuery: LoggerQuery,
     private loggerService: LoggerService
@@ -35,18 +48,29 @@ export class MainComponent implements OnInit {
       text: `${name.toUpperCase()} drag active`,
     });
 
-  lock(type: "skills") {
+  lock(type: "skills" | "info" | "links") {
     switch (type) {
       case "skills":
         this.contactGraphLocked.next(!this.contactGraphLocked.getValue());
+        break;
+      case "links":
+        this.contactLinksLocked.next(!this.contactLinksLocked.getValue());
+        break;
+      case "info":
+        this.contactInfoLocked.next(!this.contactInfoLocked.getValue());
     }
   }
 
-  close(type: "skills") {
-    console.log("close clicked", type)
+  close(type: "skills" | "info" | "links") {
     switch (type) {
       case "skills":
         this.contactGraphClosed.next(!this.contactGraphClosed.getValue());
+        break;
+      case "links":
+        this.contactLinksClosed.next(!this.contactLinksClosed.getValue());
+        break;
+      case "info":
+        this.contactInfoClosed.next(!this.contactInfoClosed.getValue());
     }
   }
 }

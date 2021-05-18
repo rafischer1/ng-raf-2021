@@ -4,9 +4,13 @@
   cdkDragBoundary=".main"
   *transloco="let t; read: 'main'"
 >
-  <div class="widget-header" cdkDragHandle (mousedown)="log.emit()">
-    <h2>{{ t("info") }}</h2>
-  </div>
+  <raf-widget-header
+    cdkDragHandle
+    [locked$]="contactInfoLocked$"
+    [type]="'info'"
+    (close)="close.emit()"
+    (lock)="lock.emit()"
+  ></raf-widget-header>
   <div class="information">
     <div>
       <raf-info-tab

@@ -6,13 +6,35 @@
     (lock)="lock('skills')"
     (close)="close('skills')"
   ></raf-contact-graph>
-  <raf-contact-links (log)="logComponentEnter('links')"></raf-contact-links>
-  <raf-contact-info (log)="logComponentEnter('info')"></raf-contact-info>
+  <raf-contact-links
+    *ngIf="!(contactLinksClosed.asObservable() | async)"
+    (log)="logComponentEnter('links')"
+    [contactLinksLocked$]="contactLinksLocked.asObservable()"
+    (lock)="lock('links')"
+    (close)="close('links')"
+  ></raf-contact-links>
+  <raf-contact-info
+    *ngIf="!(contactInfoClosed.asObservable() | async)"
+    (log)="logComponentEnter('info')"
+    [contactInfoLocked$]="contactInfoLocked.asObservable()"
+    (lock)="lock('info')"
+    (close)="close('info')"
+  ></raf-contact-info>
   <div class="main-side-bar-icons">
     <raf-main-side-bar-icon
       [type]="'skills'"
       [active]="contactGraphClosed.asObservable() | async"
       (open)="close('skills')"
+    ></raf-main-side-bar-icon>
+    <raf-main-side-bar-icon
+      [type]="'links'"
+      [active]="contactLinksClosed.asObservable() | async"
+      (open)="close('links')"
+    ></raf-main-side-bar-icon>
+    <raf-main-side-bar-icon
+      [type]="'info'"
+      [active]="contactInfoClosed.asObservable() | async"
+      (open)="close('info')"
     ></raf-main-side-bar-icon>
   </div>
 </div>
