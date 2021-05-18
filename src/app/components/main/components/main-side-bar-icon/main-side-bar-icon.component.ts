@@ -45,7 +45,7 @@ import {
       state(
         "true",
         style({
-          // final CSS following animation: TO:
+          //  TO:
           opacity: 1,
           marginRight: "20px",
         })
@@ -63,10 +63,8 @@ import {
     ]),
   ],
 })
-export class MainSideBarIconComponent implements OnInit {
+export class MainSideBarIconComponent {
   @Input() type: "skills" | "info" | "links";
   @Input() active: boolean;
   @Output() open: EventEmitter<string> = new EventEmitter<string>();
-  constructor() {}
-  ngOnInit(): void {}
 }

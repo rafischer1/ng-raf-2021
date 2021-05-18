@@ -27,12 +27,6 @@ describe("WidgetHeaderComponent", () => {
     expect(spectator.component).toBeTruthy();
   });
 
-  // it("should emit event", () => {
-  //   const spy = jest.spyOn(spectator.component.log, "emit");
-  //   spectator.component.log.emit();
-  //   expect(spy).toHaveBeenCalled();
-  // });
-
   it("should have class 'widget-header", () => {
     expect(spectator.query(".widget-header")).toExist();
   });
