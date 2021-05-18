@@ -11,7 +11,6 @@ import {
   selector: "raf-main-side-bar-icon",
   template: `<div
     *transloco="let t; read: 'main'"
-    class="side-bar-icon"
     (click)="open.emit(type)"
     [@close]="active"
   >
@@ -19,7 +18,7 @@ import {
   </div>`,
   styles: [
     `
-      .side-bar-icon {
+      div {
         border: 1px solid black;
         border-radius: 5px;
         cursor: pointer;
@@ -31,11 +30,11 @@ import {
         padding: 0 3px;
       }
 
-      .side-bar-icon:hover {
+      div:hover {
         filter: brightness(120%);
       }
 
-      .side-bar-icon:active {
+      div:active {
         filter: brightness(150%);
       }
     `,
