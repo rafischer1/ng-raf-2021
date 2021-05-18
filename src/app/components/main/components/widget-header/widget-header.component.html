@@ -1,0 +1,9 @@
+<ng-container *transloco="let t; read: 'main'">
+  <div class="widget-header">
+    <h2>{{ t(type) }}</h2>
+    <div class="button-container">
+      <p [class.locked]="locked$ | async" (click)="lock.emit()"></p>
+      <p class="close-btn" (click)="close.emit()"></p>
+    </div>
+  </div>
+</ng-container>

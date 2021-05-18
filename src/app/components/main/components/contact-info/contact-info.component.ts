@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from "@angular/core";
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { BehaviorSubject, Observable } from "rxjs";
 
 @Component({
@@ -7,8 +7,11 @@ import { BehaviorSubject, Observable } from "rxjs";
   styleUrls: ["./contact-info.component.scss"],
 })
 export class ContactInfoComponent implements OnInit {
-  nameTabActive$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
+  @Input() contactInfoLocked$: Observable<boolean>;
   @Output() log: EventEmitter<any> = new EventEmitter<any>();
+  @Output() close: EventEmitter<any> = new EventEmitter<any>();
+  @Output() lock: EventEmitter<any> = new EventEmitter<any>();
+  nameTabActive$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
   constructor() {}
 
   ngOnInit(): void {}
