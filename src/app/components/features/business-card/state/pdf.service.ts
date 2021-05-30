@@ -1,6 +1,5 @@
 import { Injectable } from "@angular/core";
 import * as jsPDF from "jspdf";
-// @ts-ignore
 import html2canvas from "html2canvas";
 import { ToastsService } from "../../../../shared/toasts-container/state/toasts.service";
 

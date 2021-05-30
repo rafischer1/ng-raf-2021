@@ -3,8 +3,23 @@ import { ChecklistStatus } from "../../../state/checklist.model";
 
 @Component({
   selector: "raf-checklist-item",
-  templateUrl: "./checklist-item.component.html",
-  styleUrls: ["./checklist-item.component.scss"],
+  template: `<div>
+    <span>
+      <label>
+        <input
+          class="action"
+          (click)="toggleStatus()"
+          type="radio"
+          [checked]="currentStatus"
+        />
+      </label>
+    </span>
+    {{ item.action | titlecase }}:
+    <span>{{ currentStatus ? "Yes" : "No" }}</span>
+    <div *ngIf="item.description" style="margin-left: 10px">
+      {{ item.description }}
+    </div>
+  </div> `,
 })
 export class ChecklistItemComponent implements OnInit {
   @Input() item: ChecklistStatus;

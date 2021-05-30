@@ -24,7 +24,6 @@ describe("BusinessCardComponent", () => {
 
   beforeEach(() => {
     spectator = createComponent();
-    spectator.component.ngOnInit();
   });
 
   it("should create", () => {

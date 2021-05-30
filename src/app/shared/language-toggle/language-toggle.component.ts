@@ -3,19 +3,7 @@ import { TranslocoService } from "@ngneat/transloco";
 import { LoggerService } from "../logging-service/logger.service";
 import { ToastsService } from "../toasts-container/state/toasts.service";
 
-@Component({
-  selector: "raf-language-toggle",
-  template: `<div class="language-toggle-container">
-    <ng-container *ngFor="let l of langs">
-      <raf-language-icon
-        [icon]="l.toUpperCase()"
-        [active]="selectedLanguage === l"
-        (select)="setActive(l)"
-      ></raf-language-icon>
-    </ng-container>
-  </div> `,
-  styles: [
-    `
+const styles = [`
       div.language-toggle-container {
         display: flex;
         flex-direction: row;
@@ -28,8 +16,20 @@ import { ToastsService } from "../toasts-container/state/toasts.service";
       div.language-toggle-container:hover {
         border: 1px solid #ededed;
       }
-    `,
-  ],
+    `];
+
+@Component({
+  selector: "raf-language-toggle",
+  template: `<div class="language-toggle-container">
+    <ng-container *ngFor="let l of langs">
+      <raf-language-icon
+        [icon]="l.toUpperCase()"
+        [active]="selectedLanguage === l"
+        (select)="setActive(l)"
+      ></raf-language-icon>
+    </ng-container>
+  </div> `,
+  styles: styles,
 })
 export class LanguageToggleComponent implements OnInit {
   constructor(

@@ -12,7 +12,16 @@ import { LoggerService } from "../logging-service/logger.service";
 
 @Component({
   selector: "raf-checklist-container",
-  templateUrl: "./checklist-container.component.html",
+  template: `<div class="{{ wrapperClass }} checklist-container">
+    <div class="modal-container">
+      <ng-container *ngIf="active$ | async" (change)="toggleWrapperClass()">
+        <raf-checklist
+          [checklist]="checklist$ | async"
+          (destroy)="closeContainer()"
+        ></raf-checklist>
+      </ng-container>
+    </div>
+  </div> `,
   styleUrls: ["./checklist-container.component.scss"],
 })
 export class ChecklistContainerComponent

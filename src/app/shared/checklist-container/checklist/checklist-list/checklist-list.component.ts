@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, Input } from "@angular/core";
 import { ChecklistStatus } from "../../state/checklist.model";
 
 @Component({
@@ -9,12 +9,8 @@ import { ChecklistStatus } from "../../state/checklist.model";
     </div>`,
   styleUrls: ["./checklist-list.component.scss"],
 })
-export class ChecklistListComponent implements OnInit {
+export class ChecklistListComponent {
   @Input() title: string = "";
   @Input() list: ChecklistStatus[] = [];
   @Input() groupIndex: number = 0;
-
-  constructor() {}
-
-  ngOnInit(): void {}
 }
