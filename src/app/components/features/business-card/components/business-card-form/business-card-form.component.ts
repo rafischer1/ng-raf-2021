@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { BusinessCardService } from "../../state/business-card.service";
 import * as faker from "faker";
 import { BusinessCardImage } from "../../state/business-card.model";
@@ -8,10 +8,8 @@ import { BusinessCardImage } from "../../state/business-card.model";
   templateUrl: "./business-card-form.component.html",
   styleUrls: ["./business-card-form.component.scss"],
 })
-export class BusinessCardFormComponent implements OnInit {
+export class BusinessCardFormComponent {
   constructor(private service: BusinessCardService) {}
-
-  ngOnInit(): void {}
 
   backgroundColorChange = (ev: any) =>
     this.service.updateBackground(ev.target?.value);

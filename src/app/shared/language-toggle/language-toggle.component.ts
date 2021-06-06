@@ -1,9 +1,10 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, DoCheck, OnInit } from "@angular/core";
 import { TranslocoService } from "@ngneat/transloco";
 import { LoggerService } from "../logging-service/logger.service";
 import { ToastsService } from "../toasts-container/state/toasts.service";
 
-const styles = [`
+const styles = [
+  `
       div.language-toggle-container {
         display: flex;
         flex-direction: row;
@@ -16,7 +17,8 @@ const styles = [`
       div.language-toggle-container:hover {
         border: 1px solid #ededed;
       }
-    `];
+    `,
+];
 
 @Component({
   selector: "raf-language-toggle",
@@ -31,20 +33,24 @@ const styles = [`
   </div> `,
   styles: styles,
 })
-export class LanguageToggleComponent implements OnInit {
+export class LanguageToggleComponent implements OnInit, DoCheck {
   constructor(
     private translate: TranslocoService,
     private logger: LoggerService,
     private toast: ToastsService
   ) {}
+
   selectedLanguage: string;
+  prevLanguage: string;
   langs: string[] = ["en", "es", "pt", "de", "fr"];
 
   ngOnInit(): void {
     this.selectedLanguage = this.translate.getActiveLang();
+    this.prevLanguage = this.translate.getActiveLang();
   }
 
   setActive = (lang: string) => {
+    this.prevLanguage = this.selectedLanguage;
     if (this.selectedLanguage !== lang) {
       this.logger.addLog({
         context: "LanguageChange",
@@ -63,4 +69,14 @@ export class LanguageToggleComponent implements OnInit {
       );
     }
   };
+
+  // TESTING IMPLEMENTATION OF A SIMPLE "DO CHECK" HOOK
+  ngDoCheck(): void {
+    if (this.prevLanguage !== this.selectedLanguage) {
+      this.logger.addLog({
+        context: "Do Check Hook Called",
+        text: `Language Change Detected (Test)`,
+      });
+    }
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 import {
   fontFamilyValueSet,
   fontWeightValueSet,
@@ -9,7 +9,7 @@ import {
   templateUrl: "./font-form.component.html",
   styleUrls: ["./font-form.component.scss"],
 })
-export class FontFormComponent implements OnInit {
+export class FontFormComponent {
   @Input() type: "primary" | "secondary" | "tertiary";
   fontFamilies: string[] = fontFamilyValueSet;
   fontWeights: string[] = fontWeightValueSet;
@@ -23,9 +23,6 @@ export class FontFormComponent implements OnInit {
     type: "primary" | "secondary" | "tertiary";
     value: any;
   }>();
-  constructor() {}
-
-  ngOnInit(): void {}
 
   fontSelect = (ev: any) =>
     this.fontEvent.emit({

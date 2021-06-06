@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { ToastsService } from "../../../shared/toasts-container/state/toasts.service";
 import { TranslocoService } from "@ngneat/transloco";
 import { LoggerService } from "../../../shared/logging-service/logger.service";
@@ -21,15 +21,13 @@ import { LoggerService } from "../../../shared/logging-service/logger.service";
     `,
   ],
 })
-export class ToastsWebComponent implements OnInit {
+export class ToastsWebComponent {
   toastTypes: string[] = ["success", "info", "warn", "alert", "link"];
   constructor(
     private translate: TranslocoService,
     private toasts: ToastsService,
     private logger: LoggerService
   ) {}
-
-  ngOnInit(): void {}
 
   showToast = (type: string) => {
     this.logger.addLog({
