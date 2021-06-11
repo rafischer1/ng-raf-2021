@@ -1,9 +1,9 @@
-import { Component, HostBinding, Input } from "@angular/core";
+import { Component, Input } from "@angular/core";
 
 @Component({
   selector: "[spinner]",
   template: `
-    <div class="container" [class.disabled]="disabled">
+    <div class="container">
       <div *ngIf="loading" class="loader"></div>
       <ng-content></ng-content>
     </div>
@@ -28,10 +28,6 @@ import { Component, HostBinding, Input } from "@angular/core";
         animation: spin 1.5s linear infinite;
       }
 
-      .disabled {
-        cursor: not-allowed;
-      }
-
       @-webkit-keyframes spin {
         0% {
           -webkit-transform: rotate(0deg);
@@ -53,8 +49,5 @@ import { Component, HostBinding, Input } from "@angular/core";
   ],
 })
 export class SpinnerComponent {
-  @Input()
-  @HostBinding("disabled")
-  disabled = false;
   @Input() loading: boolean = false;
 }
