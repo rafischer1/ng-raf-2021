@@ -14,6 +14,7 @@ import { PdfService } from "../../state/pdf.service";
 export class BusinessCardPreviewComponent implements OnInit {
   @ViewChild("card", { static: false }) cardRef: ElementRef;
   card$: Observable<BusinessCard>;
+  randomizeClicked: boolean = false;
 
   constructor(
     private query: BusinessCardQuery,
@@ -26,7 +27,13 @@ export class BusinessCardPreviewComponent implements OnInit {
     this.card$ = this.query.select((store) => store.card).pipe();
   }
 
-  reset = () => this.service.reset();
+  reset = () => {
+    this.randomizeClicked = true;
+    setTimeout(() => {
+      this.service.reset();
+      this.randomizeClicked = false;
+    }, 1000);
+  };
 
   export = () => this.pdf.pdfDownload(this.cardRef.nativeElement);
 }

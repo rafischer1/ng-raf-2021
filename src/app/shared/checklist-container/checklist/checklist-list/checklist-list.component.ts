@@ -10,7 +10,7 @@ import { ChecklistStatus } from "../../state/checklist.model";
   styleUrls: ["./checklist-list.component.scss"],
 })
 export class ChecklistListComponent {
-  @Input() title: string = "";
+  @Input() title = "";
   @Input() list: ChecklistStatus[] = [];
-  @Input() groupIndex: number = 0;
+  @Input() groupIndex  = 0;
 }

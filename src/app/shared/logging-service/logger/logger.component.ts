@@ -10,16 +10,11 @@ import { LoggerService } from "../logger.service";
   templateUrl: "./logger.component.html",
   styleUrls: ["./logger.component.scss"],
 })
-export class LoggerComponent implements OnInit {
-  logs$: Observable<Log[]>;
-  active$: Observable<boolean>;
+export class LoggerComponent {
+  logs$ = this.query.select((state) => state.logs);
+  active$ = this.query.select((state) => state.active).pipe();
 
   constructor(private query: LoggerQuery, private service: LoggerService) {}
-
-  ngOnInit(): void {
-    this.active$ = this.query.select((state) => state.active).pipe();
-    this.logs$ = this.query.select((state) => state.logs);
-  }
 
   closeLogger = () => this.service.toggleStore();
 

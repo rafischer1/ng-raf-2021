@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 import {
   animate,
   state,
@@ -39,12 +39,10 @@ import { Observable } from "rxjs";
     ]),
   ],
 })
-export class InfoTabComponent implements OnInit {
-  @Input() active$: Observable<boolean>;
-  @Input() title: string;
+export class InfoTabComponent {
+  @Input() active$!: Observable<boolean>;
+  @Input() title!: string;
 
-  @Output() toggle: EventEmitter<any> = new EventEmitter<any>();
+  @Output() toggle = new EventEmitter<any>();
   constructor() {}
-
-  ngOnInit(): void {}
 }

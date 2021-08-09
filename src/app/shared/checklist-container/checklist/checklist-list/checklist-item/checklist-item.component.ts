@@ -22,8 +22,8 @@ import { ChecklistStatus } from "../../../state/checklist.model";
   </div> `,
 })
 export class ChecklistItemComponent implements OnInit {
-  @Input() item: ChecklistStatus;
-  currentStatus: boolean = false;
+  @Input() item!: ChecklistStatus;
+  currentStatus  = false;
   constructor() {}
 
   ngOnInit(): void {

@@ -9,10 +9,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
   </ng-container>`,
   styleUrls: ["./toast-button.component.scss"],
 })
-export class ToastButtonComponent implements OnInit {
+export class ToastButtonComponent {
   @Input() type: string = "";
   @Output() show: EventEmitter<any> = new EventEmitter<any>();
-  constructor() {}
-
-  ngOnInit(): void {}
 }

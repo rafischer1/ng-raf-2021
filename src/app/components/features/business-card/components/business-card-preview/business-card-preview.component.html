@@ -1,5 +1,13 @@
 <div class="button-container" *transloco="let t; read: 'businessCard'">
-  <button (click)="reset()" id="resetBtn">{{ t("randomize/reset") }}</button>
+  <button
+    spinner
+    [loading]="randomizeClicked"
+    [disabled]="randomizeClicked"
+    (click)="reset()"
+    id="resetBtn"
+  >
+    {{ t("randomize/reset") }}
+  </button>
   <button id="exportBtn" (click)="export()">{{ t("exportPDF") }}</button>
 </div>
 
