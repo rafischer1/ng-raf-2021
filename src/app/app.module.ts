@@ -36,6 +36,7 @@ import { MatTabsModule } from "@angular/material/tabs";
 import { WidgetHeaderComponent } from './components/main/components/widget-header/widget-header.component';
 import { MainSideBarIconComponent } from './components/main/components/main-side-bar-icon/main-side-bar-icon.component';
 import { SpinnerComponent } from "./shared/spinner/spinner.component";
+import { CommonModule } from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -79,6 +80,7 @@ import { SpinnerComponent } from "./shared/spinner/spinner.component";
     PieChartModule,
     DragDropModule,
     MatTabsModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent],

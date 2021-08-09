@@ -2,10 +2,7 @@ import {
   AfterContentChecked,
   ChangeDetectorRef,
   Component,
-  OnInit,
 } from "@angular/core";
-import { Observable } from "rxjs";
-import { ChecklistObject } from "./state/checklist.model";
 import { ChecklistQuery } from "./state/checklist.query";
 import { ChecklistService } from "./state/checklist.service";
 import { LoggerService } from "../logging-service/logger.service";
@@ -24,11 +21,10 @@ import { LoggerService } from "../logging-service/logger.service";
   </div> `,
   styleUrls: ["./checklist-container.component.scss"],
 })
-export class ChecklistContainerComponent
-  implements OnInit, AfterContentChecked {
+export class ChecklistContainerComponent implements AfterContentChecked {
   wrapperClass: string = "hidden-wrapper";
-  checklist$: Observable<ChecklistObject[]> | null | undefined;
-  active$: Observable<boolean> | undefined;
+  checklist$ = this.query.select((state) => state.checklist).pipe();
+  active$ = this.query.select((state) => state.active);
 
   constructor(
     private query: ChecklistQuery,
@@ -36,11 +32,6 @@ export class ChecklistContainerComponent
     private service: ChecklistService,
     private loggerService: LoggerService
   ) {}
-
-  ngOnInit(): void {
-    this.checklist$ = this.query.select((state) => state.checklist).pipe();
-    this.active$ = this.query.select((state) => state.active);
-  }
 
   toggleWrapperClass() {
     this.wrapperClass = "modal-wrapper";
