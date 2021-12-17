@@ -1,11 +1,10 @@
-import { ComponentFixture, TestBed } from "@angular/core/testing";
-
 import { LoggerComponent } from "./logger.component";
 import { createComponentFactory, Spectator } from "@ngneat/spectator";
-import { of } from "rxjs";
+import { LoggerStore } from "../logger.store";
 
 describe("LoggerComponent", () => {
   let spectator: Spectator<LoggerComponent>;
+  let store: LoggerStore
 
   const createComponent = createComponentFactory({
     component: LoggerComponent,
