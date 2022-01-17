@@ -27,3 +27,5 @@
 [NG-Mocks Testing](https://www.npmjs.com/package/ng-mocks)
 
 [CDK Drag](https://material.angular.io/cdk/drag-drop/overview)
+
+[Skeleton Loader](https://www.npmjs.com/package/ngx-skeleton-loader)

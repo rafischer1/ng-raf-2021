@@ -33,10 +33,11 @@ import { BusinessCardPreviewComponent } from "./components/features/business-car
 import { FontFormComponent } from "./components/features/business-card/components/font-form/font-form.component";
 import { ImageFormComponent } from "./components/features/business-card/components/image-form/image-form.component";
 import { MatTabsModule } from "@angular/material/tabs";
-import { WidgetHeaderComponent } from './components/main/components/widget-header/widget-header.component';
-import { MainSideBarIconComponent } from './components/main/components/main-side-bar-icon/main-side-bar-icon.component';
+import { WidgetHeaderComponent } from "./components/main/components/widget-header/widget-header.component";
+import { MainSideBarIconComponent } from "./components/main/components/main-side-bar-icon/main-side-bar-icon.component";
 import { SpinnerComponent } from "./shared/spinner/spinner.component";
 import { CommonModule } from "@angular/common";
+import { NgxSkeletonLoaderModule } from "ngx-skeleton-loader";
 
 @NgModule({
   declarations: [
@@ -65,7 +66,7 @@ import { CommonModule } from "@angular/common";
     ImageFormComponent,
     WidgetHeaderComponent,
     MainSideBarIconComponent,
-    SpinnerComponent
+    SpinnerComponent,
   ],
   imports: [
     BrowserModule,
@@ -80,7 +81,8 @@ import { CommonModule } from "@angular/common";
     PieChartModule,
     DragDropModule,
     MatTabsModule,
-    CommonModule
+    CommonModule,
+    NgxSkeletonLoaderModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
