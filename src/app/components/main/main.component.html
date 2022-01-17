@@ -1,4 +1,10 @@
 <div class="main">
+  <ngx-skeleton-loader
+    *ngIf="!(loggerActive$ | async)"
+    count="2"
+    appearance="circle"
+    animation="pulse"
+  ></ngx-skeleton-loader>
   <raf-contact-graph
     *ngIf="!(contactGraphClosed.asObservable() | async)"
     (log)="logComponentEnter('skills')"
