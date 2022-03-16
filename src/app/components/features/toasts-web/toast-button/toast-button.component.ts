@@ -10,6 +10,6 @@ import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
   styleUrls: ["./toast-button.component.scss"],
 })
 export class ToastButtonComponent {
-  @Input() type: string = "";
-  @Output() show: EventEmitter<any> = new EventEmitter<any>();
+  @Input() type = "";
+  @Output() show = new EventEmitter<any>();
 }
