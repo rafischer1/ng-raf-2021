@@ -1,4 +1,4 @@
-import { Component, DoCheck, OnInit } from "@angular/core";
+import { Component, DoCheck } from "@angular/core";
 import { TranslocoService } from "@ngneat/transloco";
 import { LoggerService } from "../logging-service/logger.service";
 import { ToastsService } from "../toasts-container/state/toasts.service";
@@ -33,21 +33,17 @@ const styles = [
   </div> `,
   styles: styles,
 })
-export class LanguageToggleComponent implements OnInit, DoCheck {
+export class LanguageToggleComponent implements DoCheck {
   constructor(
     private translate: TranslocoService,
     private logger: LoggerService,
     private toast: ToastsService
   ) {}
-
-  selectedLanguage: string;
-  prevLanguage: string;
+  
   langs: string[] = ["en", "es", "pt", "de", "fr"];
-
-  ngOnInit(): void {
-    this.selectedLanguage = this.translate.getActiveLang();
-    this.prevLanguage = this.translate.getActiveLang();
-  }
+  selectedLanguage = this.translate.getActiveLang();
+  prevLanguage = this.translate.getActiveLang();
+  
 
   setActive = (lang: string) => {
     this.prevLanguage = this.selectedLanguage;
