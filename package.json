@@ -24,7 +24,7 @@
     "@angular/router": "~12.2.0",
     "@datorama/akita": "^1.11.0",
     "@ngneat/forms-manager": "^2.3.0",
-    "@ngneat/transloco": "^2.20.1",
+    "@ngneat/transloco": "^4.0.0",
     "@ngneat/until-destroy": "^8.0.4",
     "@swimlane/ngx-charts": "^17.0.1",
     "@types/faker": "^5.5.3",
