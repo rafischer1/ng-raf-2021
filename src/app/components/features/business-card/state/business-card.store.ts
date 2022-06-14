@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { resetActive, Store, StoreConfig } from "@datorama/akita";
+import { Query, resetActive, Store, StoreConfig } from "@datorama/akita";
 import { BusinessCard } from "./business-card.model";
 import * as faker from "faker";
 
@@ -55,4 +55,11 @@ export class BusinessCardStore extends Store<BusinessCardState> {
     this.update((_) => {
       return { card: createInitialCard() };
     });
+}
+
+@Injectable({ providedIn: "root" })
+export class BusinessCardQuery extends Query<BusinessCardState> {
+  constructor(protected store: BusinessCardStore) {
+    super(store);
+  }
 }
