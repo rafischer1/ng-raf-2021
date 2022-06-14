@@ -1,8 +1,11 @@
-import { Component } from "@angular/core";
+import { Component, Injector, SecurityContext } from "@angular/core";
 import { LoggerQuery } from "../../shared/logging-service/logger.query";
 import { BehaviorSubject } from "rxjs";
 import { UntilDestroy } from "@ngneat/until-destroy";
 import { LoggerService } from "../../shared/logging-service/logger.service";
+import { createCustomElement } from "@angular/elements";
+import { AlertComponent } from "../elements/alert/alert.component";
+import { DomSanitizer } from "@angular/platform-browser";
 
 @UntilDestroy()
 @Component({
@@ -20,10 +23,24 @@ export class MainComponent {
   contactInfoLocked = new BehaviorSubject<boolean>(false);
   contactInfoClosed = new BehaviorSubject<boolean>(false);
 
+  content = null;
   constructor(
     private loggerQuery: LoggerQuery,
-    private loggerService: LoggerService
-  ) {}
+    private loggerService: LoggerService,
+    injector: Injector,
+    domSanitizer: DomSanitizer
+  ) {
+    const AlertElement = createCustomElement(AlertComponent, { injector });
+    customElements.define("alert-element", AlertElement);
+    setTimeout(() => {
+      this.content = domSanitizer.sanitize(
+        SecurityContext.HTML,
+        domSanitizer.bypassSecurityTrustHtml(
+          `<alert-element [message]='"Dynamic render"'></alert-element>`
+        )
+      );
+    }, 1000);
+  }
 
   logComponentEnter = (name: string) =>
     this.loggerService.addLog({

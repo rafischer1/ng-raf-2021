@@ -38,6 +38,7 @@ import { MainSideBarIconComponent } from "./components/main/components/main-side
 import { SpinnerComponent } from "./shared/spinner/spinner.component";
 import { CommonModule } from "@angular/common";
 import { NgxSkeletonLoaderModule } from "ngx-skeleton-loader";
+import { AlertComponent } from "./components/elements/alert/alert.component";
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { NgxSkeletonLoaderModule } from "ngx-skeleton-loader";
     WidgetHeaderComponent,
     MainSideBarIconComponent,
     SpinnerComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,

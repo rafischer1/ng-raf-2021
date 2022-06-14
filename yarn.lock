@@ -243,6 +243,13 @@
   dependencies:
     tslib "^2.3.0"
 
+"@angular/elements@^13.3.6":
+  version "13.3.6"
+  resolved "https://registry.yarnpkg.com/@angular/elements/-/elements-13.3.6.tgz#4e1c1966a99c782a00e98772334d3075748bfb0a"
+  integrity sha512-yMHvmxj6aJSjbbzc59AQJJmd0jB2xw/rkYNpazZ4aUXWmGQ+NM9aVBEfJAb3pXdP04SWruuclZvZ3DePWzBVVA==
+  dependencies:
+    tslib "^2.3.0"
+
 "@angular/forms@~13.3.1":
   version "13.3.1"
   resolved "https://registry.yarnpkg.com/@angular/forms/-/forms-13.3.1.tgz#2ae8882eab248292d9a9c288dcce1b5d721455ed"
@@ -3153,6 +3160,11 @@
     "@webassemblyjs/ast" "1.9.0"
     "@webassemblyjs/wast-parser" "1.9.0"
     "@xtuc/long" "4.2.2"
+
+"@webcomponents/custom-elements@^1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@webcomponents/custom-elements/-/custom-elements-1.5.0.tgz#7d07ff4979312dda167cc0a2b7586e76dc1cf6ab"
+  integrity sha512-c+7jPQCs9h/BYVcZ2Kna/3tsl3A/9EyXfvWjp5RiTDm1OpTcbZaCa1z4RNcTe/hUtXaqn64JjNW1yrWT+rZ8gg==
 
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
