@@ -39,11 +39,10 @@ export class LanguageToggleComponent implements DoCheck {
     private logger: LoggerService,
     private toast: ToastsService
   ) {}
-  
+
   langs: string[] = ["en", "es", "pt", "de", "fr"];
   selectedLanguage = this.translate.getActiveLang();
   prevLanguage = this.translate.getActiveLang();
-  
 
   setActive = (lang: string) => {
     this.prevLanguage = this.selectedLanguage;
