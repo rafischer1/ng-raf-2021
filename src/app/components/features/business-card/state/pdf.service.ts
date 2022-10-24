@@ -11,9 +11,28 @@ export class PdfService {
 
   private static toPdf(html: HTMLCanvasElement) {
     const imgData = html.toDataURL("image/jpg");
+    const setDimensions: {
+      width: number;
+      height: number;
+      x: number;
+      y: number;
+    } = {
+      width: 217,
+      height: 130,
+      x: 0,
+      y: 0,
+    };
+    // * data URI .small() method not compatible with all browser
     imgData.small();
     const doc = new jsPDF.jsPDF("l", "mm", "a4");
-    doc.addImage(imgData, "JPG", 0, 0, 217, 130);
+    doc.addImage(
+      imgData,
+      "JPG",
+      setDimensions.x,
+      setDimensions.y,
+      setDimensions.width,
+      setDimensions.height
+    );
     doc.save("Business Card");
   }
 

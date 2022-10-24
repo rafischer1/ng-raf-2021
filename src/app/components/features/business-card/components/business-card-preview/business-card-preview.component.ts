@@ -21,6 +21,7 @@ export class BusinessCardPreviewComponent {
     private pdf: PdfService
   ) {}
 
+  // * resets card to randomized starting status
   reset = () => {
     this.randomizeClicked = true;
     setTimeout(() => {
@@ -29,5 +30,6 @@ export class BusinessCardPreviewComponent {
     }, 1000);
   };
 
+  // * triggers pdf service download
   export = () => this.pdf.pdfDownload(this.cardRef.nativeElement);
 }
