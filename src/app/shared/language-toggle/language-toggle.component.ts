@@ -68,10 +68,10 @@ export class LanguageToggleComponent implements DoCheck {
   // TESTING IMPLEMENTATION OF A SIMPLE "DO CHECK" HOOK
   ngDoCheck(): void {
     if (this.prevLanguage !== this.selectedLanguage) {
-      // this.logger.addLog({
-      //   context: "Do Check Hook Called",
-      //   text: `Language Change Detected (Test)`,
-      // });
+      this.logger.addLog({
+        context: "Do Check Hook Called",
+        text: `Language Change Detected (Test)`,
+      });
     }
   }
 }
