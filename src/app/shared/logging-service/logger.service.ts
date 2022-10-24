@@ -41,6 +41,7 @@ export class LoggerService {
     console.log("%c " + clg, "color: limegreen; font-family: monospace;");
   };
 
+  // * create time string for log display
   setTime = (): string => {
     const date = new Date(Date.now());
     return new Intl.DateTimeFormat(this.translate.getActiveLang(), {
