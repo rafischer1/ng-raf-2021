@@ -15,7 +15,7 @@ import { DomSanitizer } from "@angular/platform-browser";
   encapsulation: ViewEncapsulation.None,
 })
 export class MainComponent {
-  // Assignment automatic on component init lifecycle
+  // * Assignment automatic on component init lifecycle
   loggerActive$ = this.loggerQuery.select((state) => state.active).pipe();
   contactGraphLocked = new BehaviorSubject<boolean>(false);
   contactGraphClosed = new BehaviorSubject<boolean>(false);
