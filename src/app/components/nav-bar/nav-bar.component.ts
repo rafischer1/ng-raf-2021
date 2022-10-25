@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component } from "@angular/core";
 import { ChecklistService } from "../../shared/checklist-container/state/checklist.service";
 import { Router } from "@angular/router";
 import { LoggerService } from "../../shared/logging-service/logger.service";
@@ -9,15 +9,13 @@ import { TranslocoService } from "@ngneat/transloco";
   templateUrl: "./nav-bar.component.html",
   styleUrls: ["./nav-bar.component.scss"],
 })
-export class NavBarComponent implements OnInit {
+export class NavBarComponent {
   constructor(
     private checklistService: ChecklistService,
     private router: Router,
     private loggerService: LoggerService,
     private translate: TranslocoService
   ) {}
-
-  ngOnInit(): void {}
 
   openChecklist = () => {
     this.checklistService.open();

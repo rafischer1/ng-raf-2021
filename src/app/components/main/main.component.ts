@@ -1,4 +1,4 @@
-import { Component, Injector, SecurityContext } from "@angular/core";
+import { Component, Injector, ViewEncapsulation } from "@angular/core";
 import { LoggerQuery } from "../../shared/logging-service/logger.query";
 import { BehaviorSubject } from "rxjs";
 import { UntilDestroy } from "@ngneat/until-destroy";
@@ -12,6 +12,7 @@ import { DomSanitizer } from "@angular/platform-browser";
   selector: "raf-main",
   templateUrl: "./main.component.html",
   styleUrls: ["./main.component.scss"],
+  encapsulation: ViewEncapsulation.None,
 })
 export class MainComponent {
   // Assignment automatic on component init lifecycle
@@ -27,19 +28,25 @@ export class MainComponent {
   constructor(
     private loggerQuery: LoggerQuery,
     private loggerService: LoggerService,
-    injector: Injector,
-    domSanitizer: DomSanitizer
+    private injector: Injector,
+    private domSanitizer: DomSanitizer
   ) {
-    const AlertElement = createCustomElement(AlertComponent, { injector });
+    const AlertElement = createCustomElement(AlertComponent, {
+      injector: this.injector,
+    });
     customElements.define("alert-element", AlertElement);
+    // setTimeout(() => {
+    //   this.content = `<alert-element [message]="Hi">Render Me</alert-element>`;
+    // }, 1000);
     setTimeout(() => {
-      this.content = domSanitizer.sanitize(
-        SecurityContext.HTML,
-        domSanitizer.bypassSecurityTrustHtml(
-          `<alert-element [message]='"Dynamic render"'></alert-element>`
-        )
-      );
+      this.content = `<h3 class="demo">Render Me</h3>`;
     }, 1000);
+
+    // setTimeout(() => {
+    //   this.content = this.domSanitizer.bypassSecurityTrustHtml(
+    //     `<alert-element message="Hi">Render Me</alert-element>`
+    //   );
+    // }, 1000);
   }
 
   logComponentEnter = (name: string) =>

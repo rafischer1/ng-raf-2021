@@ -6,6 +6,7 @@ import {
 import { ChecklistQuery } from "./state/checklist.query";
 import { ChecklistService } from "./state/checklist.service";
 import { LoggerService } from "../logging-service/logger.service";
+import { shareReplay } from "rxjs/operators";
 
 @Component({
   selector: "raf-checklist-container",
@@ -22,8 +23,10 @@ import { LoggerService } from "../logging-service/logger.service";
   styleUrls: ["./checklist-container.component.scss"],
 })
 export class ChecklistContainerComponent implements AfterContentChecked {
-  wrapperClass: string = "hidden-wrapper";
-  checklist$ = this.query.select((state) => state.checklist).pipe();
+  wrapperClass = "hidden-wrapper";
+  checklist$ = this.query
+    .select((state) => state.checklist)
+    .pipe(shareReplay(1));
   active$ = this.query.select((state) => state.active);
 
   constructor(

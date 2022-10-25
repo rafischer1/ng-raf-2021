@@ -1,10 +1,10 @@
 <div class="main">
-  <ngx-skeleton-loader
-    *ngIf="!(loggerActive$ | async)"
-    count="2"
-    appearance="circle"
-    animation="pulse"
-  ></ngx-skeleton-loader>
+  <!--  <ngx-skeleton-loader-->
+  <!--    *ngIf="!(loggerActive$ | async)"-->
+  <!--    count="4"-->
+  <!--    appearance="circle"-->
+  <!--    animation="pulse"-->
+  <!--  ></ngx-skeleton-loader>-->
   <raf-contact-graph
     *ngIf="!(contactGraphClosed.asObservable() | async)"
     (log)="logComponentEnter('skills')"
@@ -44,5 +44,5 @@
     ></raf-main-side-bar-icon>
   </div>
 </div>
-<ng-container>{{ content }}</ng-container>
+<ng-container><div [innerHTML]="content"></div></ng-container>
 <!--<alert-element [message]="'wussup'"></alert-element>-->
