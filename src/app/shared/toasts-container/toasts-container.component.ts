@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { ToastsService } from "./state/toasts.service";
-import { ToastsQuery } from "./state/toasts.query";
+import { ToastsQuery } from "./state/toasts.store";
 
 @Component({
   selector: "raf-toasts-container",
