@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Store, StoreConfig } from "@datorama/akita";
+import { Query, Store, StoreConfig } from "@datorama/akita";
 import { Toast } from "./toasts.service";
 
 export interface ToastsState {
@@ -17,5 +17,12 @@ export function createInitialState(): ToastsState {
 export class ToastsStore extends Store<ToastsState> {
   constructor() {
     super(createInitialState());
+  }
+}
+
+@Injectable({ providedIn: "root" })
+export class ToastsQuery extends Query<ToastsState> {
+  constructor(protected store: ToastsStore) {
+    super(store);
   }
 }

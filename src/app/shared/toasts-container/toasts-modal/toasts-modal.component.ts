@@ -24,11 +24,11 @@ export class ToastsModalComponent implements OnInit, OnChanges {
   @ViewChild("linkToast", { static: true }) linkToast: TemplateRef<any>;
   @ViewChild("listToast", { static: true }) listToast: TemplateRef<any>;
 
-  @Input() message: string;
+  @Input() message!: string;
   @Input() type: string = "";
   @Input() link: string;
 
-  @Output() delete: EventEmitter<any> = new EventEmitter<any>();
+  @Output() delete = new EventEmitter<void>();
 
   liveTemplate: TemplateRef<any>;
 
