@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Store, StoreConfig } from "@datorama/akita";
+import { Query, Store, StoreConfig } from "@datorama/akita";
 import { Log } from "./log.interface";
 
 export interface LoggerState {
@@ -19,5 +19,12 @@ export function createInitialState(): LoggerState {
 export class LoggerStore extends Store<LoggerState> {
   constructor() {
     super(createInitialState());
+  }
+}
+
+@Injectable({ providedIn: "root" })
+export class LoggerQuery extends Query<LoggerState> {
+  constructor(protected store: LoggerStore) {
+    super(store);
   }
 }

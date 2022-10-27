@@ -1,11 +1,11 @@
 import { Component, Injector, ViewEncapsulation } from "@angular/core";
-import { LoggerQuery } from "../../shared/logging-service/logger.query";
 import { BehaviorSubject } from "rxjs";
 import { UntilDestroy } from "@ngneat/until-destroy";
 import { LoggerService } from "../../shared/logging-service/logger.service";
 import { createCustomElement } from "@angular/elements";
 import { AlertComponent } from "../elements/alert/alert.component";
 import { DomSanitizer } from "@angular/platform-browser";
+import { LoggerQuery } from "../../shared/logging-service/logger.store";
 
 @UntilDestroy()
 @Component({
