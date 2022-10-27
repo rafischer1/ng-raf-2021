@@ -49,5 +49,5 @@ import { Component, Input } from "@angular/core";
   ],
 })
 export class SpinnerComponent {
-  @Input() loading: boolean = false;
+  @Input() loading = false;
 }

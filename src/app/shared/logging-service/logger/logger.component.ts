@@ -1,9 +1,6 @@
-import { Component, OnInit } from "@angular/core";
-import { interval, Observable } from "rxjs";
-import { Log } from "../log.interface";
-import { LoggerQuery } from "../logger.query";
-import { takeUntil, throttle } from "rxjs/operators";
+import { Component } from "@angular/core";
 import { LoggerService } from "../logger.service";
+import { LoggerQuery } from "../logger.store";
 
 @Component({
   selector: "raf-logger",
