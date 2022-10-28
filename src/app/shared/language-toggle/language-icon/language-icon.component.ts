@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 
+// * implementation of declared styles for Angular component
 const styles = `div {
   color: lightgrey;
   filter: brightness(85%);
@@ -21,7 +22,7 @@ div:hover {filter: brightness(110%);}
   styles: [styles],
 })
 export class LanguageIconComponent {
-  @Input() active: boolean;
-  @Input() icon: string;
-  @Output() select: EventEmitter<any> = new EventEmitter<any>();
+  @Input() active!: boolean;
+  @Input() icon!: string;
+  @Output() select = new EventEmitter<void>();
 }
