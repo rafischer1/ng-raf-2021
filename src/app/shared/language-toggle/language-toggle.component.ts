@@ -40,7 +40,9 @@ export class LanguageToggleComponent implements DoCheck {
     private toast: ToastsService
   ) {}
 
-  langs: string[] = ["en", "es", "pt", "de", "fr"];
+  langs = ["en", "es", "pt", "de", "fr"];
+
+  // * transloco methods
   selectedLanguage = this.translate.getActiveLang();
   prevLanguage = this.translate.getActiveLang();
 
@@ -65,7 +67,7 @@ export class LanguageToggleComponent implements DoCheck {
     }
   };
 
-  // TESTING IMPLEMENTATION OF A SIMPLE "DO CHECK" HOOK
+  // * TESTING IMPLEMENTATION OF A SIMPLE "DO CHECK" HOOK
   ngDoCheck(): void {
     if (this.prevLanguage !== this.selectedLanguage) {
       this.logger.addLog({
