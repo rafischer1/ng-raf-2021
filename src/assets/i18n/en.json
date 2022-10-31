@@ -36,7 +36,8 @@
     "toasts": "toasts",
     "home": "home",
     "logger": "logger",
-    "businessCard": "Business"
+    "businessCard": "Business",
+    "halloween": "Halloween"
   },
   "toasts": {
     "success": "success",

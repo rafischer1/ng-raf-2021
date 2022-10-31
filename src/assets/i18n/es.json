@@ -36,7 +36,8 @@
     "toasts": "notificaciones",
     "home": "casa",
     "logger": "registro",
-    "businessCard": "empresa"
+    "businessCard": "empresa",
+    "halloween": "Dia de los muertos"
   },
   "toasts": {
     "success": "Éxito",
