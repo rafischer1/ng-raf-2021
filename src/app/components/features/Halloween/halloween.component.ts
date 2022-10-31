@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { HalloweenQuery } from "./state/halloween.store";
 
 @Component({
   selector: "app-halloween",
@@ -6,4 +7,6 @@ import { Component } from "@angular/core";
   styleUrls: ["./halloween.component.scss"],
 })
 export class HalloweenComponent {
+  constructor(private query: HalloweenQuery) {}
+  types$ = this.query.select((state) => state.types);
 }
