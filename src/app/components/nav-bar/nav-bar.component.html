@@ -14,5 +14,8 @@
   <button (click)="toggleLogger()" class="checklist-btn">
     {{ t("logger") | titlecase }}
   </button>
+  <button (click)="navTo('halloween')" class="checklist-btn halloween" id="halloween">
+    🎃 {{ t("halloween") | titlecase }} 🎃
+  </button>
   <raf-language-toggle style="float: right"></raf-language-toggle>
 </div>

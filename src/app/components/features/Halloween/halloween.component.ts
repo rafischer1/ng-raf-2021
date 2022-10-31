@@ -6,5 +6,4 @@ import { Component } from "@angular/core";
   styleUrls: ["./halloween.component.scss"],
 })
 export class HalloweenComponent {
-  title = "RAF 2021";
 }

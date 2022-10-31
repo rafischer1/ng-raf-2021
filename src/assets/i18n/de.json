@@ -36,7 +36,8 @@
     "toasts": "Benachrichtigungen",
     "home": "Startseite",
     "logger": "logbuch",
-    "businessCard": "Visitenkartenvorlage"
+    "businessCard": "Visitenkartenvorlage",
+    "halloween": "Kürbisnacht"
   },
   "toasts": {
     "success": "Erfolg",

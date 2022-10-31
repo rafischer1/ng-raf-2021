@@ -36,7 +36,8 @@
     "toasts": "notificações",
     "home": "pagina inicial",
     "logger": "registro",
-    "businessCard": "empresa"
+    "businessCard": "empresa",
+    "halloween": "Dia das Bruxas"
   },
   "toasts": {
     "success": "sucesso",

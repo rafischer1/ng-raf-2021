@@ -36,7 +36,8 @@
     "toasts": "notifications",
     "home": "page d'accueil",
     "logger": "registre",
-    "businessCard": "l' entreprise"
+    "businessCard": "l' entreprise",
+    "halloween": "Veille de la Touissant"
   },
   "toasts": {
     "success": "Succès",
