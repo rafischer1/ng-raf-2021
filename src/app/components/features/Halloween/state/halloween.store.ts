@@ -3,13 +3,13 @@ import { Query, Store, StoreConfig } from "@datorama/akita";
 
 export interface HalloweenState {
   types: string[];
-  spookyName: string;
+  spookyName: string | null;
 }
 
 export function createInitialState(): HalloweenState {
   return {
     types: ["🎃", "🧟", "🧛🏼‍"],
-    spookyName: "",
+    spookyName: null,
   };
 }
 
