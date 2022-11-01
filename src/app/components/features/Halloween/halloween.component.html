@@ -1,2 +1,9 @@
 <h1 style="color: orange; text-align: center">Halloween!</h1>
 <div *ngFor="let t of types$ | async">{{ t }}</div>
+<section>
+  <label>Input your Spooky Name!: </label>
+  <input (keyup)="onKey($event)" />
+  <div *ngIf="spookyName$ | async">
+    Your Spooky Name: {{ spookyName$ | async }}
+  </div>
+</section>
