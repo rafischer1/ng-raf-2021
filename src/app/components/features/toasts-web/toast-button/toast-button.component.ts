@@ -11,5 +11,5 @@ import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 })
 export class ToastButtonComponent {
   @Input() type = "";
-  @Output() show = new EventEmitter<any>();
+  @Output() show = new EventEmitter<void>();
 }
