@@ -8,11 +8,11 @@ import { HalloweenService } from "./state/halloween.service";
   styleUrls: ["./halloween.component.scss"],
 })
 export class HalloweenComponent {
-  query = inject(HalloweenQuery)
-  service = inject(HalloweenService)
-  types$ = this.query.select((state) => state.types);
-  spookyName$ = this.query.select((state) => state.spookyName);
+  private _query = inject(HalloweenQuery)
+  private _service = inject(HalloweenService)
+  types$ = this._query.select((state) => state.types);
+  spookyName$ = this._query.select((state) => state.spookyName);
   onKey(event: any) {
-    if (event) this.service.updateSpookyName(event.target.value);
+    if (event) this._service.updateSpookyName(event.target.value);
   }
 }
