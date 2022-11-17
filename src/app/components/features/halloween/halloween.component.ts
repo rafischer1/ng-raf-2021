@@ -6,6 +6,8 @@ import { HalloweenService } from "./state/halloween.service";
   selector: "app-halloween",
   templateUrl: "./halloween.component.html",
   styleUrls: ["./halloween.component.scss"],
+  standalone: true,
+  imports: []
 })
 export class HalloweenComponent {
   private _query = inject(HalloweenQuery)
