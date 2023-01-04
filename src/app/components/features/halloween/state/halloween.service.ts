@@ -6,7 +6,6 @@ import { HalloweenStore } from "./halloween.store";
 })
 export class HalloweenService {
   constructor(private store: HalloweenStore) {}
-
   updateSpookyName = (name: string) => {
     this.store.update((_old) => {
       return { ..._old, spookyName: name };

@@ -7,6 +7,7 @@ import { HalloweenService } from "./state/halloween.service";
   templateUrl: "./halloween.component.html",
   styleUrls: ["./halloween.component.scss"],
   standalone: false,
+  // standalone: true,
   // imports: []
 })
 export class HalloweenComponent {
