@@ -11,4 +11,9 @@ export class HalloweenService {
       return { ..._old, spookyName: name };
     });
   };
+  clearSpookyName = () => {
+    this.store.update((_old) => {
+      return { ..._old, spookyName: "" };
+    });
+  }
 }

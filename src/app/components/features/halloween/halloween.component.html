@@ -7,5 +7,7 @@
     <div *ngIf="spookyName$ | async">
       Your Spooky Name: {{ spookyName$ | async }}
     </div>
+    <br />
+    <button (click)="onClear()">Clear Spooky Name</button>
   </section>
 </div>
