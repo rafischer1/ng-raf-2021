@@ -8,7 +8,7 @@ export interface HalloweenState {
 
 export function createInitialState(): HalloweenState {
   return {
-    types: ["🎃", "🧟", "🧛🏼‍", "Dracula", "Werewolf"],
+    types: ["🎃", "🧟", "🧛🏼‍", "Dracula", "Werewolf", "Mummy"],
     spookyName: null,
   };
 }
