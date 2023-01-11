@@ -1,7 +1,7 @@
 import { Component, inject } from "@angular/core";
 import { HalloweenQuery } from "./state/halloween.store";
 import { HalloweenService } from "./state/halloween.service";
-import { NgForm } from "@angular/forms";
+
 
 @Component({
   selector: "app-halloween",
@@ -16,7 +16,12 @@ export class HalloweenComponent {
   private _service = inject(HalloweenService);
   types$ = this._query.select((state) => state.types);
   spookyName$ = this._query.select((state) => state.spookyName);
-  onKey(event: any, form: NgForm) {
+  // onKey(event: any, form: NgForm) {
+  //   if (event) this._service.updateSpookyName(event.target.value);
+  //
+  //   // console.log("Your form data : ", form.value);
+  // }
+  onKey(event: any) {
     if (event) this._service.updateSpookyName(event.target.value);
 
     // console.log("Your form data : ", form.value);
