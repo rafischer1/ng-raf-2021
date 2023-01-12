@@ -7,6 +7,7 @@
   "ng serve": run(),
   "ng test": test(),
   "ng build": build()
+  "yarn start": start it up!
 }
 ```
 
