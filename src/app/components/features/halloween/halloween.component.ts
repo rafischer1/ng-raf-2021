@@ -14,6 +14,7 @@ import { HalloweenService } from "./state/halloween.service";
 export class HalloweenComponent {
   private _query = inject(HalloweenQuery);
   private _service = inject(HalloweenService);
+  title = "Halloween!"
   types$ = this._query.select((state) => state.types);
   spookyName$ = this._query.select((state) => state.spookyName);
   // onKey(event: any, form: NgForm) {
