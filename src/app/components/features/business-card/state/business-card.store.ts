@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Query, resetActive, Store, StoreConfig } from "@datorama/akita";
+import { Query, Store, StoreConfig } from "@datorama/akita";
 import { BusinessCard } from "./business-card.model";
 import * as faker from "faker";
 
