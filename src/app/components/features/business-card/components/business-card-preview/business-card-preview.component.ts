@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from "@angular/core";
+import { Component, ElementRef, inject, ViewChild } from "@angular/core";
 import { BusinessCardService } from "../../state/business-card.service";
 import { ToastsService } from "../../../../../shared/toasts-container/state/toasts.service";
 import { PdfService } from "../../state/pdf.service";
@@ -11,21 +11,18 @@ import { BusinessCardQuery } from "../../state/business-card.store";
 })
 export class BusinessCardPreviewComponent {
   @ViewChild("card", { static: false }) cardRef: ElementRef;
-  card$ = this.query.select((store) => store.card).pipe();
+  private _query = inject(BusinessCardQuery);
+  private _service = inject(BusinessCardService);
+  card$ = this._query.select((store) => store.card).pipe();
   randomizeClicked = false;
 
-  constructor(
-    private query: BusinessCardQuery,
-    private service: BusinessCardService,
-    private toast: ToastsService,
-    private pdf: PdfService
-  ) {}
+  constructor(private toast: ToastsService, private pdf: PdfService) {}
 
   // * resets card to randomized starting status
   reset = () => {
     this.randomizeClicked = true;
     setTimeout(() => {
-      this.service.reset();
+      this._service.reset();
       this.randomizeClicked = false;
     }, 1000);
   };
