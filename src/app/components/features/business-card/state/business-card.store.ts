@@ -12,7 +12,7 @@ export function createInitialCard(): BusinessCard {
     name: faker.name.findName(),
     email: faker.internet.email(),
     background: "#3dbebe",
-    borderRadius: 0,
+    borderRadius: 3,
     doubleSided: false,
     phone: faker.phone.phoneNumber(),
     position: faker.name.jobTitle(),
@@ -21,7 +21,7 @@ export function createInitialCard(): BusinessCard {
       size: 40,
       color: "#2d2d2d",
       family: "serif",
-      weight: "normal",
+      weight: "bold",
     },
     secondaryFont: {
       size: 30,
