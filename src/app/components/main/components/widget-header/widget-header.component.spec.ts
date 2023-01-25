@@ -20,7 +20,6 @@ describe("WidgetHeaderComponent", () => {
 
   beforeEach(() => {
     spectator = createComponent();
-    spectator.component.ngOnInit();
   });
 
   it("should create", () => {

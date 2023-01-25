@@ -16,7 +16,7 @@ export class BusinessCardPreviewComponent {
   card$ = this._query.select((store) => store.card).pipe();
   randomizeClicked = false;
 
-  constructor(private toast: ToastsService, private pdf: PdfService) {}
+  constructor(private pdf: PdfService) {}
 
   // * resets card to randomized starting status
   reset = () => {
