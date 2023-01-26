@@ -7,7 +7,7 @@ import { Observable, of } from "rxjs";
   styleUrls: ["./widget-header.component.scss"],
 })
 export class WidgetHeaderComponent {
-  @Input() type: "skills" | "info" | "links";
+  @Input() type!: "skills" | "info" | "links";
   @Input() locked$: Observable<boolean> = of(false);
   @Output() close = new EventEmitter<null>();
   @Output() lock = new EventEmitter<null>();
