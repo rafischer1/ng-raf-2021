@@ -20,7 +20,6 @@ describe("ToastButtonComponent", () => {
 
   beforeEach(() => {
     spectator = createComponent();
-    spectator.component.ngOnInit();
   });
 
   it("should create", () => {
