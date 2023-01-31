@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, inject } from "@angular/core";
 import { LoggerService } from "../logger.service";
 import { LoggerQuery } from "../logger.store";
 
@@ -21,12 +21,10 @@ import { LoggerQuery } from "../logger.store";
   styleUrls: ["./logger.component.scss"],
 })
 export class LoggerComponent {
-  logs$ = this.query.select((state) => state.logs);
-  active$ = this.query.select((state) => state.active).pipe();
-
-  constructor(private query: LoggerQuery, private service: LoggerService) {}
-
-  closeLogger = () => this.service.toggleStore();
-
-  clearLogs = () => this.service.clearLogs();
+  private _query = inject(LoggerQuery);
+  private _service = inject(LoggerService);
+  logs$ = this._query.select((state) => state.logs);
+  active$ = this._query.select((state) => state.active).pipe();
+  closeLogger = () => this._service.toggleStore();
+  clearLogs = () => this._service.clearLogs();
 }
