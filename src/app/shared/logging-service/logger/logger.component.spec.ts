@@ -4,7 +4,7 @@ import { LoggerStore } from "../logger.store";
 
 describe("LoggerComponent", () => {
   let spectator: Spectator<LoggerComponent>;
-  let store: LoggerStore
+  let store: LoggerStore;
 
   const createComponent = createComponentFactory({
     component: LoggerComponent,
