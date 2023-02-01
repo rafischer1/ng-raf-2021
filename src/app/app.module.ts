@@ -39,7 +39,7 @@ import { SpinnerComponent } from "./shared/spinner/spinner.component";
 import { CommonModule } from "@angular/common";
 import { NgxSkeletonLoaderModule } from "ngx-skeleton-loader";
 import { AlertComponent } from "./components/elements/alert/alert.component";
-import { NgForDirective } from "./shared/ng-for.extended.directive";
+import { NgForDirective } from "./shared/directives/ng-for.extended.directive";
 import { HalloweenComponent } from "./components/features/halloween/halloween.component";
 
 @NgModule({

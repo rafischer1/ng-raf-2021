@@ -7,7 +7,7 @@ import { LoggerQuery } from "../logger.store";
   template: `<div class="logger-container" *ngIf="active$ | async">
     <div class="logger-header">
       <div class="header-item" (click)="closeLogger()">Close</div>
-      <div class="header-item" (click)="clearLogs()">Clear Logs</div>
+      <div class="header-item" (click)="clearLogs()">Clear</div>
     </div>
     <div class="blink log">...</div>
     <div *ngFor="let log of logs$ | async">
