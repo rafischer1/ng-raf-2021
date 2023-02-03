@@ -20,7 +20,6 @@ describe("ContactGraphComponent", () => {
 
   beforeEach(() => {
     spectator = createComponent();
-    spectator.component.ngOnInit();
   });
 
   it("should create", () => {

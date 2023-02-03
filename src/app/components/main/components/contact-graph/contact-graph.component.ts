@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { pieGraphSkillsData } from "./dashboard-data";
 import { Observable } from "rxjs";
 
@@ -7,12 +7,10 @@ import { Observable } from "rxjs";
   templateUrl: "./contact-graph.component.html",
   styleUrls: ["./contact-graph.component.scss"],
 })
-export class ContactGraphComponent implements OnInit {
+export class ContactGraphComponent {
   @Input() contactGraphLocked$: Observable<boolean>;
   @Output() log: EventEmitter<any> = new EventEmitter<any>();
   @Output() close: EventEmitter<any> = new EventEmitter<any>();
   @Output() lock: EventEmitter<any> = new EventEmitter<any>();
-  constructor() {}
   pieGraphData: { name: string; value: number }[] = pieGraphSkillsData;
-  ngOnInit(): void {}
 }
