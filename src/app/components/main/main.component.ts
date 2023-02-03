@@ -1,4 +1,4 @@
-import { Component, Injector, ViewEncapsulation } from "@angular/core";
+import { Component, inject, Injector, ViewEncapsulation } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
 import { UntilDestroy } from "@ngneat/until-destroy";
 import { LoggerService } from "../../shared/logging-service/logger.service";
@@ -15,8 +15,10 @@ import { LoggerQuery } from "../../shared/logging-service/logger.store";
   encapsulation: ViewEncapsulation.None,
 })
 export class MainComponent {
+  private _query = inject(LoggerQuery);
+  private _service = inject(LoggerService);
   // * Assignment automatic on component init lifecycle
-  loggerActive$ = this.loggerQuery.select((state) => state.active).pipe();
+  loggerActive$ = this._query.select((state) => state.active).pipe();
   contactGraphLocked = new BehaviorSubject<boolean>(false);
   contactGraphClosed = new BehaviorSubject<boolean>(false);
   contactLinksLocked = new BehaviorSubject<boolean>(false);
@@ -25,12 +27,7 @@ export class MainComponent {
   contactInfoClosed = new BehaviorSubject<boolean>(false);
 
   content = null;
-  constructor(
-    private loggerQuery: LoggerQuery,
-    private loggerService: LoggerService,
-    private injector: Injector,
-    private domSanitizer: DomSanitizer
-  ) {
+  constructor(private injector: Injector, private domSanitizer: DomSanitizer) {
     const AlertElement = createCustomElement(AlertComponent, {
       injector: this.injector,
     });
@@ -50,7 +47,7 @@ export class MainComponent {
   }
 
   logComponentEnter = (name: string) =>
-    this.loggerService.addLog({
+    this._service.addLog({
       context: "ComponentActive",
       text: `${name.toUpperCase()} drag active`,
     });
