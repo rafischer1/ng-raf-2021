@@ -39,7 +39,7 @@ export class MainComponent {
       this.content = `<h3 class="demo"><div class="balloon"></div>
 <div class="balloon"></div>
 <div class="balloon"></div></h3>`;
-    }, 1000);
+    }, 2500);
 
     // setTimeout(() => {
     //   this.content = this.domSanitizer.bypassSecurityTrustHtml(
