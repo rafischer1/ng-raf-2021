@@ -36,8 +36,10 @@ export class MainComponent {
     //   this.content = `<alert-element [message]="Hi">Render Me</alert-element>`;
     // }, 1000);
     setTimeout(() => {
-      this.content = `<h3 class="demo">Render Me</h3>`;
-    }, 1000);
+      this.content = `<h3 class="demo"><div class="balloon"></div>
+<div class="balloon"></div>
+<div class="balloon"></div></h3>`;
+    }, 2500);
 
     // setTimeout(() => {
     //   this.content = this.domSanitizer.bypassSecurityTrustHtml(
