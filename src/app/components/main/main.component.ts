@@ -35,10 +35,14 @@ export class MainComponent {
     // setTimeout(() => {
     //   this.content = `<alert-element [message]="Hi">Render Me</alert-element>`;
     // }, 1000);
+//     setTimeout(() => {
+//       this.content = `<h3 class="demo"><div class="balloon"></div>
+// <div class="balloon"></div>
+// <div class="balloon"></div></h3>`;
+//     }, 2500);
+
     setTimeout(() => {
-      this.content = `<h3 class="demo"><div class="balloon"></div>
-<div class="balloon"></div>
-<div class="balloon"></div></h3>`;
+      this.content = `<h3 class="demo"></h3>`;
     }, 2500);
 
     // setTimeout(() => {
