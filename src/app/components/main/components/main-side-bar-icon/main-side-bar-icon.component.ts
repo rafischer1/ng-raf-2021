@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 import {
   animate,
   state,
@@ -63,7 +63,7 @@ import {
   ],
 })
 export class MainSideBarIconComponent {
-  @Input() type: "skills" | "info" | "links";
-  @Input() active: boolean;
-  @Output() open: EventEmitter<string> = new EventEmitter<string>();
+  @Input() type!: "skills" | "info" | "links";
+  @Input() active = false;
+  @Output() open = new EventEmitter<string>();
 }
