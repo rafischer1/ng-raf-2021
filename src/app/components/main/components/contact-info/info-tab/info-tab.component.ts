@@ -42,7 +42,5 @@ import { Observable } from "rxjs";
 export class InfoTabComponent {
   @Input() active$!: Observable<boolean>;
   @Input() title!: string;
-
   @Output() toggle = new EventEmitter<any>();
-  constructor() {}
 }
