@@ -17,6 +17,6 @@ export class AppComponent implements AfterContentInit {
   ngAfterContentInit(): void {
     //Content Child
     console.log(this.contentColor);
-    this.contentColor.nativeElement.setAttribute("style", "color: blue");
+    this.contentColor.nativeElement.setAttribute("style", "color: teal");
   }
 }
