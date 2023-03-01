@@ -1,11 +1,16 @@
-import { Component, ContentChild, ElementRef } from "@angular/core";
+import {
+  AfterContentInit,
+  Component,
+  ContentChild,
+  ElementRef,
+} from "@angular/core";
 
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.scss"],
 })
-export class AppComponent {
+export class AppComponent implements AfterContentInit {
   //Content Child
   @ContentChild("color") contentColor!: ElementRef;
 
