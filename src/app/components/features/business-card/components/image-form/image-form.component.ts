@@ -3,9 +3,10 @@ import * as faker from "faker";
 import { BusinessCardImage } from "../../state/business-card.model";
 
 @Component({
-  selector: "raf-image-form",
-  templateUrl: "./image-form.component.html",
-  styleUrls: ["./image-form.component.scss"],
+    selector: "raf-image-form",
+    templateUrl: "./image-form.component.html",
+    styleUrls: ["./image-form.component.scss"],
+    standalone: true,
 })
 export class ImageFormComponent implements OnInit {
   currentImage: BusinessCardImage = {

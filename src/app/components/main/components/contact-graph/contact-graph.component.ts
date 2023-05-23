@@ -3,9 +3,10 @@ import { pieGraphSkillsData } from "./dashboard-data";
 import { Observable } from "rxjs";
 
 @Component({
-  selector: "raf-contact-graph",
-  templateUrl: "./contact-graph.component.html",
-  styleUrls: ["./contact-graph.component.scss"],
+    selector: "raf-contact-graph",
+    templateUrl: "./contact-graph.component.html",
+    styleUrls: ["./contact-graph.component.scss"],
+    standalone: true,
 })
 export class ContactGraphComponent {
   @Input() contactGraphLocked$: Observable<boolean>;

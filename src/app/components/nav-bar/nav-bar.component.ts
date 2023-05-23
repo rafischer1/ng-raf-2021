@@ -5,9 +5,10 @@ import { LoggerService } from "../../shared/logging-service/logger.service";
 import { TranslocoService } from "@ngneat/transloco";
 
 @Component({
-  selector: "raf-nav-bar",
-  templateUrl: "./nav-bar.component.html",
-  styleUrls: ["./nav-bar.component.scss"],
+    selector: "raf-nav-bar",
+    templateUrl: "./nav-bar.component.html",
+    styleUrls: ["./nav-bar.component.scss"],
+    standalone: true,
 })
 export class NavBarComponent {
   constructor(

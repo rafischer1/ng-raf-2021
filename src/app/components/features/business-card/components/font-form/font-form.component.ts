@@ -5,9 +5,10 @@ import {
 } from "../business-card-form/business-card-form.constants";
 
 @Component({
-  selector: "raf-font-form",
-  templateUrl: "./font-form.component.html",
-  styleUrls: ["./font-form.component.scss"],
+    selector: "raf-font-form",
+    templateUrl: "./font-form.component.html",
+    styleUrls: ["./font-form.component.scss"],
+    standalone: true,
 })
 export class FontFormComponent {
   @Input() type: "primary" | "secondary" | "tertiary";

@@ -2,9 +2,10 @@ import { Component, EventEmitter, Input, Output } from "@angular/core";
 import { BehaviorSubject, Observable, of } from "rxjs";
 
 @Component({
-  selector: "raf-contact-info",
-  templateUrl: "./contact-info.component.html",
-  styleUrls: ["./contact-info.component.scss"],
+    selector: "raf-contact-info",
+    templateUrl: "./contact-info.component.html",
+    styleUrls: ["./contact-info.component.scss"],
+    standalone: true,
 })
 export class ContactInfoComponent {
   @Input() contactInfoLocked$: Observable<boolean> = of(true);

@@ -21,8 +21,8 @@ const styles = [
 ];
 
 @Component({
-  selector: "raf-language-toggle",
-  template: `<div class="language-toggle-container">
+    selector: "raf-language-toggle",
+    template: `<div class="language-toggle-container">
     <ng-container *ngFor="let l of langs">
       <raf-language-icon
         [icon]="l.toUpperCase()"
@@ -31,7 +31,8 @@ const styles = [
       ></raf-language-icon>
     </ng-container>
   </div> `,
-  styles: styles,
+    styles: styles,
+    standalone: true,
 })
 export class LanguageToggleComponent implements DoCheck {
   constructor(

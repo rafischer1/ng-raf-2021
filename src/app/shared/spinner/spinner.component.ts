@@ -1,15 +1,15 @@
 import { Component, Input } from "@angular/core";
 
 @Component({
-  selector: "[spinner]",
-  template: `
+    selector: "[spinner]",
+    template: `
     <div class="container">
       <div *ngIf="loading" class="loader"></div>
       <ng-content></ng-content>
     </div>
   `,
-  styles: [
-    `
+    styles: [
+        `
       .container {
         display: flex;
         justify-content: center;
@@ -46,7 +46,8 @@ import { Component, Input } from "@angular/core";
         }
       }
     `,
-  ],
+    ],
+    standalone: true,
 })
 export class SpinnerComponent {
   @Input() loading = false;

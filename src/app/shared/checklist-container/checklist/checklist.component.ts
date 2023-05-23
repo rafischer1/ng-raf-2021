@@ -2,9 +2,10 @@ import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { ChecklistObject } from "../state/checklist.model";
 
 @Component({
-  selector: "raf-checklist",
-  templateUrl: "./checklist.component.html",
-  styleUrls: ["./checklist.component.scss"],
+    selector: "raf-checklist",
+    templateUrl: "./checklist.component.html",
+    styleUrls: ["./checklist.component.scss"],
+    standalone: true,
 })
 export class ChecklistComponent implements OnInit {
   @Input() checklist: ChecklistObject[] | null | undefined;

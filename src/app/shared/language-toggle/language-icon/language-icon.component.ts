@@ -16,10 +16,10 @@ div:hover {filter: brightness(110%);}
 }`;
 
 @Component({
-  selector: "raf-language-icon",
-  template:
-    '<div [class.active]="active" (click)="select.emit()">{{ icon }}</div>',
-  styles: [styles],
+    selector: "raf-language-icon",
+    template: '<div [class.active]="active" (click)="select.emit()">{{ icon }}</div>',
+    styles: [styles],
+    standalone: true,
 })
 export class LanguageIconComponent {
   @Input() active!: boolean;

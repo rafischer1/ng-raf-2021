@@ -14,9 +14,10 @@ import { LoggerService } from "../../logging-service/logger.service";
 import { TranslocoService } from "@ngneat/transloco";
 
 @Component({
-  selector: "raf-toasts-modal",
-  templateUrl: "./toasts-modal.component.html",
-  styleUrls: ["./toasts-modal.component.scss"],
+    selector: "raf-toasts-modal",
+    templateUrl: "./toasts-modal.component.html",
+    styleUrls: ["./toasts-modal.component.scss"],
+    standalone: true,
 })
 export class ToastsModalComponent implements OnInit, OnChanges {
   @ViewChild("defaultToast", { static: true }) defaultToast: TemplateRef<any>;

@@ -9,35 +9,30 @@ import {
 import { Observable } from "rxjs";
 
 @Component({
-  selector: "raf-info-tab",
-  templateUrl: "./info-tab.component.html",
-  styleUrls: ["./info-tab.component.scss"],
-  animations: [
-    trigger("active", [
-      // trigger [@active]="active"
-      state(
-        "true",
-        style({
-          // final CSS following animation: TO:
-          // backgroundColor: "#333",
-          // border: "1px solid #333 !important",
-          // color: "#F9F9F9;",
-          opacity: "1",
-        })
-      ),
-      // FROM:
-      state(
-        "true",
-        style({
-          // backgroundColor: "#bcf1e9",
-          // color: "#F9F9F9;",
-          opacity: "0",
-        })
-      ),
-      transition("true => false", animate("2000ms ease-out")),
-      transition("false => true", animate("2000ms ease-out")),
-    ]),
-  ],
+    selector: "raf-info-tab",
+    templateUrl: "./info-tab.component.html",
+    styleUrls: ["./info-tab.component.scss"],
+    animations: [
+        trigger("active", [
+            // trigger [@active]="active"
+            state("true", style({
+                // final CSS following animation: TO:
+                // backgroundColor: "#333",
+                // border: "1px solid #333 !important",
+                // color: "#F9F9F9;",
+                opacity: "1",
+            })),
+            // FROM:
+            state("true", style({
+                // backgroundColor: "#bcf1e9",
+                // color: "#F9F9F9;",
+                opacity: "0",
+            })),
+            transition("true => false", animate("2000ms ease-out")),
+            transition("false => true", animate("2000ms ease-out")),
+        ]),
+    ],
+    standalone: true,
 })
 export class InfoTabComponent {
   @Input() active$!: Observable<boolean>;

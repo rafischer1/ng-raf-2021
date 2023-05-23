@@ -1,10 +1,10 @@
 import { Component, Input } from "@angular/core";
 
 @Component({
-  selector: "alert-element",
-  template: `<div>Alert Element {{ message }}</div>`,
-  styles: [
-    `
+    selector: "alert-element",
+    template: `<div>Alert Element {{ message }}</div>`,
+    styles: [
+        `
       div {
         color: red;
         padding: 10px;
@@ -13,7 +13,8 @@ import { Component, Input } from "@angular/core";
         bottom: 0;
       }
     `,
-  ],
+    ],
+    standalone: true,
 })
 export class AlertComponent {
   @Input() message!: string;

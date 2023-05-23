@@ -5,9 +5,10 @@ import { PdfService } from "../../state/pdf.service";
 import { BusinessCardQuery } from "../../state/business-card.store";
 
 @Component({
-  selector: "raf-business-card-preview",
-  templateUrl: "./business-card-preview.component.html",
-  styleUrls: ["./business-card-preview.component.scss"],
+    selector: "raf-business-card-preview",
+    templateUrl: "./business-card-preview.component.html",
+    styleUrls: ["./business-card-preview.component.scss"],
+    standalone: true,
 })
 export class BusinessCardPreviewComponent {
   @ViewChild("card", { static: false }) cardRef: ElementRef;

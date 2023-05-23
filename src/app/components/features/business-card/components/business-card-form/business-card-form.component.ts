@@ -4,9 +4,10 @@ import * as faker from "faker";
 import { BusinessCardImage } from "../../state/business-card.model";
 
 @Component({
-  selector: "raf-business-card-form",
-  templateUrl: "./business-card-form.component.html",
-  styleUrls: ["./business-card-form.component.scss"],
+    selector: "raf-business-card-form",
+    templateUrl: "./business-card-form.component.html",
+    styleUrls: ["./business-card-form.component.scss"],
+    standalone: true,
 })
 export class BusinessCardFormComponent {
   constructor(private service: BusinessCardService) {}

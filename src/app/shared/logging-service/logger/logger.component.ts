@@ -3,8 +3,8 @@ import { LoggerService } from "../logger.service";
 import { LoggerQuery } from "../logger.store";
 
 @Component({
-  selector: "raf-logger",
-  template: `<div class="logger-container" *ngIf="active$ | async">
+    selector: "raf-logger",
+    template: `<div class="logger-container" *ngIf="active$ | async">
     <div class="logger-header">
       <div class="header-item" (click)="closeLogger()">Close</div>
       <div class="header-item" (click)="clearLogs()">Clear</div>
@@ -18,7 +18,8 @@ import { LoggerQuery } from "../logger.store";
       </div>
     </div>
   </div>`,
-  styleUrls: ["./logger.component.scss"],
+    styleUrls: ["./logger.component.scss"],
+    standalone: true,
 })
 export class LoggerComponent {
   private _query = inject(LoggerQuery);

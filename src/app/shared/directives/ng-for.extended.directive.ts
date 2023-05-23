@@ -11,7 +11,8 @@ import {
 export const TRACK_ID = new InjectionToken<string>("TRACK_ID");
 
 @Directive({
-  selector: "[ngForX]",
+    selector: "[ngForX]",
+    standalone: true,
 })
 export class NgForDirective {
   @Input() ngForTrackId: string = this.trackId;

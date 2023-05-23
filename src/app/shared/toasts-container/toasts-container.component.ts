@@ -3,8 +3,8 @@ import { ToastsService } from "./state/toasts.service";
 import { ToastsQuery } from "./state/toasts.store";
 
 @Component({
-  selector: "raf-toasts-container",
-  template: `<div class="toasts-container">
+    selector: "raf-toasts-container",
+    template: `<div class="toasts-container">
     <ng-container *ngFor="let toast of toasts$ | async; let i = index">
       <raf-toasts-modal
         (delete)="deleteToast(i)"
@@ -14,7 +14,8 @@ import { ToastsQuery } from "./state/toasts.store";
       ></raf-toasts-modal>
     </ng-container>
   </div>`,
-  styleUrls: ["./toasts-container.component.scss"],
+    styleUrls: ["./toasts-container.component.scss"],
+    standalone: true,
 })
 export class ToastsContainerComponent {
   constructor(private service: ToastsService, private query: ToastsQuery) {}

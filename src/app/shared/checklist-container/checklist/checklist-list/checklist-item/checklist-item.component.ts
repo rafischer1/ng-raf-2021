@@ -2,8 +2,8 @@ import { Component, Input, OnInit } from "@angular/core";
 import { ChecklistStatus } from "../../../state/checklist.model";
 
 @Component({
-  selector: "raf-checklist-item",
-  template: `<div>
+    selector: "raf-checklist-item",
+    template: `<div>
     <span>
       <label>
         <input
@@ -20,6 +20,7 @@ import { ChecklistStatus } from "../../../state/checklist.model";
       {{ item.description }}
     </div>
   </div> `,
+    standalone: true,
 })
 export class ChecklistItemComponent implements OnInit {
   @Input() item!: ChecklistStatus;

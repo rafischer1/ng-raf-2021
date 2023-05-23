@@ -4,12 +4,11 @@ import { HalloweenService } from "./state/halloween.service";
 
 
 @Component({
-  selector: "app-halloween",
-  templateUrl: "./halloween.component.html",
-  styleUrls: ["./halloween.component.scss"],
-  standalone: false,
-  // standalone: true,
-  // imports: []
+    selector: "app-halloween",
+    templateUrl: "./halloween.component.html",
+    styleUrls: ["./halloween.component.scss"],
+    standalone: false,
+    standalone: true,
 })
 export class HalloweenComponent {
   private _query = inject(HalloweenQuery);

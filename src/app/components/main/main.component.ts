@@ -9,10 +9,11 @@ import { LoggerQuery } from "../../shared/logging-service/logger.store";
 
 @UntilDestroy()
 @Component({
-  selector: "raf-main",
-  templateUrl: "./main.component.html",
-  styleUrls: ["./main.component.scss"],
-  encapsulation: ViewEncapsulation.None,
+    selector: "raf-main",
+    templateUrl: "./main.component.html",
+    styleUrls: ["./main.component.scss"],
+    encapsulation: ViewEncapsulation.None,
+    standalone: true,
 })
 export class MainComponent {
   private _query = inject(LoggerQuery);

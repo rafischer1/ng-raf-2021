@@ -4,8 +4,8 @@ import { TranslocoService } from "@ngneat/transloco";
 import { LoggerService } from "../../../shared/logging-service/logger.service";
 
 @Component({
-  selector: "raf-toasts-web",
-  template: `<div class="toast-buttons-container">
+    selector: "raf-toasts-web",
+    template: `<div class="toast-buttons-container">
     <ng-container *ngFor="let type of toastTypes">
       <raf-toast-button
         [type]="type"
@@ -13,13 +13,14 @@ import { LoggerService } from "../../../shared/logging-service/logger.service";
       ></raf-toast-button>
     </ng-container>
   </div>`,
-  styles: [
-    `
+    styles: [
+        `
       .toast-buttons-container {
         margin-top: 5px;
       }
     `,
-  ],
+    ],
+    standalone: true,
 })
 export class ToastsWebComponent {
   toastTypes: string[] = ["success", "info", "warn", "alert", "link"];

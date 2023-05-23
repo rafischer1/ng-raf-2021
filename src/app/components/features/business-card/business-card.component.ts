@@ -1,8 +1,8 @@
 import { Component } from "@angular/core";
 
 @Component({
-  selector: "raf-business-card",
-  template: `<ng-template transloco let-t [translocoRead]="'businessCard'">
+    selector: "raf-business-card",
+    template: `<ng-template transloco let-t [translocoRead]="'businessCard'">
     <h1>{{ t("title") | titlecase }}</h1>
     <div class="business-card-container">
       <div class="business-card-form">
@@ -13,8 +13,8 @@ import { Component } from "@angular/core";
       </div>
     </div>
   </ng-template>`,
-  styles: [
-    `
+    styles: [
+        `
       .business-card-container {
         display: flex;
         flex-direction: row;
@@ -33,6 +33,7 @@ import { Component } from "@angular/core";
         flex-basis: 55%;
       }
     `,
-  ],
+    ],
+    standalone: true,
 })
 export class BusinessCardComponent {}

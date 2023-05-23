@@ -9,8 +9,8 @@ import { LoggerService } from "../logging-service/logger.service";
 import { shareReplay } from "rxjs/operators";
 
 @Component({
-  selector: "raf-checklist-container",
-  template: `<div class="{{ wrapperClass }} checklist-container">
+    selector: "raf-checklist-container",
+    template: `<div class="{{ wrapperClass }} checklist-container">
     <div class="modal-container">
       <ng-container *ngIf="active$ | async" (change)="toggleWrapperClass()">
         <raf-checklist
@@ -20,7 +20,8 @@ import { shareReplay } from "rxjs/operators";
       </ng-container>
     </div>
   </div> `,
-  styleUrls: ["./checklist-container.component.scss"],
+    styleUrls: ["./checklist-container.component.scss"],
+    standalone: true,
 })
 export class ChecklistContainerComponent implements AfterContentChecked {
   wrapperClass = "hidden-wrapper";
