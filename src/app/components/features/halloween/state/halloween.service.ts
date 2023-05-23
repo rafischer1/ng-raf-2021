@@ -1,19 +1,24 @@
-import { Injectable } from "@angular/core";
+import { inject, Injectable } from "@angular/core";
 import { HalloweenStore } from "./halloween.store";
 
 @Injectable({
   providedIn: "root",
 })
 export class HalloweenService {
-  constructor(private store: HalloweenStore) {}
+  _store = inject(HalloweenStore);
   updateSpookyName = (name: string) => {
-    this.store.update((_old) => {
+    this._store.update((_old) => {
       return { ..._old, spookyName: name };
     });
   };
   clearSpookyName = () => {
-    this.store.update((_old) => {
+    this._store.update((_old) => {
       return { ..._old, spookyName: "" };
     });
-  }
+  };
+  setNewType = (type: string) => {
+    this._store.update((_old) => {
+      return { types: [..._old.types, type], spookyName: _old.spookyName };
+    });
+  };
 }
