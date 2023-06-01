@@ -41,6 +41,7 @@ import { NgxSkeletonLoaderModule } from "ngx-skeleton-loader";
 import { AlertComponent } from "./components/elements/alert/alert.component";
 import { NgForDirective } from "./shared/directives/ng-for.extended.directive";
 import { HalloweenComponent } from "./components/features/halloween/halloween.component";
+import { SignalsComponent } from "./components/elements/signals/signals.component";
 
 @NgModule({
   declarations: [
@@ -72,7 +73,8 @@ import { HalloweenComponent } from "./components/features/halloween/halloween.co
     SpinnerComponent,
     AlertComponent,
     NgForDirective,
-    HalloweenComponent
+    HalloweenComponent,
+    SignalsComponent,
   ],
   imports: [
     BrowserModule,
